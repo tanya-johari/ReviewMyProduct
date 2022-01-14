@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+  header("location: login.php");
+  exit;
+}
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,11 +16,11 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>Account</title>
+    <title>Account- <?php echo $_SESSION['username'] ?></title>
   </head>
   <body>
     <?php require 'partials/_nav.php' ?>
-
+     <h1> welcome <?php echo $_SESSION['username'] ?></h1>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
