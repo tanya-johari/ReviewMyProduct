@@ -9,18 +9,31 @@
 if($_SERVER['REQUEST_METHOD'] == "POST"){
     if (isset($_POST['special_price_submit'])){
         // call method addToCart
-        $Cart->addToCart($_POST['user_id'], $_POST['item_id']);
+        $Product->addTou($_POST['user_id'], $_POST['item_id']);
+    }
+}
+function getProduct($item_id = null, $table= 'product'){
+    if (isset($item_id)){
+        $result = $this->db->con->query("SELECT * FROM {$table} WHERE item_id={$item_id}");
+
+        $resultArray = array();
+
+        // fetch product data one by one
+        while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+            $resultArray[] = $item;
+        }
+
+        return $resultArray;
     }
 }
 
-$in_cart = $Cart->getCartId($product->getData('cart'));
+$in_cart =getproduct();
 
 ?>
 <section id="special-price">
     <div class="container">
-        <br>
-        <center><h4 class="font-rubik font-size-20">PRODUCTS</h4> </center>
-     <br>
+        <h4 class="font-rubik font-size-20">PRODUCTS</h4>
+     
 
         <div class="grid">
             <?php array_map(function ($item) use($in_cart){ ?>

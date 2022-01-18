@@ -20,6 +20,16 @@ class DBController
             echo "Fail " . $this->con->connect_error;
         }
     }
+    public  function addTou($userid, $itemid){
+        if (isset($userid) && isset($itemid)){
+            $params = array(
+                "user_id" => $userid,
+                "item_id" => $itemid
+            );
+
+          
+        }
+    }
 
     public function __destruct()
     {
