@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `phpreviews`
+-- Database: `product_reviewer`
 --
 
 -- --------------------------------------------------------
@@ -28,14 +28,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `reviews` (
-  'reviewid'  int PRIMARY KEY,
-  `item-id` int NOT NULL,
-  `username` varchar(255) NOT NULL,
+  `item_id` int NOT NULL,
+  `username` varchar(30) NOT NULL,
   `content` text NOT NULL,
   `rating` tinyint(1) NOT NULL,
-  `submit_date` datetime NOT NULL DEFAULT current_timestamp()
-  FOREIGN KEY 'item-id' REFERECES 'product'('item-id'),
-  FOREIGN KEY 'username' REFERECES 'usertable'('username'),
+  `submit_date` datetime NOT NULL DEFAULT current_timestamp(),
+  FOREIGN KEY (item_id) REFERENCES product(item_id),
+  FOREIGN KEY (username) REFERENCES usertable(username)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
