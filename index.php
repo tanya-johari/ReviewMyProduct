@@ -45,7 +45,7 @@
       <div class="top-nav s-12 l-9">
         <ul class="top-ul right chevron">
           <li><a href="#">Home</a></li>
-          <li><a href="acct.php">LOGIN</a></li>
+          <li><a href="login.php">LOGIN</a></li>
           <li><a href="signup.php">SIGNUP</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="contact.html">Contact</a></li>
