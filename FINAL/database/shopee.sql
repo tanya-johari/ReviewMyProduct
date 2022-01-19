@@ -56,4 +56,3 @@ ALTER TABLE `product`
 ALTER TABLE `product`
   MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
-\
