@@ -7,20 +7,20 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="test.php">Home</a>
+          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/Demo/login.php">Login</a>
+          <a class="nav-link" href="/ReviewMyProduct/login.php">Login</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             options
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="/Demo/logout.php">logout</a></li>
+            <li><a class="dropdown-item" href="/ReviewMyProduct/logout.php">logout</a></li>
             <li><a class="dropdown-item" href="#">searchproduct</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/Demo/signup.php">Sign here</a></li>
+            <li><a class="dropdown-item" href="/ReviewMyProduct/signup.php">Sign here</a></li>
           </ul>
         </li>
       </ul>

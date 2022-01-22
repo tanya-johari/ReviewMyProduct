@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `product`
 --
 
-CREATE TABLE `product` (
+CREATE TABLE IF NOT EXISTS `product` (
   `item_id` int(11) NOT NULL,
   `item_brand` varchar(200) NOT NULL,
   `item_name` varchar(255) NOT NULL,
@@ -61,7 +61,7 @@ INSERT INTO `product` (`item_id`, `item_brand`, `item_name`, `item_price`, `item
 -- Table structure for table `reviews`
 --
 
-CREATE TABLE `reviews` (
+CREATE TABLE IF NOT EXISTS`reviews` (
   `item_id` int(11) NOT NULL,
   `userid` int(11) NOT NULL,
   `content` text NOT NULL,
@@ -75,7 +75,7 @@ CREATE TABLE `reviews` (
 -- Table structure for table `usertable`
 --
 
-CREATE TABLE `usertable` (
+CREATE TABLE IF NOT EXISTS `usertable` (
   `userid` int(11) NOT NULL,
   `name` varchar(25) NOT NULL,
   `gender` char(10) NOT NULL,

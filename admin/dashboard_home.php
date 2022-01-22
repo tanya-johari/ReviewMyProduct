@@ -81,7 +81,7 @@ body {
   <a href="#">👥Manage User</a>
   <a href="#">⭐Manage Review</a>
   <a href="#">🔑Change Password</a>
-  <a href="#">🔒Logout</a>
+  <a href="../logout.php">🔒Logout</a>
   
 </div>
 

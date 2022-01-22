@@ -54,7 +54,7 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
     ?>
     <div class="container">
         <h1 class="text-center">Login to Reviewersblog</h1>
-        <form action="/Demo/login.php" method="post">
+        <form action="/ReviewMyProduct/login.php" method="post">
         <div class="col-md-4">
         <label for="username" class="form-label">Username</label>
         <input type="text" class="form-control" id="username" name="username" >
