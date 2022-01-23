@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 19, 2022 at 12:22 PM
+-- Generation Time: Jan 23, 2022 at 06:13 PM
 -- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.1
+-- PHP Version: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `product`
 --
 
-CREATE TABLE IF NOT EXISTS `product` (
+CREATE TABLE `product` (
   `item_id` int(11) NOT NULL,
   `item_brand` varchar(200) NOT NULL,
   `item_name` varchar(255) NOT NULL,
@@ -61,7 +61,7 @@ INSERT INTO `product` (`item_id`, `item_brand`, `item_name`, `item_price`, `item
 -- Table structure for table `reviews`
 --
 
-CREATE TABLE IF NOT EXISTS`reviews` (
+CREATE TABLE `reviews` (
   `item_id` int(11) NOT NULL,
   `userid` int(11) NOT NULL,
   `content` text NOT NULL,
@@ -69,13 +69,21 @@ CREATE TABLE IF NOT EXISTS`reviews` (
   `submit_date` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `reviews`
+--
+
+INSERT INTO `reviews` (`item_id`, `userid`, `content`, `rating`, `submit_date`) VALUES
+(11, 1, 'very good product!!', 4, '2022-01-23 22:34:30'),
+(13, 10, 'bad product..should improve!!', 1, '2022-01-23 22:35:18');
+
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `usertable`
 --
 
-CREATE TABLE IF NOT EXISTS `usertable` (
+CREATE TABLE `usertable` (
   `userid` int(11) NOT NULL,
   `name` varchar(25) NOT NULL,
   `gender` char(10) NOT NULL,
@@ -93,7 +101,8 @@ CREATE TABLE IF NOT EXISTS `usertable` (
 
 INSERT INTO `usertable` (`userid`, `name`, `gender`, `Email`, `phone_no`, `username`, `avtar_no`, `password`, `dob`) VALUES
 (1, 'vish', '', 'vishakhay036@gmail.com', 5678, 'yryhu', 1, '1234', '2022-01-01'),
-(9, 'Girl Power', 'male', 'gals6969@gmail.com', 98184, 'Wearenotless', 1, 'mynameiskhan', '2005-08-19');
+(9, 'Girl Power', 'male', 'gals6969@gmail.com', 98184, 'Wearenotless', 1, 'mynameiskhan', '2005-08-19'),
+(10, 'tanya', 'female', 'admin@gmail.com', 2147483647, 'tan11', 1, 'admin', '2022-01-01');
 
 --
 -- Indexes for dumped tables
@@ -133,7 +142,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `usertable`
 --
 ALTER TABLE `usertable`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables
