@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 23, 2022 at 06:13 PM
+-- Generation Time: Jan 24, 2022 at 06:38 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -62,6 +62,7 @@ INSERT INTO `product` (`item_id`, `item_brand`, `item_name`, `item_price`, `item
 --
 
 CREATE TABLE `reviews` (
+  `review_id` int(11) NOT NULL,
   `item_id` int(11) NOT NULL,
   `userid` int(11) NOT NULL,
   `content` text NOT NULL,
@@ -73,9 +74,9 @@ CREATE TABLE `reviews` (
 -- Dumping data for table `reviews`
 --
 
-INSERT INTO `reviews` (`item_id`, `userid`, `content`, `rating`, `submit_date`) VALUES
-(11, 1, 'very good product!!', 4, '2022-01-23 22:34:30'),
-(13, 10, 'bad product..should improve!!', 1, '2022-01-23 22:35:18');
+INSERT INTO `reviews` (`review_id`, `item_id`, `userid`, `content`, `rating`, `submit_date`) VALUES
+(1001, 11, 10, 'very good!!', 5, '2022-01-24 23:06:25'),
+(1002, 1, 1, 'bad product', 1, '2022-01-24 23:06:25');
 
 -- --------------------------------------------------------
 
@@ -118,6 +119,7 @@ ALTER TABLE `product`
 -- Indexes for table `reviews`
 --
 ALTER TABLE `reviews`
+  ADD PRIMARY KEY (`review_id`),
   ADD KEY `item_id` (`item_id`),
   ADD KEY `userid` (`userid`);
 
@@ -137,6 +139,12 @@ ALTER TABLE `usertable`
 --
 ALTER TABLE `product`
   MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `reviews`
+--
+ALTER TABLE `reviews`
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1003;
 
 --
 -- AUTO_INCREMENT for table `usertable`

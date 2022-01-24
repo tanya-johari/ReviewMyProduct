@@ -1,8 +1,15 @@
 <?php include 'dashboard_home.php';
 include '../partials/connection.php';
+if (isset($_POST['Delete'])) {
+  // If you receive the Delete post data, delete it from your table
+  $delete = 'DELETE FROM reviews WHERE review_id = ?';
+  $stmt = $conn->prepare($delete);
+  $stmt->bind_param("i", $_POST['Delete']);
+  $stmt->execute();
+}
 $sql = "SELECT * FROM reviews ORDER BY submit_date DESC ";
 $result = $conn->query($sql);
-
+$counter = 0;
 ?>
 
 <!DOCTYPE html>
@@ -15,12 +22,13 @@ $result = $conn->query($sql);
 
 </head>
 <body>
-<div class="container p-3 my-3 bg-white text-white">
- 
-<table class="table">
-  <thead class="thead-light">
+<div class="container p-2 my-4 bg-light text-white">
+<form method="POST"> 
+<table class="table table-striped">
+  <thead class="thead-dark">
     <tr>
       <th scope="col">Sno</th>
+      <th scope="col">Review ID</th>
       <th scope="col">Product ID</th>
       <th scope="col">User ID</th>
       <th scope="col">Review</th>
@@ -36,15 +44,17 @@ $result = $conn->query($sql);
                 {
              ?>
     <tr>
-    <?php $i = 1; ?>
-      <th scope="row"><?php echo $i?></th>
+    
+      <th scope="row"><?php echo ++$counter;?></th>
+      <td><?php echo $rows['review_id'];?></td>
       <td><?php echo $rows['item_id'];?></td>
       <td><?php echo $rows['userid'];?></td>
       <td><?php echo $rows['content'];?></td>
       <td><?php echo $rows['rating'];?></td>
       <td><?php echo $rows['submit_date'];?></td>
+      <?php echo '<td><button type="submit" name="Delete" value="'.$rows['review_id'].'">DELETE</button></td>';?>
     </tr>
-    <?php $i++;}
+    <?php }
     ?>
   </tbody>
 </table>
