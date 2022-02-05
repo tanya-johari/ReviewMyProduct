@@ -144,7 +144,7 @@
     <!-- SECTION 1 -->
     <section class="grid margin text-center">
 
-      <a href="css/components.css" class="s-12 m-6 l-3 padding-2x vertical-center margin-bottom background-red">
+      <a href="FINAL/index.php" class="s-12 m-6 l-3 padding-2x vertical-center margin-bottom background-red">
         <br>
         <img src="img/11.jpg"></img>
         <h3 class="text-strong text-size-20 text-line-height-1 margin-bottom-30 text-uppercase">MOBILE PHONES

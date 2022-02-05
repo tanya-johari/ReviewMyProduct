@@ -59,7 +59,7 @@ body {
   background-color: #5006e8;
 }
 
-#main {
+#main1 {
   transition: margin-left .5s;
   padding: 16px;
 }
@@ -75,27 +75,19 @@ body {
 
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-  <a href="#">👤Profile</a>
+  <a href="profile.php">👤Profile</a>
   <a href="#">✏Edit Profile</a>
   <a href="#">🏷Manage Products</a>
   <a href="#">👥Manage User</a>
-  <a href="#">⭐Manage Review</a>
+  <a href="manage_review.php">⭐Manage Review</a>
   <a href="#">🔑Change Password</a>
-  <a href="#">🔒Logout</a>
+  <a href="../logout.php">🔒Logout</a>
   
 </div>
 
 <div id="main">
   <button class="openbtn" onclick="openNav()">☰ ADMIN</button> 
-  <div class="container p-3 my-3 bg-dark text-white">
-  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar" class="rounded-circle img-fluid mx-auto d-block" style="width: 150px;"></br>
-   
-      <h5>Name : </h5></br>
-      <h5>Email Id : </h5></br>
-      <h5>Admin ID : </h5></br>
-      <h5>Phone No : </h5></br>
-      <h5>Gender : </h5>
-  </div>
+  
   
 </div>
 

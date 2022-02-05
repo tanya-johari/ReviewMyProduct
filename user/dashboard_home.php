@@ -95,7 +95,7 @@ body {
   <a href="#">✏Edit Profile</a>
   <a href="#">⭐Manage Review</a>
   <a href="#">🔑Change Password</a>
-  <a href="#">🔒Logout</a>
+  <a href="../logout.php">🔒Logout</a>
   
 </div>
 

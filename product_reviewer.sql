@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 19, 2022 at 12:22 PM
+-- Generation Time: Jan 24, 2022 at 06:38 PM
 -- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.1
+-- PHP Version: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -62,12 +62,21 @@ INSERT INTO `product` (`item_id`, `item_brand`, `item_name`, `item_price`, `item
 --
 
 CREATE TABLE `reviews` (
+  `review_id` int(11) NOT NULL,
   `item_id` int(11) NOT NULL,
   `userid` int(11) NOT NULL,
   `content` text NOT NULL,
   `rating` tinyint(1) NOT NULL,
   `submit_date` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `reviews`
+--
+
+INSERT INTO `reviews` (`review_id`, `item_id`, `userid`, `content`, `rating`, `submit_date`) VALUES
+(1001, 11, 10, 'very good!!', 5, '2022-01-24 23:06:25'),
+(1002, 1, 1, 'bad product', 1, '2022-01-24 23:06:25');
 
 -- --------------------------------------------------------
 
@@ -93,7 +102,8 @@ CREATE TABLE `usertable` (
 
 INSERT INTO `usertable` (`userid`, `name`, `gender`, `Email`, `phone_no`, `username`, `avtar_no`, `password`, `dob`) VALUES
 (1, 'vish', '', 'vishakhay036@gmail.com', 5678, 'yryhu', 1, '1234', '2022-01-01'),
-(9, 'Girl Power', 'male', 'gals6969@gmail.com', 98184, 'Wearenotless', 1, 'mynameiskhan', '2005-08-19');
+(9, 'Girl Power', 'male', 'gals6969@gmail.com', 98184, 'Wearenotless', 1, 'mynameiskhan', '2005-08-19'),
+(10, 'tanya', 'female', 'admin@gmail.com', 2147483647, 'tan11', 1, 'admin', '2022-01-01');
 
 --
 -- Indexes for dumped tables
@@ -109,6 +119,7 @@ ALTER TABLE `product`
 -- Indexes for table `reviews`
 --
 ALTER TABLE `reviews`
+  ADD PRIMARY KEY (`review_id`),
   ADD KEY `item_id` (`item_id`),
   ADD KEY `userid` (`userid`);
 
@@ -130,10 +141,16 @@ ALTER TABLE `product`
   MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
+-- AUTO_INCREMENT for table `reviews`
+--
+ALTER TABLE `reviews`
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1003;
+
+--
 -- AUTO_INCREMENT for table `usertable`
 --
 ALTER TABLE `usertable`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables

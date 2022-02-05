@@ -3,7 +3,7 @@
 $DATABASE_HOST = 'localhost';
 $DATABASE_USER = 'root';
 $DATABASE_PASS = '';
-$DATABASE_NAME = 'phpreviews';
+$DATABASE_NAME = 'product_reviewer';
 try {
     $pdo = new PDO('mysql:host=' . $DATABASE_HOST . ';dbname=' . $DATABASE_NAME . ';charset=utf8', $DATABASE_USER, $DATABASE_PASS);
 } catch (PDOException $exception) {
@@ -35,7 +35,7 @@ function time_elapsed_string($datetime, $full = false) {
 if (isset($_GET['page_id'])) {
     if (isset($_POST['name'], $_POST['rating'], $_POST['content'])) {
         // Insert a new review (user submitted form)
-        $stmt = $pdo->prepare('INSERT INTO reviews (page_id, name, content, rating, submit_date) VALUES (?,?,?,?,NOW())');
+        $stmt = $pdo->prepare('INSERT INTO reviews ( name, content, rating, submit_date) VALUES (?,?,?,?,NOW())');
         $stmt->execute([$_GET['page_id'], $_POST['name'], $_POST['content'], $_POST['rating']]);
         exit('Your review has been submitted!');
     }
@@ -46,16 +46,14 @@ if (isset($_GET['page_id'])) {
         exit('Your review has been submitted!');
     }
     // Get all reviews by the Page ID ordered by the submit date
-    $stmt = $pdo->prepare('SELECT * FROM reviews WHERE page_id = ? ORDER BY submit_date DESC');
+    $stmt = $pdo->prepare('SELECT * FROM reviews  ORDER BY submit_date DESC');
     $stmt->execute([$_GET['page_id']]);
     $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
     // Get the overall rating and total amount of reviews
-    $stmt = $pdo->prepare('SELECT AVG(rating) AS overall_rating, COUNT(*) AS total_reviews FROM reviews WHERE page_id = ?');
-    $stmt->execute([$_GET['page_id']]);
+    $stmt = $pdo->prepare('SELECT AVG(rating) AS overall_rating, COUNT(*) AS total_reviews FROM reviews');
+    
     $reviews_info = $stmt->fetch(PDO::FETCH_ASSOC);
-} else {
-    exit('Please provide the page ID.');
-}
+} 
 ?>
 
 
