@@ -56,7 +56,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     ?>
     <div class="container">
         <h1 class="text-center">Signup to Reviewersblog</h1>
-        <form action="/Demo/signup.php" method="post">
+        <form action="/ReviewMyProduct/signup.php" method="post">
         <div class="col-md-4">
         <label for="email" class="form-label">Email-id</label>
         <input type="text" class="form-control" id="email" name=email aria-describedby="emailHelp">
