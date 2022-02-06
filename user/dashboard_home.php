@@ -91,9 +91,9 @@ body {
 
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-  <a href="#">👤Profile</a>
+  <a href="profile.php">👤Profile</a>
   <a href="#">✏Edit Profile</a>
-  <a href="#">⭐Manage Review</a>
+  <a href="manage_review.php">⭐Manage Review</a>
   <a href="#">🔑Change Password</a>
   <a href="../logout.php">🔒Logout</a>
   
@@ -102,38 +102,10 @@ body {
 <div id="main">
   <button class="openbtn" onclick="openNav()">☰ USER</button> 
   <div class="container p-3 my-3 bg-dark text-white">
-  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar" class="rounded-circle img-fluid mx-auto d-block" style="width: 150px;"></br>
-   
+  
   <div class="panel-body bio-graph-info">
               
-              <div class="row">
-                  <div class="bio-row">
-                      <p><span>First Name </span>: </p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>Last Name </span>: </p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>User ID </span>: </p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>Birthday</span>: </p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>Occupation </span>: </p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>Email </span>: </p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>Mobile </span>: </p>
-                  </div>
-                  <div class="bio-row">
-                      <p><span>Gender </span>: </p>
-                  </div>
-              </div>
-          </div>
-      
+            
   </div>
   
 </div>
