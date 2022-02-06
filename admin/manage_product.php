@@ -54,7 +54,7 @@ if (isset($_POST['Delete'])) {
       <th scope="col">ITEM BRAND</th>
       <th scope="col">ITEM NAME</th>
       <th scope="col">ITEM PRICE</th>
-      <th scope="col">ITEM IMAGE PATH</th>
+      <th scope="col">ITEM IMAGE</th>
       <th scope="col">ADD</th>
       <th scope="col">Delete</th>
 
@@ -72,7 +72,7 @@ if (isset($_POST['Delete'])) {
       <td><?php echo $rows['item_brand'];?></td>
       <td><?php echo $rows['item_name'];?></td>
       <td><?php echo $rows['item_price'];?></td>
-      <td><?php echo $rows['item_image'];?></td>
+      <td><image src="<?php echo $rows['item_image'];?>" width="100px" height="100px" alt=""></td>
 
       
       <?php echo '<td><button type="submit" name="ADD" value="'.$rows['item_id'].'">ADD</button></td>';?>
