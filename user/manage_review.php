@@ -2,7 +2,7 @@
 include '../partials/connection.php';
 if (isset($_POST['Delete'])) {
   // If you receive the Delete post data, delete it from your table
-  $delete = 'DELETE FROM reviews WHERE review_id = ?';
+  $delete = 'DELETE FROM reviews WHERE review_id = ?'; 
   $stmt = $conn->prepare($delete);
   $stmt->bind_param("i", $_POST['Delete']);
   $stmt->execute();

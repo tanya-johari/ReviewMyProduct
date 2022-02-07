@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 24, 2022 at 06:38 PM
+-- Generation Time: Feb 07, 2022 at 12:23 PM
 -- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.27
+-- PHP Version: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `product_reviewer`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `adminid` int(11) NOT NULL,
+  `adminusername` varchar(50) NOT NULL,
+  `fname` varchar(30) NOT NULL,
+  `lname` varchar(30) NOT NULL,
+  `Email` varchar(50) NOT NULL,
+  `phoneno` char(10) NOT NULL,
+  `adminimg` longblob NOT NULL,
+  `dob` date NOT NULL,
+  `gender` varchar(10) NOT NULL,
+  `passwrd` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -41,7 +60,7 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`item_id`, `item_brand`, `item_name`, `item_price`, `item_image`, `item_register`) VALUES
-(1, 'Samsung', 'Samsung Galaxy 10', 152.00, './assets/products/1.png', '2020-03-28 11:08:57'),
+(1, 'Samsung', 'Samsung Galaxy 10', 152.00, '../assets/products/1.png', '2020-03-28 11:08:57'),
 (2, 'Redmi', 'Redmi Note 7', 122.00, '../assets/products/2.png', '2022-01-28 11:08:57'),
 (3, 'Redmi', 'Redmi Note 6', 122.00, '../assets/products/3.png', '2022-01-28 11:08:57'),
 (4, 'Redmi', 'Redmi Note 5', 122.00, '../assets/products/4.png', '2022-01-28 11:08:57'),
@@ -62,21 +81,12 @@ INSERT INTO `product` (`item_id`, `item_brand`, `item_name`, `item_price`, `item
 --
 
 CREATE TABLE `reviews` (
-  `review_id` int(11) NOT NULL,
   `item_id` int(11) NOT NULL,
   `userid` int(11) NOT NULL,
   `content` text NOT NULL,
   `rating` tinyint(1) NOT NULL,
   `submit_date` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `reviews`
---
-
-INSERT INTO `reviews` (`review_id`, `item_id`, `userid`, `content`, `rating`, `submit_date`) VALUES
-(1001, 11, 10, 'very good!!', 5, '2022-01-24 23:06:25'),
-(1002, 1, 1, 'bad product', 1, '2022-01-24 23:06:25');
 
 -- --------------------------------------------------------
 
@@ -91,7 +101,7 @@ CREATE TABLE `usertable` (
   `Email` varchar(50) NOT NULL,
   `phone_no` int(10) NOT NULL,
   `username` varchar(30) NOT NULL,
-  `avtar_no` int(11) NOT NULL,
+  `userimg` longblob NOT NULL,
   `password` varchar(25) NOT NULL,
   `dob` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -100,14 +110,19 @@ CREATE TABLE `usertable` (
 -- Dumping data for table `usertable`
 --
 
-INSERT INTO `usertable` (`userid`, `name`, `gender`, `Email`, `phone_no`, `username`, `avtar_no`, `password`, `dob`) VALUES
-(1, 'vish', '', 'vishakhay036@gmail.com', 5678, 'yryhu', 1, '1234', '2022-01-01'),
-(9, 'Girl Power', 'male', 'gals6969@gmail.com', 98184, 'Wearenotless', 1, 'mynameiskhan', '2005-08-19'),
-(10, 'tanya', 'female', 'admin@gmail.com', 2147483647, 'tan11', 1, 'admin', '2022-01-01');
+INSERT INTO `usertable` (`userid`, `name`, `gender`, `Email`, `phone_no`, `username`, `userimg`, `password`, `dob`) VALUES
+(1, 'vish', '', 'vishakhay036@gmail.com', 5678, 'yryhu', 0x31, '1234', '2022-01-01'),
+(9, 'Girl Power', 'male', 'gals6969@gmail.com', 98184, 'Wearenotless', 0x31, 'mynameiskhan', '2005-08-19');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`adminid`);
 
 --
 -- Indexes for table `product`
@@ -119,7 +134,6 @@ ALTER TABLE `product`
 -- Indexes for table `reviews`
 --
 ALTER TABLE `reviews`
-  ADD PRIMARY KEY (`review_id`),
   ADD KEY `item_id` (`item_id`),
   ADD KEY `userid` (`userid`);
 
@@ -135,22 +149,22 @@ ALTER TABLE `usertable`
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `adminid` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
   MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `reviews`
---
-ALTER TABLE `reviews`
-  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1003;
-
---
 -- AUTO_INCREMENT for table `usertable`
 --
 ALTER TABLE `usertable`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables

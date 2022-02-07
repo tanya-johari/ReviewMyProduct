@@ -1,9 +1,5 @@
 <?php
-session_start();
-if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
-  header("location:/ReviewMyProduct/admin/login_admin.php");
-  exit;
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -86,7 +82,7 @@ body {
   <a href="profile.php">👤Profile</a>
   <a href="#">✏Edit Profile</a>
   <a href="manage_product.php">🏷Manage Products</a>
-  <a href="#">👥Manage User</a>
+  <a href="manage_user.php">👥Manage User</a>
   <a href="manage_review.php">⭐Manage Review</a>
   <a href="#">🔑Change Password</a>
   <a href="../index.php">🔒Logout</a>
@@ -106,22 +102,7 @@ body {
    if (mysqli_num_rows($result2)==1)
    $row2=mysqli_fetch_array($result2)
 ?> 
-    <div class="gallery"> 
-        <?php while($row1 = $result1->fetch_assoc()){ ?> 
-            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row1['userimg']); ?>" alt="avatar" class="rounded-circle img-fluid mx-auto d-block" style="width: 250px;"></br> 
-        <?php } ?> 
-    </div> 
-   
-     <h5>First Name : <?php  echo $row2['fname'];?></h5></br>
-     <h5>last Name : <?php  echo $row2['lname'];?></h5></br>
-      <h5>USERNAME : <?php echo $row2['adminusername'];?></h5></br>
-      <h5>Email Id : <?php echo $row2['Email']; ?></h5></br>
-      <h5>Phone No : <?php echo $row2['phoneno']; ?></h5></br>
-      <h5>DOB : <?php echo $row2['dob']; ?></h5></br>
-      <h5>Gender : <?php echo $row2['gender']; ?></h5>
-  </div>
-  
-</div>
+    
 
 <script>
 function openNav() {

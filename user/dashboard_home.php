@@ -87,11 +87,11 @@ body {
   <body>
   <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-<<<<<<< HEAD
-  <a href="acct.php">👤Profile</a>
-=======
+
+  
+
   <a href="profile.php">👤Profile</a>
->>>>>>> a78a86e612e6ae43988d7d76bb2ccf1e99557ae5
+
   <a href="#">✏Edit Profile</a>
   <a href="manage_review.php">⭐Manage Review</a>
   <a href="#">🔑Change Password</a>
@@ -100,39 +100,9 @@ body {
   <div id="main">
   <button class="openbtn" onclick="openNav()">☰ USER</button> 
   <div class="container p-3 my-3 bg-dark text-white">
-<<<<<<< HEAD
-  <?php  
-   include '../partials/connection.php';
-   $usname=$_SESSION['username'];
-   $sql1 = "SELECT userimg FROM usertable WHERE USERNAME='$usname'"; 
-   $sql2 = "SELECT name,username,Email,phone_no,dob,gender FROM usertable WHERE USERNAME='$usname'";
-   $result1 = mysqli_query($conn,$sql1);
-   $result2 = mysqli_query($conn,$sql2);
-   if (mysqli_num_rows($result2)==1)
-   $row2=mysqli_fetch_array($result2)
-?> 
-    <div class="gallery"> 
-        <?php while($row1 = $result1->fetch_assoc()){ ?> 
-            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row1['userimg']); ?>" alt="avatar" class="rounded-circle img-fluid mx-auto d-block" style="width: 250px;"></br> 
-        <?php } ?> 
-    </div> 
-   
-     <h5>Name : <?php  echo $row2['name'];?></h5></br>
-      <h5>USERNAME : <?php echo $row2['username'];?></h5></br>
-      <h5>Email Id : <?php echo $row2['Email']; ?></h5></br>
-      <h5>Phone No : <?php echo $row2['phone_no']; ?></h5></br>
-      <h5>DOB : <?php echo $row2['dob']; ?></h5></br>
-      <h5>Gender : <?php echo $row2['gender']; ?></h5>
-=======
-  
-  <div class="panel-body bio-graph-info">
-              
-            
->>>>>>> a78a86e612e6ae43988d7d76bb2ccf1e99557ae5
-  </div>
-  
-</div>
 
+  
+   
 <script>
 function openNav() {
   document.getElementById("mySidebar").style.width = "250px";

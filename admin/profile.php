@@ -1,5 +1,9 @@
 <?php include 'dashboard_home.php';
-
+session_start();
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+  header("location:/ReviewMyProduct/admin/login_admin.php");
+  exit;
+}
 
 
 ?>
@@ -14,15 +18,22 @@
 <body>
 <div id="main">
  
-  <div class="container p-3 my-3 bg-dark text-white">
-  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar" class="rounded-circle img-fluid mx-auto d-block" style="width: 150px;"></br>
+<div class="gallery"> 
+        <?php while($row1 = $result1->fetch_assoc()){ ?> 
+            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row1['userimg']); ?>" alt="avatar" class="rounded-circle img-fluid mx-auto d-block" style="width: 250px;"></br> 
+        <?php } ?> 
+    </div> 
    
-      <h5>Name : </h5></br>
-      <h5>Email Id : </h5></br>
-      <h5>Admin ID : </h5></br>
-      <h5>Phone No : </h5></br>
-      <h5>Gender : </h5>
+     <h5>First Name : <?php  echo $row2['fname'];?></h5></br>
+     <h5>last Name : <?php  echo $row2['lname'];?></h5></br>
+      <h5>USERNAME : <?php echo $row2['adminusername'];?></h5></br>
+      <h5>Email Id : <?php echo $row2['Email']; ?></h5></br>
+      <h5>Phone No : <?php echo $row2['phoneno']; ?></h5></br>
+      <h5>DOB : <?php echo $row2['dob']; ?></h5></br>
+      <h5>Gender : <?php echo $row2['gender']; ?></h5>
   </div>
+  
+</div>
   
 </div>
 </body>
