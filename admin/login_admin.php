@@ -12,8 +12,8 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
       $login = true;
       session_start();
       $_SESSION['loggedin']= true;
-      $_SESSION['username']=$username;
-      header("location: admin/dashboard_home.php");
+      $_SESSION['adminusername']=$username;
+      header("location: profile.php");
   }
   else {
       $showError = true;
