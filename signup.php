@@ -2,25 +2,39 @@
 $err =false;
 $alert= false;
 if($_SERVER["REQUEST_METHOD"]=="POST"){
+  $status = $statusMsg = ''; 
   include 'partials/connection.php';
-  $email=$_POST["email"];
-  $name=$_POST["name"];
-  $username=$_POST["username"];
-  $phoneno=$_POST["phoneno"];
-  $dob=$_POST["dob"];
-  $password=$_POST["password"];
-  $cpassword=$_POST["cpassword"];
-  $avtar=1;
-  $gender=$_POST["gender"];
-  $exists=false;
-  if(($password == $cpassword) && $exists == false){
-    $sql = "INSERT into usertable (`name`, `gender`, `Email`, `phone_no`, `username`, `avtar_no`, `password`, `dob`) VALUES ('$name', '$gender', '$email', '$phoneno', '$username', '$avtar', '$password', '$dob')";
-    $result = mysqli_query($conn, $sql);
-    if($result){
-      $err = true;
-    }
-  }
-}
+    $status = 'error'; 
+    if(!empty($_FILES["image"]["name"])) { 
+        $fileName = basename($_FILES["image"]["name"]); 
+        $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
+        $allowTypes = array('jpg','png','jpeg','gif'); 
+        if(in_array($fileType, $allowTypes)){ 
+            $image = $_FILES['image']['tmp_name']; 
+            $imgcontent = addslashes(file_get_contents($image));        
+            $email=$_POST["email"];
+            $name=$_POST["name"];
+            $username=$_POST["username"];
+            $phoneno=$_POST["phoneno"];
+            $dob=$_POST["dob"];
+            $password=$_POST["password"];
+            $cpassword=$_POST["cpassword"];
+            $gender=$_POST["gender"];
+            $exists=false;
+            if(($password == $cpassword) && $exists == false){
+            $sql = "INSERT into usertable (`name`, `gender`, `Email`, `phone_no`, `username`, `userimg`, `password`, `dob`) VALUES ('$name', '$gender', '$email', '$phoneno', '$username', '$imgcontent', '$password', '$dob')";
+             $result = mysqli_query($conn, $sql);}
+            if($result){
+            $err = true;
+           }
+          } else{ 
+        $statusMsg = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.'; 
+       } 
+}else{ 
+$statusMsg = 'Please select an image file to upload.'; 
+} 
+}  
+echo $statusMsg; 
 ?>
 
 
@@ -56,28 +70,32 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     ?>
     <div class="container">
         <h1 class="text-center">Signup to Reviewersblog</h1>
-        <form action="/Demo/signup.php" method="post">
-        <div class="col-md-4">
+        <form action="/ReviewMyProduct/signup.php" method="post" enctype="multipart/form-data">
+        <div class="col-md-6">
+        <label>Select profile photo</label>
+        <input type="file" name="image">
+        </div>
+        <div class="col-md-6">
         <label for="email" class="form-label">Email-id</label>
         <input type="text" class="form-control" id="email" name=email aria-describedby="emailHelp">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
         <label for="name" class="form-label">Name</label>
         <input type="text" class="form-control" id="name" name="name" >
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
         <label for="username" class="form-label">Username</label>
         <input type="text" class="form-control" id="username" name="username" >
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
         <label for="phoneno" class="form-label">Mobile Number</label>
         <input type="text" class="form-control" id="phoneno" name="phoneno">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
         <label for="dob" class="form-label">Date of Birth</label>
         <input type="date" class="form-control" id="dob" name="dob">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
         <label for="gender" class="form-label">Gender</label>
         <select id="gender" name="gender" class="form-select">
         <option selected>selected</option>
@@ -85,16 +103,16 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         <option value="female">Female</option>
         </select>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
         <label for="password" class="form-label">Password</label>
         <input type="password" class="form-control" id="password" name="password">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
         <label for="cpassword" class="form-label">Confirm Password</label>
         <input type="password" class="form-control" id="cpassword" name="cpassword">
         <div id="emailHelp" class="form-text">Make sure to enter the same Password.</div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
         <input type="checkbox" class="form-check-input" id="exampleCheck1">
         <label class="form-check-label" for="exampleCheck1">All Entered Data is correct</label>
         </div>
