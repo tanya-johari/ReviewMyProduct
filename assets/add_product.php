@@ -1,3 +1,8 @@
+<?php
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -79,7 +84,7 @@ body {
   <a href="#">✏Edit Profile</a>
   <a href="manage_product.php">🏷Manage Products</a>
   <a href="#">👥Manage User</a>
-  <a href="manage_review.php">⭐Manage Review</a>
+  <a href="../admin/manage_review.php">⭐Manage Review</a>
   <a href="#">🔑Change Password</a>
   <a href="../index.php">🔒Logout</a>
   
@@ -105,3 +110,77 @@ function closeNav() {
    
 </body>
 </html> 
+
+
+<?php
+	$db_host = "localhost";
+	$db_username = "root";
+	$db_pass = "";
+	$db_name = "product_reviewer";
+	
+	
+	
+	$link = mysqli_connect($db_host,$db_username,$db_pass);
+
+	mysqli_select_db($link,$db_name);
+
+
+
+?>
+
+
+<div class="grid_10">
+<div class="box round first">
+  <h2>
+ADD Product
+</h2>
+<div class="block">
+<form name="form1" action="" method="post"  enctype="multipart/form-data"      >
+  <table >
+<tr>
+ <td> Brand name     </td>
+<td> <input type="text" name="bnm"  ></td>
+</tr><tr>
+ <td> Product name     </td>
+<td> <input type="text" name="pnm"  ></td>
+</tr>
+<tr>
+ <td> Price    </td>
+<td> <input type="text" name="pprice"  ></td>
+</tr>
+<tr>
+ <td> Image     </td>
+<td> <input type="file" name="pimage"  ></td>
+</tr>
+<tr>
+
+<td colspan="2" align="center"><input type="submit" name="submit1"> </td>
+</tr>
+
+
+
+<?php
+if (isset($_POST["submit1"]))
+{
+  $v1=rand(1111,9999);
+  $v2=rand(1111,9999);
+  $v3=$v1.$v2;
+  $v3=md5($v3);
+$fnm=$_FILES["pimage"]["name"];
+$dst="./products/".$v3.$fnm;
+$dst1="../assets/products/".$v3.$fnm;
+move_uploaded_file($_FILES["pimage"]["tmp_name"],$dst);
+
+
+
+mysqli_query($link,"INSERT INTO `product` (`item_id`,`item_brand`, `item_name`, `item_price`, `item_image`) VALUES('','$_POST[bnm]','$_POST[pnm]','$_POST[pprice]','$dst1' )");
+
+
+
+
+
+
+
+}
+
+?>
