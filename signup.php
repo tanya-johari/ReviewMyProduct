@@ -1,8 +1,8 @@
 <?php
 $err =false;
 $alert= false;
+$status = $statusMsg = ''; 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
-  $status = $statusMsg = ''; 
   include 'partials/connection.php';
     $status = 'error'; 
     if(!empty($_FILES["image"]["name"])) { 
@@ -53,20 +53,20 @@ echo $statusMsg;
   <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="../index.php">REVIEW.COM</a>
+    <a class="navbar-brand" href="index.php">REVIEW.COM</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link "  href="../index.php">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link "  href="index.php">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../login.php">LOGIN</a>
+          <a class="nav-link" href="login.php">LOGIN</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../signup.php">SIGNUP</a>
+          <a class="nav-link" href="signup.php">SIGNUP</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">CONTACT</a>
