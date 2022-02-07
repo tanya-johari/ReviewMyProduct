@@ -85,7 +85,7 @@ body {
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
   <a href="profile.php">👤Profile</a>
   <a href="#">✏Edit Profile</a>
-  <a href="#">🏷Manage Products</a>
+  <a href="manage_product.php">🏷Manage Products</a>
   <a href="#">👥Manage User</a>
   <a href="manage_review.php">⭐Manage Review</a>
   <a href="#">🔑Change Password</a>

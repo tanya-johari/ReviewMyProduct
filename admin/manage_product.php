@@ -45,6 +45,15 @@ if (isset($_POST['Delete'])) {
 </head>
 <body>
 <div class="container p-2 my-4 bg-light text-white">
+<a href="../assets/add_product.php">
+<button   class="btn btn-dark btn-lg float-right" >ADD PRODUCT</button>
+</a>
+
+<br>
+<br>
+<br>
+
+
 <form method="POST"> 
 <table class="table table-striped">
   <thead class="thead-dark">
@@ -55,7 +64,6 @@ if (isset($_POST['Delete'])) {
       <th scope="col">ITEM NAME</th>
       <th scope="col">ITEM PRICE</th>
       <th scope="col">ITEM IMAGE</th>
-      <th scope="col">ADD</th>
       <th scope="col">Delete</th>
 
     </tr>
@@ -75,7 +83,7 @@ if (isset($_POST['Delete'])) {
       <td><image src="<?php echo $rows['item_image'];?>" width="100px" height="100px" alt=""></td>
 
       
-      <?php echo '<td><button type="submit" name="ADD" value="'.$rows['item_id'].'">ADD</button></td>';?>
+     
       <?php echo '<td><button type="submit" name="Delete" value="'.$rows['item_id'].'">DELETE</button></td>';?>
       
     </tr>
