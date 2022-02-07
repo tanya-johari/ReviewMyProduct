@@ -7,7 +7,7 @@ if (isset($_POST['Delete'])) {
   $stmt->bind_param("i", $_POST['Delete']);
   $stmt->execute();
 }
-$sql = "SELECT * FROM reviews ORDER BY submit_date DESC ";
+$sql = "SELECT * FROM reviews WHERE userid='' ORDER BY submit_date DESC ";
 $result = $conn->query($sql);
 $counter = 0;
 ?>
@@ -23,7 +23,7 @@ $counter = 0;
 </head>
 <body>
 <div class="container p-2 my-4 bg-light text-white">
-<button type="submit" class="btn btn-dark btn-lg float-right" onclick="#">ADD REVIEW</button>
+<button type="submit" class="btn btn-dark btn-lg float-right" onclick="add_review.php">ADD REVIEW</button>
 <form method="POST"> 
 <table class="table table-striped">
   <thead class="thead-dark">

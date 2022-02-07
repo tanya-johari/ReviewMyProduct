@@ -87,15 +87,20 @@ body {
   <body>
   <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+<<<<<<< HEAD
   <a href="acct.php">👤Profile</a>
+=======
+  <a href="profile.php">👤Profile</a>
+>>>>>>> a78a86e612e6ae43988d7d76bb2ccf1e99557ae5
   <a href="#">✏Edit Profile</a>
-  <a href="#">⭐Manage Review</a>
+  <a href="manage_review.php">⭐Manage Review</a>
   <a href="#">🔑Change Password</a>
   <a href="index.php.php">🔒Logout</a>
   </div>
   <div id="main">
   <button class="openbtn" onclick="openNav()">☰ USER</button> 
   <div class="container p-3 my-3 bg-dark text-white">
+<<<<<<< HEAD
   <?php  
    include '../partials/connection.php';
    $usname=$_SESSION['username'];
@@ -118,6 +123,12 @@ body {
       <h5>Phone No : <?php echo $row2['phone_no']; ?></h5></br>
       <h5>DOB : <?php echo $row2['dob']; ?></h5></br>
       <h5>Gender : <?php echo $row2['gender']; ?></h5>
+=======
+  
+  <div class="panel-body bio-graph-info">
+              
+            
+>>>>>>> a78a86e612e6ae43988d7d76bb2ccf1e99557ae5
   </div>
   
 </div>

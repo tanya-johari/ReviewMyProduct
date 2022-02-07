@@ -101,12 +101,17 @@ echo $statusMsg;
     ?>
     <div class="container">
         <h1 class="text-center">Signup to Reviewersblog</h1>
+<<<<<<< HEAD
         <form action="/ReviewMyProduct/signup.php" method="post" enctype="multipart/form-data">
         <div class="col-md-6">
         <label>Select profile photo</label>
         <input type="file" name="image">
         </div>
         <div class="col-md-6">
+=======
+        <form action="/ReviewMyProduct/signup.php" method="post">
+        <div class="col-md-4">
+>>>>>>> a78a86e612e6ae43988d7d76bb2ccf1e99557ae5
         <label for="email" class="form-label">Email-id</label>
         <input type="text" class="form-control" id="email" name=email aria-describedby="emailHelp">
         </div>
