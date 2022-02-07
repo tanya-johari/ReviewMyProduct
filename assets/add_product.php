@@ -131,7 +131,8 @@ function closeNav() {
 
 <div class="grid_10">
 <div class="box round first">
-  <h2>
+<center> 
+<h2>
 ADD Product
 </h2>
 <div class="block">
@@ -141,6 +142,7 @@ ADD Product
  <td> Brand name     </td>
 <td> <input type="text" name="bnm"  ></td>
 </tr><tr>
+  
  <td> Product name     </td>
 <td> <input type="text" name="pnm"  ></td>
 </tr>
@@ -157,7 +159,7 @@ ADD Product
 <td colspan="2" align="center"><input type="submit" name="submit1"> </td>
 </tr>
 
-
+</center>
 
 <?php
 if (isset($_POST["submit1"]))
