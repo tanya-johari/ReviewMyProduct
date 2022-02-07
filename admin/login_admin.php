@@ -2,10 +2,10 @@
 $login =false;
 $showError= false;
 if($_SERVER["REQUEST_METHOD"]== "POST"){
-    include 'partials/connection.php';
+    include '../partials/connection.php';
     $username=$_POST["username"];
     $password=$_POST["password"];
-  $sql = "Select * from usertable where username ='$username' AND password='$password'";
+  $sql = "Select * from admin where adminusername ='$username' AND passwrd='$password'";
   $result = mysqli_query($conn,$sql);
   $num = mysqli_num_rows($result);
   if ($num == 1){
@@ -13,7 +13,7 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
       session_start();
       $_SESSION['loggedin']= true;
       $_SESSION['username']=$username;
-      header("location: user/dashboard_home.php");
+      header("location: admin/dashboard_home.php");
   }
   else {
       $showError = true;
@@ -85,7 +85,7 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
     ?>
     <div class="container">
         <h1 class="text-center">Login to Reviewersblog</h1>
-        <form action="/ReviewMyProduct/login.php" method="post">
+        <form action="/ReviewMyProduct/admin/login_admin.php" method="post">
         <div class="col-md-4">
         <label for="username" class="form-label">Username</label>
         <input type="text" class="form-control" id="username" name="username" >
