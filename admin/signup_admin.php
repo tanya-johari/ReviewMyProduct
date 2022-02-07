@@ -3,7 +3,7 @@ $err =false;
 $alert= false;
 if($_SERVER["REQUEST_METHOD"]=="POST"){
   $status = $statusMsg = ''; 
-  include 'partials/connection.php';
+  include '../partials/connection.php';
     $status = 'error'; 
     if(!empty($_FILES["image"]["name"])) { 
         $fileName = basename($_FILES["image"]["name"]); 
@@ -13,8 +13,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             $image = $_FILES['image']['tmp_name']; 
             $imgcontent = addslashes(file_get_contents($image));        
             $email=$_POST["email"];
-            $name=$_POST["name"];
-            $username=$_POST["username"];
+            $fname=$_POST["fname"];
+            $lname=$_POST["lname"];
+            $adusername=$_POST["username"];
             $phoneno=$_POST["phoneno"];
             $dob=$_POST["dob"];
             $password=$_POST["password"];
@@ -22,7 +23,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             $gender=$_POST["gender"];
             $exists=false;
             if(($password == $cpassword) && $exists == false){
-            $sql = "INSERT into usertable (`name`, `gender`, `Email`, `phone_no`, `username`, `userimg`, `password`, `dob`) VALUES ('$name', '$gender', '$email', '$phoneno', '$username', '$imgcontent', '$password', '$dob')";
+            $sql = "INSERT into admin (`adminusername`, `fname`, `lname`, `Email`, `phoneno`, `adminimg`, `dob`, `gender`,`passwrd`) VALUES ('$adusername', '$fname', '$lname', '$email', '$phoneno', '$imgcontent', '$dob', '$gender','$password')";
              $result = mysqli_query($conn, $sql);}
             if($result){
             $err = true;
@@ -101,7 +102,7 @@ echo $statusMsg;
     ?>
     <div class="container">
         <h1 class="text-center">Signup to Reviewersblog</h1>
-        <form action="/ReviewMyProduct/signup.php" method="post" enctype="multipart/form-data">
+        <form action="/ReviewMyProduct/admin/signup_admin.php" method="post" enctype="multipart/form-data">
         <div class="col-md-6">
         <label>Select profile photo</label>
         <input type="file" name="image">
@@ -111,8 +112,12 @@ echo $statusMsg;
         <input type="text" class="form-control" id="email" name=email aria-describedby="emailHelp">
         </div>
         <div class="col-md-6">
-        <label for="name" class="form-label">Name</label>
-        <input type="text" class="form-control" id="name" name="name" >
+        <label for="name" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="fname" name="fname" >
+        </div>
+        <div class="col-md-6">
+        <label for="name" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lname" name="lname" >
         </div>
         <div class="col-md-6">
         <label for="username" class="form-label">Username</label>
