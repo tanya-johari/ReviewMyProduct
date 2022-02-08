@@ -1,16 +1,14 @@
-<?php
-
-?>
 
 <!DOCTYPE html>
 <html>
 <head>
+<!-- Required meta tags -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-<title>Account- <?php echo $_SESSION['username'] ?></title>
+<title>Account- <?php echo $_SESSION['adminusername'] ?></title>
 
 <style>
 body {
@@ -79,7 +77,10 @@ body {
 
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-  <a href="profile.php">👤Profile</a>
+
+
+
+  <a href="adprofile.php">👤Profile</a>
   <a href="#">✏Edit Profile</a>
   <a href="manage_product.php">🏷Manage Products</a>
   <a href="manage_user.php">👥Manage User</a>
@@ -88,21 +89,10 @@ body {
   <a href="../index.php">🔒Logout</a>
   
 </div>
-
 <div id="main">
-  <button class="openbtn" onclick="openNav()">☰ ADMIN</button>
-  <div class="container p-3 my-3 bg-dark text-white"> 
-  <?php  
-   include '../partials/connection.php';
-   $usname=$_SESSION['username'];
-   $sql1 = "SELECT adminimg FROM admin WHERE adminusername='$usname'"; 
-   $sql2 = "SELECT fname,lname,adminusername,Email,phoneno,dob,gender FROM admin WHERE adminusername='$usname'";
-   $result1 = mysqli_query($conn,$sql1);
-   $result2 = mysqli_query($conn,$sql2);
-   if (mysqli_num_rows($result2)==1)
-   $row2=mysqli_fetch_array($result2)
-?> 
-    
+  <button class="openbtn" onclick="openNav()">☰ ADMIN</button> 
+  <div class="container p-3 my-3 bg-dark text-white">
+
 
 <script>
 function openNav() {

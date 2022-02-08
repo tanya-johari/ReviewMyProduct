@@ -57,7 +57,7 @@ $counter = 0;
       <td><?php echo $rows['name'];?></td>
       <td><?php echo $rows['username'];?></td>
       <td><?php while($row1 = $result1->fetch_assoc()){ ?> 
-            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row1['userimg']); ?>" alt="avatar" class="rounded-circle img-fluid mx-auto d-block" style="width: 250px;"></br> 
+            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row1['userimg']); ?>" alt="avatar" width="100px" height="100px"></br> 
         <?php } ?></td>
       <td><?php echo $rows['phone_no'];?></td>
       <td><?php echo $rows['Email'];?></td>

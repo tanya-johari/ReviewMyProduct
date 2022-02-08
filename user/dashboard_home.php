@@ -1,10 +1,3 @@
-<?php
-session_start();
-if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
-  header("location: login.php");
-  exit;
-}
-?>
 
 <!doctype html>
 <html lang="en">
@@ -82,10 +75,10 @@ body {
   .sidebar a {font-size: 18px;}
 }
 </style>
-
-  </head>
-  <body>
-  <div id="mySidebar" class="sidebar">
+</head>
+<body>
+  
+<div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
 
   

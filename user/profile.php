@@ -1,8 +1,11 @@
-<?php include 'dashboard_home.php';
+<?php
+include 'dashboard_home.php';
 include '../partials/connection.php';
-
-
-
+session_start();
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+  header("location: login.php");
+  exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +13,7 @@ include '../partials/connection.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>User Profile</title>
 </head>
 <body>
 <?php  
@@ -30,8 +33,7 @@ include '../partials/connection.php';
             <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row1['userimg']); ?>" alt="avatar" class="rounded-circle img-fluid mx-auto d-block" style="width: 250px;"></br> 
         <?php } ?> 
     </div> 
-   
-     <h5>Name : <?php  echo $row2['name'];?></h5></br>
+      <h5>Name : <?php  echo $row2['name'];?></h5></br>
       <h5>USERNAME : <?php echo $row2['username'];?></h5></br>
       <h5>Email Id : <?php echo $row2['Email']; ?></h5></br>
       <h5>Phone No : <?php echo $row2['phone_no']; ?></h5></br>
