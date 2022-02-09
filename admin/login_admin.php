@@ -3,17 +3,17 @@ $login =false;
 $showError= false;
 if($_SERVER["REQUEST_METHOD"]== "POST"){
     include '../partials/connection.php';
-    $username=$_POST["username"];
-    $password=$_POST["password"];
-  $sql = "Select * from admin where adminusername ='$username' AND passwrd='$password'";
+    $adusername=$_POST["adusername"];
+    $passwrd=$_POST["passwrd"];
+  $sql = "SELECT * FROM admin WHERE adminusername ='$adusername' AND passwrd='$passwrd'";
   $result = mysqli_query($conn,$sql);
   $num = mysqli_num_rows($result);
   if ($num == 1){
       $login = true;
       session_start();
       $_SESSION['loggedin']= true;
-      $_SESSION['adminusername']=$username;
-      header("location: profile.php");
+      $_SESSION['adminusername']=$adusername;
+      header("location: adprofile.php");
   }
   else {
       $showError = true;
@@ -44,13 +44,25 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link "  href="index.php">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link "  href="index.php">HOME </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="admin/login_admin.php">LOGIN</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            LOGIN
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="../ReviewMyProduct/login.php">USER</a></li>
+            <li><a class="dropdown-item" href=" ../ReviewMyProduct/admin/login_admin.php">ADMIN</a></li>
+          </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="admin/signup_admin.php">SIGNUP</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            SIGN UP
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="../ReviewMyProduct/signup.php">USER</a></li>
+            <li><a class="dropdown-item" href="../ReviewMyProduct/admin/signup_admin.php">ADMIN</a></li>
+          </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">CONTACT</a>
@@ -84,16 +96,17 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
     </div>';}
     ?>
     <div class="container">
-        <h1 class="text-center">Login to Reviewersblog</h1>
-        <form action="/ReviewMyProduct/admin/login_admin.php" method="post">
+        <h1 class="text-center">Welcome Back to ReviewMyProduct</h1>
+        <form action="../admin/login_admin.php" method="post">
         <div class="col-md-4">
-        <label for="username" class="form-label">Username</label>
-        <input type="text" class="form-control" id="username" name="username" >
+        <label for="username" class="form-label">Username : </label>
+        <input type="text" class="form-control" id="adusername" name="adusername" >
         </div>
         <div class="col-md-4">
-        <label for="password" class="form-label">Password</label>
-        <input type="password" class="form-control" id="password" name="password">
+        <label for="password" class="form-label">Password : </label>
+        <input type="password" class="form-control" id="passwrd" name="passwrd">
         </div>
+        <br>
         <button type="submit" class="btn btn-primary">LOGIN</button>
         </form>
     </div>
