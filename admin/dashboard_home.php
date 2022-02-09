@@ -85,7 +85,7 @@ body {
   <a href="manage_product.php">🏷Manage Products</a>
   <a href="manage_user.php">👥Manage User</a>
   <a href="manage_review.php">⭐Manage Review</a>
-  <a href="#">🔑Change Password</a>
+  <a href="change_password.php">🔑Change Password</a>
   <a href="../index.php">🔒Logout</a>
   
 </div>

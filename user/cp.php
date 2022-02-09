@@ -1,44 +1,62 @@
-<?php
-session_start();
-$id = (isset($_GET['userid']) ? intval($_GET['userid']) : -1);/* userid of the user */
-$db_host = "localhost";
-	$db_username = "root";
-	$db_pass = "";
-	$db_name = "product_reviewer";
-$con = mysqli_connect($db_host,$db_username,$db_pass) or die('Unable To connect');
-if(count($_POST)>0) {
-$result = mysqli_query($con,"SELECT *from 'usertable' WHERE userid='" . $id . "'");
-$row=mysqli_fetch_array($result);
-if($_POST["currentPassword"] == $row["password"] && $_POST["newPassword"] == $row["confirmPassword"] ) {
-mysqli_query($con,"UPDATE student set password='" . $_POST["newPassword"] . "' WHERE name='" . $id . "'");
-$message = "Password Changed Sucessfully";
-} else{
- $message = "Password is not correct";
-}
-}
-?>
-<!DOCTYPE html>
-<html>
-<head>
-<title>Password Change</title>
 
+<?php
+include 'dashboard_home.php';
+include '../partials/connection.php';
+session_start();
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+	header("location: login.php");
+	exit;
+  }
+  
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Change Password</title>
 </head>
 <body>
-<h3 align="center">CHANGE PASSWORD</h3>
-<div><?php if(isset($message)) { echo $message; } ?></div>
-<form method="post" action="" align="center">
-Current Password:<br>
-<input type="password" name="currentPassword"><span id="currentPassword" class="required"></span>
-<br>
-New Password:<br>
-<input type="password" name="newPassword"><span id="newPassword" class="required"></span>
-<br>
-Confirm Password:<br>
-<input type="password" name="confirmPassword"><span id="confirmPassword" class="required"></span>
-<br><br>
-<input type="submit">
-</form>
-<br>=
-<br>
+<div class="grid_10">
+<div class="box round first">
+	<?php
+		$usname=$_SESSION['username'];
+		if (isset($_POST["Submit"])){
+			mysqli_query($conn,"update usertable set password='$_POST[pnm]' where username='$usname'") ;
+		    
+		}
+	
+	?>
+<center> 
+<h2>
+Change Password
+</h2>
+<div class="block">
+<form name="form1" action="" method="post"  enctype="multipart/form-data">
+  <table >
+<tr>
+ <td> OLD PASSWORD     </td>
+<td> <input type="password" name="bnm"  ></td>
+</tr><tr>
+	</br>
+ <td> NEW PASSWORD    </td>
+<td> <input type="password" name="pnm"  ></td>
+</tr>
+<tr>
+</br>
+ <td> CONFIRM NEW PASSWORD   </td>
+<td> <input type="text" name="cps"  ></td>
+</br>
+<tr>
+
+<td align="right"><button type="submit" class="btn btn-primary" name="Submit">SUBMIT</button></td>
+</tr>
+
+</center>
+
 </body>
 </html>
+
+
