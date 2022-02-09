@@ -85,10 +85,10 @@ body {
 
   <a href="profile.php">👤Profile</a>
 
-  <a href="#">✏Edit Profile</a>
+  <a href="edit_profile.php">✏Edit Profile</a>
   <a href="manage_review.php">⭐Manage Review</a>
   <a href="#">🔑Change Password</a>
-  <a href="index.php.php">🔒Logout</a>
+  <a href="../index.php">🔒Logout</a>
   </div>
   <div id="main">
   <button class="openbtn" onclick="openNav()">☰ USER</button> 
