@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+  header("location: login.php");
+  exit;
+}
+?>
+
+
 <?php include 'dashboard_home.php';
 include '../partials/connection.php';
 session_start();
@@ -26,7 +35,7 @@ $counter = 0;
 </head>
 <body>
 <div class="container p-2 my-4 bg-light text-white">
-<button type="submit" class="btn btn-dark btn-lg float-right" onclick="add_review.php">ADD REVIEW</button>
+<button type="submit" class="btn btn-dark btn-lg float-right" onclick="window.location.href='writereview.php'">ADD REVIEW</button>
 <form method="POST"> 
 <table class="table table-striped">
   <thead class="thead-dark">
@@ -34,7 +43,6 @@ $counter = 0;
       <th scope="col">Sno</th>
       <th scope="col">Review ID</th>
       <th scope="col">Product ID</th>
-      <th scope="col">User ID</th>
       <th scope="col">Review</th>
       <th scope="col">Rating</th>
       <th scope="col">Submit Date</th>
@@ -52,7 +60,6 @@ $counter = 0;
       <th scope="row"><?php echo ++$counter;?></th>
       <td><?php echo $rows['review_id'];?></td>
       <td><?php echo $rows['item_id'];?></td>
-      <td><?php echo $rows['userid'];?></td>
       <td><?php echo $rows['content'];?></td>
       <td><?php echo $rows['rating'];?></td>
       <td><?php echo $rows['submit_date'];?></td>
