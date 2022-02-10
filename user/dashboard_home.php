@@ -85,10 +85,17 @@ body {
 
   <a href="profile.php">👤Profile</a>
 
+<<<<<<< HEAD
   <a href="#">✏Edit Profile</a>
   <a href="manage_review.php" >⭐Manage Review</a>
   <a href="#">🔑Change Password</a>
   <a href="index.php">🔒Logout</a>
+=======
+  <a href="edit_profile.php">✏Edit Profile</a>
+  <a href="manage_review.php">⭐Manage Review</a>
+  <a href="cp.php">🔑Change Password</a>
+  <a href="../index.php">🔒Logout</a>
+>>>>>>> 7e9cd8ac3aec304d2e999d11dd65a856ccf0ed60
   </div>
   <div id="main">
   <button class="openbtn" onclick="openNav()">☰ USER</button> 

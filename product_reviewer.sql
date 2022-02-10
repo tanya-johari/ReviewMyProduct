@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 07, 2022 at 12:23 PM
+-- Generation Time: Feb 09, 2022 at 11:27 AM
 -- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.1
+-- PHP Version: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -17,15 +17,6 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
---
--- Database: `product_reviewer`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `admin`
---
 
 CREATE TABLE `admin` (
   `adminid` int(11) NOT NULL,
@@ -39,6 +30,13 @@ CREATE TABLE `admin` (
   `gender` varchar(10) NOT NULL,
   `passwrd` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`adminid`, `adminusername`, `fname`, `lname`, `Email`, `phoneno`, `adminimg`, `dob`, `gender`, `passwrd`) VALUES
+(1, 'abc123', 'virat', 'kohli', 'admin@gmail.com', '9999999999', 0x6361726f7573656c2d30322e6a7067, '2022-02-03', 'male', 'admin');
 
 -- --------------------------------------------------------
 
@@ -70,9 +68,10 @@ INSERT INTO `product` (`item_id`, `item_brand`, `item_name`, `item_price`, `item
 (8, 'Redmi', 'Redmi Note', 122.00, '../assets/products/10.png', '2022-01-28 11:08:57'),
 (9, 'Samsung', 'Samsung Galaxy S6', 152.00, '../assets/products/11.png', '2022-01-28 11:08:57'),
 (10, 'Samsung', 'Samsung Galaxy S7', 152.00, '../assets/products/12.png', '2022-01-28 11:08:57'),
-(11, 'Apple', 'Apple iPhone 5', 152.00, '../assets/products/13.png', '2022-01-28 11:08:57'),
 (12, 'Apple', 'Apple iPhone 6', 152.00, '../assets/products/14.png', '2022-01-28 11:08:57'),
-(13, 'Apple', 'Apple iPhone 7', 152.00, '../assets/products/15.png', '2022-01-28 11:08:57');
+(13, 'Apple', 'Apple iPhone 7', 152.00, '../assets/products/15.png', '2022-01-28 11:08:57'),
+(15, 'Apple', 'i13', 40000.00, '../assets/products/af5daed1b5cc0eb11c4ab97a40a31ff733.jpg', NULL),
+(16, 'mi', 'redmi', 5000.00, '../assets/products/95ea8cd498641ae7ea93b35f01caf95644.jfif', NULL);
 
 -- --------------------------------------------------------
 
@@ -81,12 +80,21 @@ INSERT INTO `product` (`item_id`, `item_brand`, `item_name`, `item_price`, `item
 --
 
 CREATE TABLE `reviews` (
+  `review_id` int(11) NOT NULL,
   `item_id` int(11) NOT NULL,
   `userid` int(11) NOT NULL,
   `content` text NOT NULL,
   `rating` tinyint(1) NOT NULL,
   `submit_date` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `reviews`
+--
+
+INSERT INTO `reviews` (`review_id`, `item_id`, `userid`, `content`, `rating`, `submit_date`) VALUES
+(1002, 15, 1, '2 months and still received incorrect pre twice, then they just ignored my request for what I was promised. I ordered red and they just sent black, I did not get any contact that I would be receiving incorrect item', 3, '2022-02-09 15:56:15'),
+(1003, 9, 13, 'This was an awesome phone and I loved having the fun turquoise colour. Unfortunately I smashed the back camera when dropping to and would caution users that this is an extremely breakable piece of technology.', 3, '2022-02-09 15:56:47');
 
 -- --------------------------------------------------------
 
@@ -111,8 +119,9 @@ CREATE TABLE `usertable` (
 --
 
 INSERT INTO `usertable` (`userid`, `name`, `gender`, `Email`, `phone_no`, `username`, `userimg`, `password`, `dob`) VALUES
-(1, 'vish', '', 'vishakhay036@gmail.com', 5678, 'yryhu', 0x31, '1234', '2022-01-01'),
-(9, 'Girl Power', 'male', 'gals6969@gmail.com', 98184, 'Wearenotless', 0x31, 'mynameiskhan', '2005-08-19');
+(1, 'vish', '', 'vishakhay036@gmail.com', 5678, 'yryhu', '1234', '2022-01-01');
+INSERT INTO `usertable` (`userid`, `name`, `gender`, `Email`, `phone_no`, `username`, `userimg`, `password`, `dob`) VALUES
+(13, 'aisha', 'female', 'aisha@gmail.com', 2223333, 'aisha11',  'rohit', '2022-02-09');
 
 --
 -- Indexes for dumped tables
@@ -134,6 +143,7 @@ ALTER TABLE `product`
 -- Indexes for table `reviews`
 --
 ALTER TABLE `reviews`
+  ADD PRIMARY KEY (`review_id`),
   ADD KEY `item_id` (`item_id`),
   ADD KEY `userid` (`userid`);
 
@@ -152,19 +162,25 @@ ALTER TABLE `usertable`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `adminid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `adminid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `reviews`
+--
+ALTER TABLE `reviews`
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10002;
 
 --
 -- AUTO_INCREMENT for table `usertable`
 --
 ALTER TABLE `usertable`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Constraints for dumped tables
@@ -174,8 +190,8 @@ ALTER TABLE `usertable`
 -- Constraints for table `reviews`
 --
 ALTER TABLE `reviews`
-  ADD CONSTRAINT `reviews_ibfk_1` FOREIGN KEY (`item_id`) REFERENCES `product` (`item_id`),
-  ADD CONSTRAINT `reviews_ibfk_2` FOREIGN KEY (`userid`) REFERENCES `usertable` (`userid`);
+  ADD CONSTRAINT `con1` FOREIGN KEY (`item_id`) REFERENCES `product` (`item_id`),
+  ADD CONSTRAINT `con2` FOREIGN KEY (`userid`) REFERENCES `usertable` (`userid`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

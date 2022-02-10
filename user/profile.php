@@ -29,6 +29,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
 <div id="main">
  
 <div class="gallery"> 
+
         <?php while($row1 = $result1->fetch_assoc()){ ?> 
             <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row1['userimg']); ?>" alt="avatar" class="rounded-circle img-fluid mx-auto d-block" style="width: 250px;"></br> 
         <?php } ?> 
