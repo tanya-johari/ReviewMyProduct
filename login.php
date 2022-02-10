@@ -6,6 +6,9 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
     $username=$_POST["username"];
     $password=$_POST["password"];
   $sql = "Select * from usertable where username ='$username' AND password='$password'";
+  $sql1 = "SELECT userid FROM usertable WHERE USERNAME='$username'";
+  $result1 = mysqli_query($conn,$sql1);
+  $row = $result1->fetch_assoc();
   $result = mysqli_query($conn,$sql);
   $num = mysqli_num_rows($result);
   if ($num == 1){
@@ -13,6 +16,7 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
       session_start();
       $_SESSION['loggedin']= true;
       $_SESSION['username']=$username;
+      $_SESSION['uid']=$row['userid'];
       header("location: user/profile.php");
   }
   else {

@@ -1,13 +1,16 @@
 <?php include 'dashboard_home.php';
 include '../partials/connection.php';
+session_start();
+$uid=$_SESSION['uid'];
 if (isset($_POST['Delete'])) {
   // If you receive the Delete post data, delete it from your table
-  $delete = 'DELETE FROM reviews WHERE review_id = ?'; 
+  $delete = "DELETE FROM reviews WHERE review_id = ? AND userid='$uid'"; 
   $stmt = $conn->prepare($delete);
   $stmt->bind_param("i", $_POST['Delete']);
   $stmt->execute();
 }
-$sql = "SELECT * FROM reviews WHERE userid='' ORDER BY submit_date DESC ";
+
+$sql = "SELECT * FROM reviews WHERE userid='$uid' ORDER BY submit_date DESC ";
 $result = $conn->query($sql);
 $counter = 0;
 ?>
