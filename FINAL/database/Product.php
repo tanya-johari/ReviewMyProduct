@@ -1,6 +1,5 @@
 <?php
 
-// Use to fetch product data
 class Product
 {
     public $db = null;
@@ -24,8 +23,6 @@ class Product
 
         return $resultArray;
     }
-
-    // get product using item id
   
  
 

@@ -1,3 +1,9 @@
+<?php
+session_start();
+$_SESSION['loggedin']= false;
+$_SESSION['counter']=0;
+$_SESSION['iid']=0;
+?>
 <!DOCTYPE html>
 <html lang="en-US">
 
