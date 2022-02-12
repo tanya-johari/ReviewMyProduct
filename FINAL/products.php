@@ -3,23 +3,23 @@
   $iid;
   $iname;
 session_start();
-$_Session["ratedindex"]=0;
+$_SESSION['ratedindex']=0;
 if($_SESSION['counter']==0)
 {
 $iid= $_GET['itemid'];
 $_SESSION['iid']=$_GET['itemid']; 
 $_SESSION['counter']=$_SESSION['counter']+1;
 }
-if(isset($_POST['submit'])){
-  $textareaValue = trim($_POST['content']);
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+
   $status = $statusMsg = ''; 
   $iid=$_SESSION['iid'];
   $status = 'error'; 
   $uid=$_SESSION['uid'];
-  $rate=Session["ratedIndex"];
-  
+  $rate=$_SESSION['ratedIndex'];
+  $content=$_POST["content"];
   $exists=false;
-  $sql = "INSERT into reviews (`item_id`, `userid`, `content`, `rating`) VALUES ('$iid', '$uid', '$rate', '$textareaValue')";
+  $sql = "INSERT into reviews (`item_id`, `userid`, `content`, `rating`) VALUES ('$iid', '$uid', '$rate', '$content')";
   $result = mysqli_query($conn, $sql);
 }
    $iid=$_SESSION['iid'];
@@ -98,15 +98,13 @@ if($_SESSION['loggedin']==true){
     <label for="cont" class="form-label">Content :</label>
     <textarea name="content" class="form-control" placeholder="Write your review here..." required></textarea>
     </div>
-    <div align="center">
-    <input type="submit" name="sub" class="btn btn-primary" value="submit">
+    <button type="submit" class="btn btn-primary">Submit Review</button>
     <script>
   var ratedIndex =-1;
   $(document).ready(function(){
     resetStarColors();
    $('.fa-star').on('click',function(){
-     
-          '<% Session["ratedindex"] = " ' + parseInt($(this).data('index'))+ ' "; %>';
+   ratedIndex = parseInt($(this).data('index'));
     })
     $('.fa-star').mouseover(function(){
     
