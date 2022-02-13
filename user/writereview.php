@@ -6,6 +6,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true ){
 }
 $err =false;
 $alert= false;
+$_SESSION['item_id']=9;
 if($_SERVER["REQUEST_METHOD"]=="POST"){
   $status = $statusMsg = ''; 
   include '../partials/connection.php';

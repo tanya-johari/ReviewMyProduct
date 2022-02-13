@@ -86,7 +86,6 @@ body {
   <a href="profile.php">👤Profile</a>
 
 
-  
 
   <a href="edit_profile.php">✏Edit Profile</a>
   <a href="manage_review.php">⭐Manage Review</a>
