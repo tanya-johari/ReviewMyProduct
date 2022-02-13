@@ -1,9 +1,10 @@
 <?php
+  include '../partials/_nav.php';
   include '../partials/connection.php';
   $iid;
   $iname;
 session_start();
-$_SESSION['ratedindex']=0;
+$_SESSION['rating']=0;
 if($_SESSION['counter']==0)
 {
 $iid= $_GET['itemid'];
@@ -16,10 +17,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
   $iid=$_SESSION['iid'];
   $status = 'error'; 
   $uid=$_SESSION['uid'];
-  $rate=$_SESSION['ratedIndex'];
+  $rate=$_SESSION['rating'];
   $content=$_POST["content"];
   $exists=false;
-  $sql = "INSERT into reviews (`item_id`, `userid`, `content`, `rating`) VALUES ('$iid', '$uid', '$rate', '$content')";
+  $sql = "INSERT into reviews (`item_id`, `userid`, `rating`, `content`) VALUES ('$iid', '$uid', '$rate', '$content')";
   $result = mysqli_query($conn, $sql);
 }
    $iid=$_SESSION['iid'];
@@ -27,7 +28,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
    $sql3 = "SELECT * FROM reviews WHERE item_id='$iid'";
    $result2 = mysqli_query($conn,$sql2);
    if (mysqli_num_rows($result2)==1)
-   $row2=mysqli_fetch_array($result2);
+   $row2 = mysqli_fetch_array($result2);
    $result = $conn->query($sql3);
 ?> 
 <!DOCTYPE html>
@@ -49,10 +50,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 </head>
 <body>
-<img src="<?php echo $row2['item_image'] ?? "./assets/products/13.png"; ?>" alt="product1" class="img-fluid"></br>
-<h3><?php echo $row2['item_name'];?></h3></br>
-<h3><?php echo $row2['item_brand']; ?></h3></br>
-<h3><?php echo $row2['item_price']; ?></h3></br>
+<img src="<?php echo $row2['item_image'] ?? "./assets/products/13.png"; ?>" alt="product1" class="img-fluid" style="width: 350px;"></br>
+<h3>NAME: <?php echo $row2['item_name'];?></h3></br>
+<h3>BRAND: <?php echo $row2['item_brand']; ?></h3></br>
+<h3>PRICE: $<?php echo $row2['item_price']; ?></h3></br>
 <div class="container p-2 my-4 bg-light text-white">
 <table class="table table-striped">
 <?php   
@@ -66,9 +67,10 @@ while($rows=$result->fetch_assoc())
   </thead>
   <tbody>
   <tr>
-      <td><?php echo $rows['content'];
-      echo $rows['rating'];?></td>
+      <td><?php echo $rows['content'];?></td>
+      <td><h6><?php echo $rows['rating'];?>★</h6></td>
     </tr>
+    
     <?php }
     ?>
   </tbody>
@@ -100,11 +102,11 @@ if($_SESSION['loggedin']==true){
     </div>
     <button type="submit" class="btn btn-primary">Submit Review</button>
     <script>
-  var ratedIndex =-1;
+  var rating =-1;
   $(document).ready(function(){
     resetStarColors();
    $('.fa-star').on('click',function(){
-   ratedIndex = parseInt($(this).data('index'));
+   rating = parseInt($(this).data('index'));
     })
     $('.fa-star').mouseover(function(){
     
@@ -114,8 +116,8 @@ if($_SESSION['loggedin']==true){
     });
     $('.fa-star').mouseleave(function(){
       resetStarColors();
-      if(ratedIndex!=-1){
-        for(var i=0;i<=ratedIndex;i++)
+      if(rating!=-1){
+        for(var i=0;i<=rating;i++)
        $('#submit_star_'+i).addClass('text-warning');
       }
     });
@@ -133,9 +135,9 @@ if($_SESSION['loggedin']==true){
         dataType: 'json',
         data: {
           save:1,
-          ratedIndex: ratedIndex+1
+          ratedIndex: rating+1
         },success: function(r){
-          ratedIndex=r.ratedIndex;
+          rating=r.rating;
         }
       });
     }
@@ -144,6 +146,7 @@ if($_SESSION['loggedin']==true){
 </div>
 <?php
 }
+include 'footer.php'
 ?>
 </body>
 </html>
