@@ -169,7 +169,7 @@ if (isset($_POST["submit1"]))
   $v3=$v1.$v2;
   $v3=md5($v3);
 $fnm=$_FILES["pimage"]["name"];
-$dst="./products/".$v3.$fnm;
+$dst="../products/".$v3.$fnm;
 $dst1="../assets/products/".$v3.$fnm;
 move_uploaded_file($_FILES["pimage"]["tmp_name"],$dst);
 

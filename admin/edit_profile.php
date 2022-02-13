@@ -17,19 +17,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
 </head>
 <body>
     <?php 
-        if (isset($_POST['Submit'])) {
-            $Email=$_POST["email"];
-            $fname=$_POST["fname"];
-            $lname=$_POST["lname"];
-            $usname=$_POST["adminusername"];
-            $phoneno=$_POST["phoneno"];
-            $dob=$_POST["dob"];
-            $gender=$_POST["gender"];
-            $adminimg=$_POST["adminimg"];
-            $update = "UPDATE admin SET adminimg='$adminimg',fname='$fname',lname='$lname',email='$Email',phoneno='$phoneno',
-            dob='$dob',gender='$gender' where adminusername='$usname'";
-            $sql3=mysqli_query($conn,$update);
-        }
+        
         
         $usname=$_SESSION['adminusername'];
 
@@ -65,7 +53,27 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
                                 </select></h5></br>
     <button type="submit" class="btn btn-primary" name="Submit">Save Changes</button>
 </form>
-
+<?php
+    if (isset($_POST['Submit'])) {
+        $v1=rand(1111,9999);
+        $v2=rand(1111,9999);
+        $v3=$v1.$v2;
+        $v3=md5($v3);
+        $fnm=$_FILES["adminimg"]["name"];
+        $dst="../assets/img/".$v3.$fnm;
+        move_uploaded_file($_FILES["adminimg"]["tmp_name"],$dst);
+        $Email=$_POST["email"];
+        $fname=$_POST["fname"];
+        $lname=$_POST["lname"];
+        $usname=$_POST["adminusername"];
+        $phoneno=$_POST["phoneno"];
+        $dob=$_POST["dob"];
+        $gender=$_POST["gender"];
+        $update = "UPDATE admin SET adminimg='$dst',fname='$fname',lname='$lname',email='$Email',phoneno='$phoneno',
+        dob='$dob',gender='$gender' where adminusername='$usname'";
+        $sql3=mysqli_query($conn,$update);
+    }
+?>
 </div>
 </body>
 </html>
