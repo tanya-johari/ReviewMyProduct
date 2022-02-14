@@ -4,7 +4,7 @@
   $iid;
   $iname;
 session_start();
-$_SESSION['rating']=0;
+$_SESSION['rating'];
 if($_SESSION['counter']==0)
 {
 $iid= $_GET['itemid'];
@@ -63,6 +63,7 @@ while($rows=$result->fetch_assoc())
   <thead class="thead-dark">
     <tr>
       <th scope="row"><?php echo $rows['userid']; ?></th>
+      <th scope="row"><?php echo $rows['submit_date'];; ?></th>
      </tr>
   </thead>
   <tbody>
@@ -84,8 +85,6 @@ if($_SESSION['loggedin']==true){
     <div class="write_review">
     <form action="/ReviewMyProduct/FINAL/products.php" method="post" enctype="multipart/form-data">
     <div class="col-md-6">
-    <label for="qual" class="form-label">Quality :</label>
-    <input name="qual" type="text" class="form-control" placeholder="quality" required>
     </div>
     <div class="col-md-6">
     <label for="rate" class="form-label">Ratings :</label>
