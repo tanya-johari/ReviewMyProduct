@@ -17,17 +17,28 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
 </head>
 <body>
     <?php 
-        if (isset($_POST['Submit'])) {
+        if ($_SERVER["REQUEST_METHOD"]=="POST") {
+            if (1) {
+                $fileName = basename($_FILES["image"]["name"]); 
+                $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
+                $allowTypes = array('jpg','png','jpeg','gif'); 
+                if(in_array($fileType, $allowTypes)){ 
+                    $image = $_FILES['image']['tmp_name']; 
+                    $imgcontent = addslashes(file_get_contents($image));
             $Email=$_POST["Email"];
             $name=$_POST["name"];
             $username=$_POST["username"];
             $phone_no=$_POST["phone_no"];
             $dob=$_POST["dob"];
             $gender=$_POST["gender"];
-            $userimg=$_POST["userimg"];
-            $update = "UPDATE usertable SET userimg='$userimg',name='$name',username='$username', email='$Email',
+            $update = "UPDATE usertable SET 
+            userimg='$imgcontent',name='$name',username='$username', email='$Email',
             phone_no='$phone_no',dob='$dob',gender='$gender' where username='$username'";
-            $sql3=mysqli_query($conn,$update);
+            $sql3=mysqli_query($conn,$update);}
+            else{ 
+                $statusMsg = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.'; 
+               } 
+        }          
         }
         
         $username=$_SESSION['username'];
@@ -41,14 +52,14 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
         $row2=mysqli_fetch_array($result2)
     ?>
 <div id="main">
-<form action="" method="POST">
+<form action="/ReviewMyProduct/user/edit_profile.php" method="POST" enctype="multipart/form-data">
 
 <div class="gallery"> 
         <?php while($row1 = $result1->fetch_assoc()){ ?> 
         <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row1['userimg']); ?>" alt="avatar" class="rounded-circle img-fluid mx-auto d-block" style="width: 250px;"></br> 
         <?php } ?> 
         </br>
-        <h6 align="center">CHANGE PROFILE PICTURE: <input type="file" name="userimg"></h6></br>
+        <h6 align="center">CHANGE PROFILE PICTURE: <input type="file" name="image"></h6></br>
 </div> 
 
       

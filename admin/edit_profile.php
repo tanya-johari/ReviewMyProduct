@@ -5,6 +5,29 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
   header("location:/ReviewMyProduct/admin/login_admin.php");
   exit;
 }
+    if ($_SERVER["REQUEST_METHOD"]=="POST") {
+        if (1) {
+            $fileName = basename($_FILES["image"]["name"]); 
+            $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
+            $allowTypes = array('jpg','png','jpeg','gif'); 
+            if(in_array($fileType, $allowTypes)){ 
+                $image = $_FILES['image']['tmp_name']; 
+                $imgcontent = addslashes(file_get_contents($image));
+        $Email=$_POST["email"];
+        $fname=$_POST["fname"];
+        $lname=$_POST["lname"];
+        $usname=$_POST["adminusername"];
+        $phoneno=$_POST["phoneno"];
+        $dob=$_POST["dob"];
+        $gender=$_POST["gender"];
+        $update = "UPDATE admin SET adminimg='$imgcontent',fname='$fname',lname='$lname',email='$Email',phoneno='$phoneno',
+        dob='$dob',gender='$gender' where adminusername='$usname'";
+        $sql3=mysqli_query($conn,$update);}
+        else{ 
+            $statusMsg = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.'; 
+           } 
+    }         
+    }
 ?>
 
 <!DOCTYPE html>
@@ -30,14 +53,14 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
         $row2=mysqli_fetch_array($result2)
     ?>
 <div id="main">
-<form action="" method="POST">
+<form action="/ReviewMyProduct/admin/edit_profile.php" method="POST" enctype="multipart/form-data">
 
 <div class="gallery"> 
         <?php while($row1 = $result1->fetch_assoc()){ ?> 
         <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row1['adminimg']); ?>" alt="avatar" class="rounded-circle img-fluid mx-auto d-block" style="width: 250px;"></br> 
         <?php } ?> 
         </br>
-        <h6 align="center">CHANGE PROFILE PICTURE: <input type="file" name="adminimg"></h6></br>
+        <h6 align="center">CHANGE PROFILE PICTURE: <input type="file" name="image"></h6></br>
 </div> 
 
     <h5>First Name :<input type="text" name="fname" value="<?php echo $row2['fname'];?>"></h5></br>   
@@ -53,27 +76,6 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
                                 </select></h5></br>
     <button type="submit" class="btn btn-primary" name="Submit">Save Changes</button>
 </form>
-<?php
-    if (isset($_POST['Submit'])) {
-        $v1=rand(1111,9999);
-        $v2=rand(1111,9999);
-        $v3=$v1.$v2;
-        $v3=md5($v3);
-        $fnm=$_FILES["adminimg"]["name"];
-        $dst="../assets/img/".$v3.$fnm;
-        move_uploaded_file($_FILES["adminimg"]["tmp_name"],$dst);
-        $Email=$_POST["email"];
-        $fname=$_POST["fname"];
-        $lname=$_POST["lname"];
-        $usname=$_POST["adminusername"];
-        $phoneno=$_POST["phoneno"];
-        $dob=$_POST["dob"];
-        $gender=$_POST["gender"];
-        $update = "UPDATE admin SET adminimg='$dst',fname='$fname',lname='$lname',email='$Email',phoneno='$phoneno',
-        dob='$dob',gender='$gender' where adminusername='$usname'";
-        $sql3=mysqli_query($conn,$update);
-    }
-?>
 </div>
 </body>
 </html>
