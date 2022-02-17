@@ -140,7 +140,7 @@ $statusMsg = 'Please select an image file to upload.';
         </div>
         <div class="col-md-6">
         <label for="dob" class="form-label">Date of Birth</label>
-        <input type="date" class="form-control" id="dob" name="dob" required>
+        <input type="date" class="form-control" id="dob" name="dob" min="1960-01-01" max="2011-12-31" required>
         </div>
         <div class="col-md-6">
         <label for="gender" class="form-label">Gender</label>
