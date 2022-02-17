@@ -4,7 +4,6 @@
   $iid;
   $iname;
 session_start();
-$_SESSION['rating'];
 if($_SESSION['counter']==0)
 {
 $iid= $_GET['itemid'];
@@ -17,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
   $iid=$_SESSION['iid'];
   $status = 'error'; 
   $uid=$_SESSION['uid'];
-  $rate=$_SESSION['rating'];
+  $rate=$_POST['rating'];
   $content=$_POST["content"];
   $exists=false;
   $sql = "INSERT into reviews (`item_id`, `userid`, `rating`, `content`) VALUES ('$iid', '$uid', '$rate', '$content')";
@@ -95,17 +94,15 @@ if($_SESSION['loggedin']==true){
       <i class="fas fa-star fa-2x" id="submit_star_3" data-index="3"></i>
       <i class="fas fa-star fa-2x" id="submit_star_4" data-index="4"></i>
     </div>
-    <div class="col-md-6">
-    <label for="cont" class="form-label">Content :</label>
-    <textarea name="content" class="form-control" placeholder="Write your review here..." required></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit Review</button>
+    <input type="hidden" name="rating" id="rating" />
     <script>
-  var rating =-1;
+  var rating = -1;
   $(document).ready(function(){
     resetStarColors();
    $('.fa-star').on('click',function(){
    rating = parseInt($(this).data('index'));
+   rating=rating+1;
+   $("#rating").val(rating);
     })
     $('.fa-star').mouseover(function(){
     
@@ -127,20 +124,12 @@ if($_SESSION['loggedin']==true){
     }
     }
     });
-    function saverating(){
-      $.ajax({
-        url:"/ReviewMyProduct/FINAL/products.php",
-        method:"POST",
-        dataType: 'json',
-        data: {
-          save:1,
-          ratedIndex: rating+1
-        },success: function(r){
-          rating=r.rating;
-        }
-      });
-    }
 </script>
+    <div class="col-md-6">
+    <label for="cont" class="form-label">Content :</label>
+    <textarea name="content" class="form-control" placeholder="Write your review here..." required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" >Submit Review</button>
     </form>
 </div>
 <?php
