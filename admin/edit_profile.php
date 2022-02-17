@@ -13,6 +13,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
             if(in_array($fileType, $allowTypes)){ 
                 $image = $_FILES['image']['tmp_name']; 
                 $imgcontent = addslashes(file_get_contents($image));
+            
         $Email=$_POST["email"];
         $fname=$_POST["fname"];
         $lname=$_POST["lname"];
@@ -66,8 +67,8 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
     <h5>First Name :<input type="text" name="fname" value="<?php echo $row2['fname'];?>"></h5></br>   
     <h5>last Name : <input type="text" name="lname" value="<?php echo $row2['lname'];?>"></h5></br>
     <h5>USERNAME : <input type="text" name="adminusername" value="<?php echo $row2['adminusername'];?>"></h5></br>
-    <h5>Email Id : <input type="text" name="email" value="<?php echo $row2['email'];?>"></h5></br>
-    <h5>Phone No : <input type="text" name="phoneno" value="<?php echo $row2['phoneno'];?>"></h5></br>
+    <h5>Email Id : <input type="email" name="email" value="<?php echo $row2['email'];?>"></h5></br>
+    <h5>Phone No : <input type="tel" name="phoneno" value="<?php echo $row2['phoneno'];?>" pattern="[6789][0-9]{9}" title="Please enter valid phone number"></h5></br>
     <h5>DOB : <input type="date" name="dob" value="<?php echo $row2['dob'];?>"></h5></br>
     <h5>Gender : <select type="gender" name="gender" value="<?php echo $row2['gender'];?>">
                                 <option selected><?php echo $row2['gender'];?></option>

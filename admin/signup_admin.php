@@ -120,27 +120,27 @@ $statusMsg = 'Please select an image file to upload.';
         </div>
         <div class="col-md-6">
         <label for="email" class="form-label">Email-id</label>
-        <input type="text" class="form-control" id="email" name=email aria-describedby="emailHelp">
+        <input type="email" class="form-control" id="email" name=email aria-describedby="emailHelp" placeholder="Enter your email" required>
         </div>
         <div class="col-md-6">
         <label for="name" class="form-label">First Name</label>
-        <input type="text" class="form-control" id="fname" name="fname" >
+        <input type="text" class="form-control" id="fname" name="fname" required>
         </div>
         <div class="col-md-6">
         <label for="name" class="form-label">Last Name</label>
-        <input type="text" class="form-control" id="lname" name="lname" >
+        <input type="text" class="form-control" id="lname" name="lname" required>
         </div>
         <div class="col-md-6">
         <label for="username" class="form-label">Username</label>
-        <input type="text" class="form-control" id="username" name="username" >
+        <input type="text" class="form-control" id="username" name="username" required>
         </div>
         <div class="col-md-6">
         <label for="phoneno" class="form-label">Mobile Number</label>
-        <input type="text" class="form-control" id="phoneno" name="phoneno">
+        <input type="tel" class="form-control" id="phoneno" name="phoneno" pattern="[6789][0-9]{9}" title="Please enter valid phone number" required>
         </div>
         <div class="col-md-6">
         <label for="dob" class="form-label">Date of Birth</label>
-        <input type="date" class="form-control" id="dob" name="dob">
+        <input type="date" class="form-control" id="dob" name="dob" required>
         </div>
         <div class="col-md-6">
         <label for="gender" class="form-label">Gender</label>

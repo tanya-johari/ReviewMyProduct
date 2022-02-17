@@ -65,8 +65,8 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
       
     <h5>Name : <input type="text" name="name" value="<?php echo $row2['name'];?>"></h5></br>
     <h5>USERNAME : <input type="text" name="username" value="<?php echo $row2['username'];?>"></h5></br>
-    <h5>Email Id : <input type="text" name="Email" value="<?php echo $row2['Email'];?>"></h5></br>
-    <h5>Phone No : <input type="text" name="phone_no" value="<?php echo $row2['phone_no'];?>"></h5></br>
+    <h5>Email Id : <input type="email" name="Email" value="<?php echo $row2['Email'];?>"></h5></br>
+    <h5>Phone No : <input type="tel" name="phone_no" value="<?php echo $row2['phone_no'];?>" pattern="[6789][0-9]{9}" title="Please enter valid phone number"></h5></br>
     <h5>DOB : <input type="date" name="dob" value="<?php echo $row2['dob'];?>"></h5></br>
     <h5>Gender : <select type="gender" name="gender" value="<?php echo $row2['gender'];?>">
                                 <option selected><?php echo $row2['gender'];?></option>
