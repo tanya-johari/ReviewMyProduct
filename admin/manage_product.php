@@ -46,12 +46,11 @@ $result = $conn->query($sql);
 <table class="table table-striped">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">Sno</th>
-      <th scope="col">ITEM ID</th>
-      <th scope="col">ITEM BRAND</th>
-      <th scope="col">ITEM NAME</th>
-      <th scope="col">ITEM PRICE</th>
-      <th scope="col">ITEM IMAGE</th>
+      <th scope="col">SNO</th>
+      <th scope="col">PRODUCT BRAND</th>
+      <th scope="col">PRODUCT NAME</th>
+      <th scope="col">PRICE</th>
+      <th scope="col">IMAGE</th>
       <th scope="col">Delete</th>
 
     </tr>
@@ -64,7 +63,6 @@ $result = $conn->query($sql);
     <tr>
     
       <th scope="row"><?php echo ++$counter;?></th>
-      <td><?php echo $rows['item_id'];?></td>
       <td><?php echo $rows['item_brand'];?></td>
       <td><?php echo $rows['item_name'];?></td>
       <td><?php echo $rows['item_price'];?></td>
