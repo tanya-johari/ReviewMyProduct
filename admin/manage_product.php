@@ -1,34 +1,22 @@
 <?php include 'dashboard_home.php';
-//Include '../partials/connection.php';
-	$db_host = "localhost";
-	$db_username = "root";
-	$db_pass = "";
-	$db_name = "product_reviewer";
-	
-	
-	
-	$connection = mysqli_connect($db_host,$db_username,$db_pass);
-if (!$connection) {
-    die("Database connection failed: " . mysqli_error());
-}
-	$db_select = mysqli_select_db($connection,$db_name);
-if (!$db_select) {
-    die("Database selection failed: " . mysqli_error());
-}
-
-
-
-$sql = "SELECT * FROM product ORDER BY item_id DESC ";
-$result = $connection->query($sql);
+include '../partials/connection.php';
 $counter = 0;
 
 if (isset($_POST['Delete'])) {
   // If you receive the Delete post data, delete it from your table
   $delete = 'DELETE FROM product WHERE item_id = ?';
-  $stmt = $connection->prepare($delete);
+  $stmt = $conn->prepare($delete);
   $stmt->bind_param("i", $_POST['Delete']);
   $stmt->execute();
+
+  echo '<div class="alert alert-success alert-dismissable" id="flash-msg">
+<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+<h5><i class="icon fa fa-check"></i>Successfully Deleted Product!</h5>
+</div>';
+
 }
+$sql = "SELECT * FROM product ORDER BY item_id DESC ";
+$result = $conn->query($sql);
 ?>
 
 
@@ -45,7 +33,7 @@ if (isset($_POST['Delete'])) {
 </head>
 <body>
 <div class="container p-2 my-4 bg-light text-white">
-<a href="../assets/add_product.php">
+<a href="add_product.php">
 <button   class="btn btn-dark btn-lg float-right" >ADD PRODUCT</button>
 </a>
 

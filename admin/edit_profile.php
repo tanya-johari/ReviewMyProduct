@@ -23,7 +23,12 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
         $gender=$_POST["gender"];
         $update = "UPDATE admin SET adminimg='$imgcontent',fname='$fname',lname='$lname',email='$Email',phoneno='$phoneno',
         dob='$dob',gender='$gender' where adminusername='$usname'";
-        $sql3=mysqli_query($conn,$update);}
+        $sql3=mysqli_query($conn,$update);
+        echo '<div class="alert alert-success alert-dismissable" id="flash-msg">
+<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+<h5><i class="icon fa fa-check"></i>Successfully Updated your Profile!</h5>
+</div>';
+    }
         else{ 
             $statusMsg = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.'; 
            } 
