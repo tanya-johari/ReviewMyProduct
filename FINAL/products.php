@@ -25,6 +25,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
    $iid=$_SESSION['iid'];
    $sql2 = "SELECT * FROM product WHERE item_id='$iid'";
    $sql3 = "SELECT * FROM reviews WHERE item_id='$iid'";
+   $sql4 = "SELECT * FROM itemref WHERE item_id='$iid'";
+   $result1 = $conn->query($sql4);
    $result2 = mysqli_query($conn,$sql2);
    if (mysqli_num_rows($result2)==1)
    $row2 = mysqli_fetch_array($result2);
@@ -53,6 +55,36 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 <h3>NAME: <?php echo $row2['item_name'];?></h3></br>
 <h3>BRAND: <?php echo $row2['item_brand']; ?></h3></br>
 <h3>PRICE: $<?php echo $row2['item_price']; ?></h3></br>
+<div class="container p-2 my-4 bg-light text-white">
+<table class="table table-striped">
+<thead class="thead-dark">
+    <tr>
+      <th scope="row"><h4>Store</h4></th>
+      <th scope="row"><h4>Link</h4></th>
+     </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <?php   
+while($rows1=$result1->fetch_assoc())
+{ $src;
+  if($rows1['store'] == 'amazon')
+    $src="http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Amazon%20logo.PNG";
+  if($rows1['store'] == 'flipkart')
+    $src="https://i.pinimg.com/originals/15/aa/16/15aa1678d4ee5615c5c53ed5c9968126.png";
+    ?>
+      <td><?php echo $rows1['store'];?></td>
+      <td>
+      <p><a href="<?php echo $rows1['reflink'];?>">
+      <img src="<?php echo $src; ?>" width="80" height="100">
+      </a></p></td>
+    </tr>
+    
+    <?php }
+    ?>
+  </tbody>
+</table>
+</div>
 <div class="container p-2 my-4 bg-light text-white">
 <table class="table table-striped">
 <?php   
