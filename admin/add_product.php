@@ -11,17 +11,31 @@ include "dashboard_home.php";
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+<script>
+	$(document).ready(function() {
+	var max_fields      = 10; //maximum input boxes allowed
+	var wrapper   		= $(".input_fields_wrap"); //Fields wrapper
+	var add_button      = $(".add_field_button"); //Add button ID
+	
+	var x = 1; //initlal text box count
+	$(add_button).click(function(e){ //on add input button click
+		e.preventDefault();
+		if(x < max_fields){ //max input box allowed
+			x++; //text box increment
+			$(wrapper).append('<div><textarea type="text" name="mytext"></textarea><a href="#" class="remove_field">Remove</a></div>'); //add input box
+		}
+	});
+	
+	$(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+		e.preventDefault(); $(this).parent('div').remove(); x--;
+	})
+});
+	</script>
 <body>  
 </body>
 </html> 
 <?php
-	$db_host = "localhost";
-	$db_username = "root";
-	$db_pass = "";
-	$db_name = "product_reviewer";
-	
-	$link = mysqli_connect($db_host,$db_username,$db_pass);
-	mysqli_select_db($link,$db_name);
+	include "../partials/connection.php";
 ?>
 
 
@@ -47,6 +61,25 @@ ADD Product
 <td> <input type="text" name="pprice"  ></td>
 </tr>
 <tr>
+
+	<td>
+	
+	<button class="add_field_button">Add References </button>
+    
+<label >Choose a Store </label>
+
+<select id="store" name="store">
+  <option value="amazon">amazon</option>
+  <option value="flipkart">flipkart</option>
+  <option value="snapdeal">snapdeal</option>
+</select></br></td>
+<td><div class="input_fields_wrap">
+Add Link: <div><textarea type="text" name="mytext"></textarea></div>
+ </td>
+</div>
+</tr>
+
+<tr>
  <td> Image     </td>
 <td> <input type="file" name="pimage"  ></td>
 </tr>
@@ -69,18 +102,17 @@ $dst="../assets/products/".$v3.$fnm;
 $dst1="../assets/products/".$v3.$fnm;
 move_uploaded_file($_FILES["pimage"]["tmp_name"],$dst);
 
-mysqli_query($link,"INSERT INTO `product` (`item_id`,`item_brand`, `item_name`, `item_price`, `item_image`) 
+mysqli_query($conn,"INSERT INTO `product` (`item_id`,`item_brand`, `item_name`, `item_price`, `item_image`) 
 VALUES('','$_POST[bnm]','$_POST[pnm]','$_POST[pprice]','$dst1' )");
+
+mysqli_query($conn,"INSERT INTO `itemref` ( `item_id`, `store`, `reflink`) 
+VALUES((SELECT item_id FROM product where item_name='$_POST[pnm]'), '$_POST[store]', '$_POST[mytext]')");
+
 echo '<div class="alert alert-success alert-dismissable" id="flash-msg">
 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 <h5><i class="icon fa fa-check"></i>Successfully Added Product!</h5>
 </div>';
 
 }
-else {
-	echo '<div class="alert alert-danger alert-dismissable" id="flash-msg">
-				<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-				<h5><i class="icon fa fa-check"></i>Sorry. Product can not be added!!!</h5>
-				</div>';
-}
+
 ?>

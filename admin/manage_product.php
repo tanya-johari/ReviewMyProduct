@@ -4,6 +4,10 @@ $counter = 0;
 
 if (isset($_POST['Delete'])) {
   // If you receive the Delete post data, delete it from your table
+  $delete1 = 'DELETE FROM itemref WHERE item_id = ?';
+  $stmt1 = $conn->prepare($delete1);
+  $stmt1->bind_param("i", $_POST['Delete']);
+  $stmt1->execute();
   $delete = 'DELETE FROM product WHERE item_id = ?';
   $stmt = $conn->prepare($delete);
   $stmt->bind_param("i", $_POST['Delete']);
