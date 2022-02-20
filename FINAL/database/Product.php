@@ -13,8 +13,8 @@ class Product
     // fetch product data using getData Method
     public function getData($table = 'product'){
         
-        $catselected = $_POST['category'];
-        $result = $this->db->con->query("SELECT * FROM {$table} WHERE category='$catselected'");
+       
+        $result = $this->db->con->query("SELECT * FROM {$table}");
 
         $resultArray = array();
 
