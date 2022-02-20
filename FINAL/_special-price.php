@@ -20,10 +20,16 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 }
     }
 function getProduct($item_id = null, $table= 'product'){
+<<<<<<< HEAD
     include "../partials/connection.php";
     if (isset($item_id)){
         
         $result = $conn->query("SELECT * FROM {$table} ");
+=======
+    if (isset($item_id) || $_SERVER["REQUEST_METHOD"]=="POST"){
+        $catselected = $_POST['category'];
+        $result = $this->db->con->query("SELECT * FROM {$table} WHERE item_id={$item_id} AND category = '$catselected'");
+>>>>>>> c050cf732d1bc278f27f277677beed944a688015
 
         $resultArray = array();
 
@@ -52,12 +58,19 @@ $res = $conn->query($sql1);
         <label><h4>Select Category : </h4></label>
 
 <select id="category" name="category">
+<<<<<<< HEAD
     <option selected>All</option>
 <?php while($cat = $res->fetch_assoc()) { ?>
   <option value="<?php echo $cat['category']?>"><?php echo $cat['category']?></option>
 <?php } ?>
 </select>
 <button type="submit" class="btn btn-primary" name="Submit">Submit</button>
+=======
+<?php while($cat = $res->fetch_assoc()) { ?>
+  <option value="catsel"><?php echo $cat['category']?></option>
+<?php } ?>
+</select>
+>>>>>>> c050cf732d1bc278f27f277677beed944a688015
 </form>
         <div class="grid">
             <?php array_map(function ($item) use($in_cart){ ?>
