@@ -17,8 +17,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     }
 }
 function getProduct($item_id = null, $table= 'product'){
-    if (isset($item_id)){
-        $result = $this->db->con->query("SELECT * FROM {$table} WHERE item_id={$item_id}");
+    if (isset($item_id) || $_SERVER["REQUEST_METHOD"]=="POST"){
+        $catselected = $_POST['category'];
+        $result = $this->db->con->query("SELECT * FROM {$table} WHERE item_id={$item_id} AND category = '$catselected'");
 
         $resultArray = array();
 
@@ -33,13 +34,25 @@ function getProduct($item_id = null, $table= 'product'){
 }
 
 $in_cart =getproduct();
+include "../partials/connection.php";
+$sql1 = "SELECT DISTINCT category FROM product";
+$res = $conn->query($sql1);
 
 ?>
+
+<form method="post">
 <section id="special-price">
     <div class="container">
         <h4 class="font-rubik font-size-20">PRODUCTS</h4>
      
+        <label><h4>Select Category : </h4></label>
 
+<select id="category" name="category">
+<?php while($cat = $res->fetch_assoc()) { ?>
+  <option value="catsel"><?php echo $cat['category']?></option>
+<?php } ?>
+</select>
+</form>
         <div class="grid">
             <?php array_map(function ($item) use($in_cart){ ?>
             <div class="grid-item border <?php echo $item['item_brand'] ?? "Brand" ; ?>">

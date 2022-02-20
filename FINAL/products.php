@@ -113,14 +113,16 @@ while($rows=$result->fetch_assoc())
   <thead class="thead-dark">
     <tr>
     <th scope="row"><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($rows['userimg']); ?>" alt="avatar" class="rounded-circle img-fluid " style="width:80px;">
-       </th>
-      <th scope="row"><h4>@<?php echo $rows['username']; ?></h4></th>
+      
+      <h4>@<?php echo $rows['username']; ?></h4></th>
+      <th scope="row"></th>
       <th scope="row"><?php echo date_format($date, 'jS F Y'); ?></th>
      </tr>
   </thead>
   <tbody>
   <tr>
       <td><?php echo $rows['content'];?></td>
+      <td> </td>
       <td><h6><?php echo $rows['rating'];?>⭐</h6></td>
     </tr>
     
