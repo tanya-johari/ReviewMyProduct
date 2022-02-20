@@ -60,6 +60,9 @@ ADD Product
  <td> Price    </td>
 <td> <input type="text" name="pprice"  ></td>
 </tr>
+<td> Category     </td>
+<td> <input type="text" name="cat"  ></td>
+</tr>
 <tr>
 
 	<td>
@@ -102,8 +105,8 @@ $dst="../assets/products/".$v3.$fnm;
 $dst1="../assets/products/".$v3.$fnm;
 move_uploaded_file($_FILES["pimage"]["tmp_name"],$dst);
 
-mysqli_query($conn,"INSERT INTO `product` (`item_id`,`item_brand`, `item_name`, `item_price`, `item_image`) 
-VALUES('','$_POST[bnm]','$_POST[pnm]','$_POST[pprice]','$dst1' )");
+mysqli_query($conn,"INSERT INTO `product` (`item_id`,`item_brand`, `item_name`, `item_price`, `category`, `item_image`) 
+VALUES('','$_POST[bnm]','$_POST[pnm]','$_POST[pprice]', '$_POST[cat]', '$dst1' )");
 
 mysqli_query($conn,"INSERT INTO `itemref` ( `item_id`, `store`, `reflink`) 
 VALUES((SELECT item_id FROM product where item_name='$_POST[pnm]'), '$_POST[store]', '$_POST[mytext]')");

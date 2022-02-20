@@ -4,6 +4,8 @@ $counter = 0;
 
 if (isset($_POST['Delete'])) {
   // If you receive the Delete post data, delete it from your table
+  $delete2 = 'DELETE FROM reviews WHERE item_id = ?';
+  $stmt2 = $conn->prepare($delete2);
   $delete1 = 'DELETE FROM itemref WHERE item_id = ?';
   $stmt1 = $conn->prepare($delete1);
   $stmt1->bind_param("i", $_POST['Delete']);
@@ -32,7 +34,7 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Review</title>
+    <title>Manage Product</title>
 
 </head>
 <body>
@@ -51,6 +53,7 @@ $result = $conn->query($sql);
   <thead class="thead-dark">
     <tr>
       <th scope="col">SNO</th>
+      <th scope="col">CATEGORY</th>
       <th scope="col">PRODUCT BRAND</th>
       <th scope="col">PRODUCT NAME</th>
       <th scope="col">PRICE</th>
@@ -67,6 +70,7 @@ $result = $conn->query($sql);
     <tr>
     
       <th scope="row"><?php echo ++$counter;?></th>
+      <td><?php echo $rows['category'];?></td>
       <td><?php echo $rows['item_brand'];?></td>
       <td><?php echo $rows['item_name'];?></td>
       <td><?php echo $rows['item_price'];?></td>

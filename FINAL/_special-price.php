@@ -1,24 +1,29 @@
 <!-- Special Price -->
 <?php
+    
     session_start();
     $_SESSION['counter']=0;
     $brand = array_map(function ($pro){ return $pro['item_brand']; }, $product_shuffle);
     $unique = array_unique($brand);
     sort($unique);
     shuffle($product_shuffle);
-
-if($_SERVER['REQUEST_METHOD'] == "POST"){
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
     
         $_SESSION['itemid']= $_POST['item_id'];
-        
-     
+
+      
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+    
     if (isset($_POST['special_price_submit'])){
         $Product->addTou($_POST['user_id'], $_POST['item_id']);
     }
 }
+    }
 function getProduct($item_id = null, $table= 'product'){
+    include "../partials/connection.php";
     if (isset($item_id)){
-        $result = $this->db->con->query("SELECT * FROM {$table} WHERE item_id={$item_id}");
+        
+        $result = $conn->query("SELECT * FROM {$table} ");
 
         $resultArray = array();
 
@@ -33,13 +38,27 @@ function getProduct($item_id = null, $table= 'product'){
 }
 
 $in_cart =getproduct();
+include "../partials/connection.php";
+$sql1 = "SELECT DISTINCT category FROM product";
+$res = $conn->query($sql1);
 
 ?>
+
+<form method="post">
 <section id="special-price">
     <div class="container">
         <h4 class="font-rubik font-size-20">PRODUCTS</h4>
      
+        <label><h4>Select Category : </h4></label>
 
+<select id="category" name="category">
+    <option selected>All</option>
+<?php while($cat = $res->fetch_assoc()) { ?>
+  <option value="<?php echo $cat['category']?>"><?php echo $cat['category']?></option>
+<?php } ?>
+</select>
+<button type="submit" class="btn btn-primary" name="Submit">Submit</button>
+</form>
         <div class="grid">
             <?php array_map(function ($item) use($in_cart){ ?>
             <div class="grid-item border <?php echo $item['item_brand'] ?? "Brand" ; ?>">
@@ -58,7 +77,7 @@ $in_cart =getproduct();
                                 <span><i class="far fa-star"></i></span>
                             </div>
                             <div class="price py-2">
-                                <span>$<?php echo $item['item_price'] ?? 0 ?></span>
+                                <span>Rs <?php echo $item['item_price'] ?? 0 ?></span>
                             </div>
                             <form method="post">
                                 

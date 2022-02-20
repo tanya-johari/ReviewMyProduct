@@ -62,7 +62,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 <img src="<?php echo $row2['item_image'] ?? "./assets/products/13.png"; ?>" alt="product1" class="img-fluid" style="width: 350px;"></br>
 <h3>NAME: <?php echo $row2['item_name'];?></h3></br>
 <h3>BRAND: <?php echo $row2['item_brand']; ?></h3></br>
-<h3>PRICE: $<?php echo $row2['item_price']; ?></h3></br>
+<h3>PRICE: Rs <?php echo $row2['item_price']; ?></h3></br>
 
 <div class="container p-2 my-4 bg-light text-white">
 <table class="table table-striped">
@@ -113,14 +113,16 @@ while($rows=$result->fetch_assoc())
   <thead class="thead-dark">
     <tr>
     <th scope="row"><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($rows['userimg']); ?>" alt="avatar" class="rounded-circle img-fluid " style="width:80px;">
-       </th>
-      <th scope="row"><h4>@<?php echo $rows['username']; ?></h4></th>
+      
+      <h4>@<?php echo $rows['username']; ?></h4></th>
+      <th scope="row"></th>
       <th scope="row"><?php echo date_format($date, 'jS F Y'); ?></th>
      </tr>
   </thead>
   <tbody>
   <tr>
       <td><?php echo $rows['content'];?></td>
+      <td> </td>
       <td><h6><?php echo $rows['rating'];?>⭐</h6></td>
     </tr>
     

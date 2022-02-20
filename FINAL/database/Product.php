@@ -9,10 +9,12 @@ class Product
         if (!isset($db->con)) return null;
         $this->db = $db;
     }
-
+    
     // fetch product data using getData Method
     public function getData($table = 'product'){
-        $result = $this->db->con->query("SELECT * FROM {$table}");
+        
+        $catselected = $_POST['category'];
+        $result = $this->db->con->query("SELECT * FROM {$table} WHERE category='$catselected'");
 
         $resultArray = array();
 
