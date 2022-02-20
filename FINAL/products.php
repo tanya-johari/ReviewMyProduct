@@ -24,8 +24,15 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 }
    $iid=$_SESSION['iid'];
    $sql2 = "SELECT * FROM product WHERE item_id='$iid'";
-   $sql3 = "SELECT * FROM reviews WHERE item_id='$iid'";
+   $sql3 = "SELECT * FROM reviews JOIN usertable WHERE usertable.userid = reviews.userid AND item_id='$iid'";
    $sql4 = "SELECT * FROM itemref WHERE item_id='$iid'";
+   $sql5 = "SELECT COUNT(content) AS ttr FROM reviews WHERE item_id='$iid'";
+   $totalReview = $conn->query($sql5);
+   $sql6 = "SELECT COUNT(rating) AS rt FROM reviews WHERE item_id='$iid'";
+   $totalRating = $conn->query($sql6);
+   $sql7 = "SELECT ROUND(AVG(rating),2) AS ar FROM reviews WHERE item_id='$iid'";
+   $avgrating = $conn->query($sql7);
+   
    $result1 = $conn->query($sql4);
    $result2 = mysqli_query($conn,$sql2);
    if (mysqli_num_rows($result2)==1)
@@ -51,10 +58,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 </head>
 <body>
+</br>
 <img src="<?php echo $row2['item_image'] ?? "./assets/products/13.png"; ?>" alt="product1" class="img-fluid" style="width: 350px;"></br>
 <h3>NAME: <?php echo $row2['item_name'];?></h3></br>
 <h3>BRAND: <?php echo $row2['item_brand']; ?></h3></br>
 <h3>PRICE: $<?php echo $row2['item_price']; ?></h3></br>
+
 <div class="container p-2 my-4 bg-light text-white">
 <table class="table table-striped">
 <thead class="thead-dark">
@@ -85,22 +94,34 @@ while($rows1=$result1->fetch_assoc())
   </tbody>
 </table>
 </div>
+<?php $tr=$totalReview->fetch_assoc();
+      $rt=$totalRating->fetch_assoc();
+      $ar=$avgrating->fetch_assoc();
+?>
+<h4 align="center" style="color:blue;">Total Reviews and Ratings</h4>
+<h5 align="center">(<?php echo $tr['ttr'] ;?>) Reviews and (<?php echo $rt['rt'];?>) Ratings</h5>
+<h4 align="center" style="color:orange;">Average Rating : <?php echo $ar['ar'];?></h4>
+
+
 <div class="container p-2 my-4 bg-light text-white">
 <table class="table table-striped">
 <?php   
 while($rows=$result->fetch_assoc())
 {
+  $date = date_create($rows['submit_date']);
 ?>
   <thead class="thead-dark">
     <tr>
-      <th scope="row"><?php echo $rows['userid']; ?></th>
-      <th scope="row"><?php echo $rows['submit_date'];; ?></th>
+    <th scope="row"><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($rows['userimg']); ?>" alt="avatar" class="rounded-circle img-fluid " style="width:80px;">
+       </th>
+      <th scope="row"><h4>@<?php echo $rows['username']; ?></h4></th>
+      <th scope="row"><?php echo date_format($date, 'jS F Y'); ?></th>
      </tr>
   </thead>
   <tbody>
   <tr>
       <td><?php echo $rows['content'];?></td>
-      <td><h6><?php echo $rows['rating'];?>★</h6></td>
+      <td><h6><?php echo $rows['rating'];?>⭐</h6></td>
     </tr>
     
     <?php }
@@ -161,6 +182,7 @@ if($_SESSION['loggedin']==true){
     <label for="cont" class="form-label">Content :</label>
     <textarea name="content" class="form-control" placeholder="Write your review here..." required></textarea>
     </div>
+  </br>
     <button type="submit" class="btn btn-primary" >Submit Review</button>
     </form>
 </div>

@@ -36,7 +36,7 @@ $counter = 0;
 </head>
 <body>
 <div class="container p-2 my-4 bg-light text-white">
-<button type="submit" class="btn btn-dark btn-lg float-right" onclick="window.location.href='../FINAL/index.php'">ADD REVIEW</button>
+<button type="submit" class="btn btn-dark btn-lg float-right" onclick="window.location.href='../FINAL/index.php'">WRITE REVIEW</button>
 <form method="POST"> 
 <table class="table table-striped">
   <thead class="thead-dark">
