@@ -1,34 +1,28 @@
 <?php include 'dashboard_home.php';
-//Include '../partials/connection.php';
-	$db_host = "localhost";
-	$db_username = "root";
-	$db_pass = "";
-	$db_name = "product_reviewer";
-	
-	
-	
-	$connection = mysqli_connect($db_host,$db_username,$db_pass);
-if (!$connection) {
-    die("Database connection failed: " . mysqli_error());
-}
-	$db_select = mysqli_select_db($connection,$db_name);
-if (!$db_select) {
-    die("Database selection failed: " . mysqli_error());
-}
-
-
-
-$sql = "SELECT * FROM product ORDER BY item_id DESC ";
-$result = $connection->query($sql);
+include '../partials/connection.php';
 $counter = 0;
 
 if (isset($_POST['Delete'])) {
   // If you receive the Delete post data, delete it from your table
+  $delete2 = 'DELETE FROM reviews WHERE item_id = ?';
+  $stmt2 = $conn->prepare($delete2);
+  $delete1 = 'DELETE FROM itemref WHERE item_id = ?';
+  $stmt1 = $conn->prepare($delete1);
+  $stmt1->bind_param("i", $_POST['Delete']);
+  $stmt1->execute();
   $delete = 'DELETE FROM product WHERE item_id = ?';
-  $stmt = $connection->prepare($delete);
+  $stmt = $conn->prepare($delete);
   $stmt->bind_param("i", $_POST['Delete']);
   $stmt->execute();
+
+  echo '<div class="alert alert-success alert-dismissable" id="flash-msg">
+<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+<h5><i class="icon fa fa-check"></i>Successfully Deleted Product!</h5>
+</div>';
+
 }
+$sql = "SELECT * FROM product ORDER BY item_id DESC ";
+$result = $conn->query($sql);
 ?>
 
 
@@ -40,12 +34,12 @@ if (isset($_POST['Delete'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Review</title>
+    <title>Manage Product</title>
 
 </head>
 <body>
 <div class="container p-2 my-4 bg-light text-white">
-<a href="../assets/add_product.php">
+<a href="add_product.php">
 <button   class="btn btn-dark btn-lg float-right" >ADD PRODUCT</button>
 </a>
 
@@ -58,12 +52,12 @@ if (isset($_POST['Delete'])) {
 <table class="table table-striped">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">Sno</th>
-      <th scope="col">ITEM ID</th>
-      <th scope="col">ITEM BRAND</th>
-      <th scope="col">ITEM NAME</th>
-      <th scope="col">ITEM PRICE</th>
-      <th scope="col">ITEM IMAGE</th>
+      <th scope="col">SNO</th>
+      <th scope="col">CATEGORY</th>
+      <th scope="col">PRODUCT BRAND</th>
+      <th scope="col">PRODUCT NAME</th>
+      <th scope="col">PRICE</th>
+      <th scope="col">IMAGE</th>
       <th scope="col">Delete</th>
 
     </tr>
@@ -76,7 +70,7 @@ if (isset($_POST['Delete'])) {
     <tr>
     
       <th scope="row"><?php echo ++$counter;?></th>
-      <td><?php echo $rows['item_id'];?></td>
+      <td><?php echo $rows['category'];?></td>
       <td><?php echo $rows['item_brand'];?></td>
       <td><?php echo $rows['item_name'];?></td>
       <td><?php echo $rows['item_price'];?></td>

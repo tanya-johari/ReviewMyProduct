@@ -132,11 +132,11 @@ echo $statusMsg;
         </div>
         <div class="col-md-6">
         <label for="phoneno" class="form-label">Mobile Number</label>
-        <input type="text" class="form-control" id="phoneno" name="phoneno">
+        <input type="tel" class="form-control" id="phoneno" name="phoneno" required>
         </div>
         <div class="col-md-6">
         <label for="dob" class="form-label">Date of Birth</label>
-        <input type="date" class="form-control" id="dob" name="dob">
+        <input type="date" class="form-control" id="dob" name="dob" min="1960-01-01" max="2011-12-31" required>
         </div>
         <div class="col-md-6">
         <label for="gender" class="form-label">Gender</label>

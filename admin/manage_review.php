@@ -6,6 +6,11 @@ if (isset($_POST['Delete'])) {
   $stmt = $conn->prepare($delete);
   $stmt->bind_param("i", $_POST['Delete']);
   $stmt->execute();
+
+  echo '<div class="alert alert-success alert-dismissable" id="flash-msg">
+<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+<h5><i class="icon fa fa-check"></i>Successfully Deleted Review!</h5>
+</div>';
 }
 $sql = "SELECT * FROM reviews ORDER BY submit_date DESC ";
 $result = $conn->query($sql);

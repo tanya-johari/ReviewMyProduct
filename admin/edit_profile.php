@@ -13,6 +13,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
             if(in_array($fileType, $allowTypes)){ 
                 $image = $_FILES['image']['tmp_name']; 
                 $imgcontent = addslashes(file_get_contents($image));
+            
         $Email=$_POST["email"];
         $fname=$_POST["fname"];
         $lname=$_POST["lname"];
@@ -22,7 +23,12 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
         $gender=$_POST["gender"];
         $update = "UPDATE admin SET adminimg='$imgcontent',fname='$fname',lname='$lname',email='$Email',phoneno='$phoneno',
         dob='$dob',gender='$gender' where adminusername='$usname'";
-        $sql3=mysqli_query($conn,$update);}
+        $sql3=mysqli_query($conn,$update);
+        echo '<div class="alert alert-success alert-dismissable" id="flash-msg">
+<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+<h5><i class="icon fa fa-check"></i>Successfully Updated your Profile!</h5>
+</div>';
+    }
         else{ 
             $statusMsg = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.'; 
            } 
@@ -66,9 +72,9 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
     <h5>First Name :<input type="text" name="fname" value="<?php echo $row2['fname'];?>"></h5></br>   
     <h5>last Name : <input type="text" name="lname" value="<?php echo $row2['lname'];?>"></h5></br>
     <h5>USERNAME : <input type="text" name="adminusername" value="<?php echo $row2['adminusername'];?>"></h5></br>
-    <h5>Email Id : <input type="text" name="email" value="<?php echo $row2['email'];?>"></h5></br>
-    <h5>Phone No : <input type="text" name="phoneno" value="<?php echo $row2['phoneno'];?>"></h5></br>
-    <h5>DOB : <input type="date" name="dob" value="<?php echo $row2['dob'];?>"></h5></br>
+    <h5>Email Id : <input type="email" name="email" value="<?php echo $row2['email'];?>"></h5></br>
+    <h5>Phone No : <input type="tel" name="phoneno" value="<?php echo $row2['phoneno'];?>" pattern="[6789][0-9]{9}" title="Please enter valid phone number"></h5></br>
+    <h5>DOB : <input type="date" name="dob" value="<?php echo $row2['dob'];?>" min="1960-01-01" max="2011-12-31"></h5></br>
     <h5>Gender : <select type="gender" name="gender" value="<?php echo $row2['gender'];?>">
                                 <option selected><?php echo $row2['gender'];?></option>
                                 <option value="male">Male</option>

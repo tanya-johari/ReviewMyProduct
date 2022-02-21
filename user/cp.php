@@ -24,10 +24,31 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
 	<?php
 		$usname=$_SESSION['username'];
 		if (isset($_POST["Submit"])){
-			mysqli_query($conn,"update usertable set password='$_POST[pnm]' where username='$usname'") ;
-		    
+		$old_pass=$_POST['bnm'];
+		$new_pass=$_POST['pnm'];
+		$con_pass=$_POST['cps'];
+		if($old_pass=="SELECT password FROM usertable WHERE username='$usname'"){
+			if($new_pass==$con_pass) {
+		mysqli_query($conn,"update usertable set password='$_POST[pnm]' where username='$usname'") ;
+	  echo '<div class="alert alert-success alert-dismissable" id="flash-msg">
+	  <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+	  <h5><i class="icon fa fa-check"></i>Successfully changed Password!</h5>
+	  </div>';
+	  }
+	  else {
+		  echo '<div class="alert alert-danger alert-dismissable" id="flash-msg">
+		  <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+		  <h5><i class="icon fa fa-check"></i>Password does not match. Please try again!!!</h5>
+		  </div>';
+	  }
+	}
+		else {
+			echo '<div class="alert alert-danger alert-dismissable" id="flash-msg">
+		  <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+		  <h5><i class="icon fa fa-check"></i>OLD Password does not match. Please try again!!!</h5>
+		  </div>';
 		}
-	
+  }
 	?>
 <center> 
 <h2>
@@ -38,16 +59,16 @@ Change Password
   <table >
 <tr>
  <td> OLD PASSWORD     </td>
-<td> <input type="password" name="bnm"  ></td>
+<td> <input type="password" name="bnm"  required></td>
 </tr><tr>
 	</br>
  <td> NEW PASSWORD    </td>
-<td> <input type="password" name="pnm"  ></td>
+<td> <input type="password" name="pnm"  required></td>
 </tr>
 <tr>
 </br>
  <td> CONFIRM NEW PASSWORD   </td>
-<td> <input type="text" name="cps"  ></td>
+<td> <input type="password" name="cps"  required></td>
 </br>
 <tr>
 

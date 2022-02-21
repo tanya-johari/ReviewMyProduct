@@ -6,6 +6,11 @@ if (isset($_POST['Delete'])) {
   $stmt = $conn->prepare($delete);
   $stmt->bind_param("i", $_POST['Delete']);
   $stmt->execute();
+
+  echo '<div class="alert alert-success alert-dismissable" id="flash-msg">
+<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+<h5><i class="icon fa fa-check"></i>Successfully Deleted User Account!</h5>
+</div>';
 }
 $sql = "SELECT * FROM usertable";
 $result = $conn->query($sql);
@@ -46,9 +51,9 @@ $counter = 0;
                     $uid=$rows['userid'];
                     $sql1 = "SELECT userimg FROM usertable WHERE userid='$uid'";
                     $result1 = mysqli_query($conn,$sql1);
-                    $sql2="SELECT COUNT(*) FROM REVIEWS WHERE USERID='$uid'";
-                    $result2 = mysqli_query($conn,$sql2);
-                    $total= mysqli_num_rows($result2)
+                    $sql2="SELECT COUNT(*) AS cnt FROM reviews WHERE userid='$uid'";
+                    $result2 = $conn->query($sql2);
+                    $total= $result2->fetch_assoc();
              ?>
     <tr>
     
@@ -61,7 +66,7 @@ $counter = 0;
         <?php } ?></td>
       <td><?php echo $rows['phone_no'];?></td>
       <td><?php echo $rows['Email'];?></td>
-      <td><?php echo $total;?></td>
+      <td><?php echo $total['cnt'];?></td>
       <?php echo '<td><button type="submit" name="Delete" value="'.$rows['userid'].'">DELETE</button></td>';?>
     </tr>
     <?php }

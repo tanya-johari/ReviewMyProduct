@@ -13,6 +13,11 @@ if (isset($_POST['Delete'])) {
   $stmt = $conn->prepare($delete);
   $stmt->bind_param("i", $_POST['Delete']);
   $stmt->execute();
+
+  echo '<div class="alert alert-success alert-dismissable" id="flash-msg">
+<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+<h5><i class="icon fa fa-check"></i>Successfully Deleted Review!</h5>
+</div>';
 }
 
 $sql = "SELECT * FROM reviews WHERE userid='$uid' ORDER BY submit_date DESC ";
@@ -31,7 +36,7 @@ $counter = 0;
 </head>
 <body>
 <div class="container p-2 my-4 bg-light text-white">
-<button type="submit" class="btn btn-dark btn-lg float-right" onclick="window.location.href='../FINAL/index.php'">ADD REVIEW</button>
+<button type="submit" class="btn btn-dark btn-lg float-right" onclick="window.location.href='../FINAL/index.php'">WRITE REVIEW</button>
 <form method="POST"> 
 <table class="table table-striped">
   <thead class="thead-dark">

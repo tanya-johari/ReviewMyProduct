@@ -34,7 +34,11 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
             $update = "UPDATE usertable SET 
             userimg='$imgcontent',name='$name',username='$username', email='$Email',
             phone_no='$phone_no',dob='$dob',gender='$gender' where username='$username'";
-            $sql3=mysqli_query($conn,$update);}
+            $sql3=mysqli_query($conn,$update);
+            echo '<div class="alert alert-success alert-dismissable" id="flash-msg">
+            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+            <h5><i class="icon fa fa-check"></i>Successfully Updated your Profile!</h5>
+            </div>';}
             else{ 
                 $statusMsg = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.'; 
                } 
@@ -65,9 +69,9 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
       
     <h5>Name : <input type="text" name="name" value="<?php echo $row2['name'];?>"></h5></br>
     <h5>USERNAME : <input type="text" name="username" value="<?php echo $row2['username'];?>"></h5></br>
-    <h5>Email Id : <input type="text" name="Email" value="<?php echo $row2['Email'];?>"></h5></br>
-    <h5>Phone No : <input type="text" name="phone_no" value="<?php echo $row2['phone_no'];?>"></h5></br>
-    <h5>DOB : <input type="date" name="dob" value="<?php echo $row2['dob'];?>"></h5></br>
+    <h5>Email Id : <input type="email" name="Email" value="<?php echo $row2['Email'];?>"></h5></br>
+    <h5>Phone No : <input type="tel" name="phone_no" value="<?php echo $row2['phone_no'];?>" pattern="[6789][0-9]{9}" title="Please enter valid phone number"></h5></br>
+    <h5>DOB : <input type="date" name="dob" value="<?php echo $row2['dob'];?>" min="1960-01-01" max="2011-12-31"></h5></br>
     <h5>Gender : <select type="gender" name="gender" value="<?php echo $row2['gender'];?>">
                                 <option selected><?php echo $row2['gender'];?></option>
                                 <option value="male">Male</option>
