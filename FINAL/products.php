@@ -124,6 +124,9 @@ while($rows1=$result1->fetch_assoc())
     $src="http://media.corporate-ir.net/media_files/IROL/17/176060/Oct18/Amazon%20logo.PNG";
   if($rows1['store'] == 'flipkart')
     $src="https://i.pinimg.com/originals/15/aa/16/15aa1678d4ee5615c5c53ed5c9968126.png";
+    if($rows1['store'] == 'croma')
+    $src="https://m.media-amazon.com/images/S/abs-image-upload-na/8/AmazonStores/A21TJRUUN4KGV/19dae191bb75eda8e3fc9ffc1e335b9f.w400.h400.jpg";
+    
     ?>
       <td><?php echo $rows1['store'];?></td>
       <td>
