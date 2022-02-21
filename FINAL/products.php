@@ -1,5 +1,4 @@
 <?php
-  include '../partials/_nav.php';
   include '../partials/connection.php';
   $iid;
   $iname;
@@ -49,6 +48,51 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../index.php">ReviewMyProduct</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link "  href="index.php">HOME </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            LOGIN
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="../ReviewMyProduct/login.php">USER</a></li>
+            <li><a class="dropdown-item" href=" ../ReviewMyProduct/admin/login_admin.php">ADMIN</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            SIGN UP
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="../ReviewMyProduct/signup.php">USER</a></li>
+            <li><a class="dropdown-item" href="../ReviewMyProduct/admin/signup_admin.php">ADMIN</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">CONTACT</a>
+        </li>
+       
+
+      </ul>
+    </div>
+  </div>
+  <div class="navbar-brand">
+  
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+</nav>
+
 <img src="<?php echo $row2['item_image'] ?? "./assets/products/13.png"; ?>" alt="product1" class="img-fluid" style="width: 350px;"></br>
 <h3>NAME: <?php echo $row2['item_name'];?></h3></br>
 <h3>BRAND: <?php echo $row2['item_brand']; ?></h3></br>
@@ -129,6 +173,7 @@ if($_SESSION['loggedin']==true){
     <label for="cont" class="form-label">Content :</label>
     <textarea name="content" class="form-control" placeholder="Write your review here..." required></textarea>
     </div>
+    <br>
     <button type="submit" class="btn btn-primary" >Submit Review</button>
     </form>
 </div>

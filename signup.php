@@ -155,13 +155,16 @@ echo $statusMsg;
         <input type="password" class="form-control" id="cpassword" name="cpassword">
         <div id="emailHelp" class="form-text">Make sure to enter the same Password.</div>
         </div>
+        <br>
         <div class="col-md-6">
         <input type="checkbox" class="form-check-input" id="exampleCheck1">
         <label class="form-check-label" for="exampleCheck1">All Entered Data is correct</label>
         </div>
+        <br>
         <button type="submit" class="btn btn-primary">Sign Up</button>
         </form>
     </div>
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
