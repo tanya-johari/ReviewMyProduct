@@ -114,17 +114,20 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
       <h2>Find Trends OR <br> <span>Make Them</span></h2>
       <p class="par">ReviewMyProduct is the best platform to turn your likes 
         <br>into the Trends. Your single line experience is valuable for every 
-        <br>new user and make you win beneficial rewards</p>
+        <br>new user and make you win beneficial rewards.</p>
+
+        <button class="cn"><a href="signup.php">JOIN US</a></button>
     </div>  
-        <div class="container">
+        <div class="container" align="right">
+          <h3> Login Here </h3>
         <form action="/ReviewMyProduct/login.php" method="post">
         <div class="col-md-4">
-        <label for="username" class="form-label">Username</label>
-        <input type="text" class="form-control" id="username" name="username" >
+        <label for="username" class="form-label">Username : </label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username Here">
         </div>
         <div class="col-md-4">
-        <label for="password" class="form-label">Password</label>
-        <input type="password" class="form-control" id="password" name="password">
+        <label for="password" class="form-label">Password :</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password Here">
         </div>
         <br>
         <button type="submit" class="btn btn-primary">LOGIN</button>

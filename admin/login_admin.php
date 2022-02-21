@@ -33,6 +33,15 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <title>LOGIN</title>
+    <style>
+         body {
+          width: 100%;
+            background-image: url("/ReviewMyProduct/img/1.jpg");
+            background-position: center;
+            background-size: cover;
+            height: 109vh;
+         }
+      </style>
   </head>
   <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -99,11 +108,11 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
         <h1 class="text-center">Welcome Back to ReviewMyProduct</h1>
         <form action="../admin/login_admin.php" method="post">
         <div class="col-md-4">
-        <label for="username" class="form-label">Username : </label>
+        <label for="username" class="form-label" style="color:#ff7200;">Username : </label>
         <input type="text" class="form-control" id="adusername" name="adusername" >
         </div>
         <div class="col-md-4">
-        <label for="password" class="form-label">Password : </label>
+        <label for="password" class="form-label" style="color:#ff7200;">Password : </label>
         <input type="password" class="form-control" id="passwrd" name="passwrd">
         </div>
         <br>

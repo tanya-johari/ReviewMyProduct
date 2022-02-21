@@ -15,18 +15,26 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             $email=$_POST["email"];
             $name=$_POST["name"];
             $username=$_POST["username"];
+            if(!empty($_POST["username"])){
+            $sql = "Select * from usertable where username ='$username'";
+            $result1 = mysqli_query($conn,$sql);
+            $num = mysqli_num_rows($result1);
+            if ($num == 1)
+            {
+              $alert=true;
+            }}
             $phoneno=$_POST["phoneno"];
             $dob=$_POST["dob"];
             $password=$_POST["password"];
             $cpassword=$_POST["cpassword"];
             $gender=$_POST["gender"];
             $exists=false;
-            if(($password == $cpassword) && $exists == false){
+            if(($password == $cpassword) && ($exists == false) && !$alert){
             $sql = "INSERT into usertable (`name`, `gender`, `Email`, `phone_no`, `username`, `userimg`, `password`, `dob`) VALUES ('$name', '$gender', '$email', '$phoneno', '$username', '$imgcontent', '$password', '$dob')";
-             $result = mysqli_query($conn, $sql);}
+             $result = mysqli_query($conn, $sql);
             if($result){
             $err = true;
-           }
+           }}
           } else{ 
         $statusMsg = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.'; 
        } 
@@ -47,8 +55,17 @@ echo $statusMsg;
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="css/style.css">
     <title>Signup</title>
+    <style>
+         body {
+          width: 100%;
+            background-image: url("/ReviewMyProduct/img/1.jpg");
+            background-position: center;
+            background-size: cover;
+            height: 130vh;
+         }
+      </style>
   </head>
   <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -107,58 +124,58 @@ echo $statusMsg;
     if($alert){
       echo '
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-    <strong>Error</strong>'.$alert.'
+    <strong>Error</strong> username already exist
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>';}
     ?>
     <div class="container">
-        <h1 class="text-center">Welcome To ReviewMyProduct</h1>
+        <h1 class="text-center" style="color:#ff7200;">Welcome To ReviewMyProduct</h1>
         <form action="/ReviewMyProduct/signup.php" method="post" enctype="multipart/form-data">
-        <div class="col-md-6">
-        <label>Select profile photo</label>
-        <input type="file" name="image">
+        <div class="col-md-4">
+        <label style="color:#ff7200;">Select profile photo * :</label>
+        <input type="file" name="image" required>
         </div>
-        <div class="col-md-6">
-        <label for="email" class="form-label">Email-id</label>
-        <input type="text" class="form-control" id="email" name=email aria-describedby="emailHelp">
+        <div class="col-md-4">
+        <label for="email" class="form-label" style="color:#ff7200;">Email-id * :</label>
+        <input type="text" class="form-control" id="email" name=email aria-describedby="emailHelp" placeholder="Enter Email Id Here" required>
         </div>
-        <div class="col-md-6">
-        <label for="name" class="form-label">Name</label>
-        <input type="text" class="form-control" id="name" name="name" >
+        <div class="col-md-4">
+        <label for="name" class="form-label" style="color:#ff7200;">Name * :</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name Here" required>
         </div>
-        <div class="col-md-6">
-        <label for="username" class="form-label">Username</label>
-        <input type="text" class="form-control" id="username" name="username" >
+        <div class="col-md-4">
+        <label for="username" class="form-label" style="color:#ff7200;">Username * :</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Enter UserName Here" required>
         </div>
-        <div class="col-md-6">
-        <label for="phoneno" class="form-label">Mobile Number</label>
-        <input type="tel" class="form-control" id="phoneno" name="phoneno" required>
+        <div class="col-md-4">
+        <label for="phoneno" class="form-label" style="color:#ff7200;">Mobile Number * :</label>
+        <input type="tel" class="form-control" id="phoneno" name="phoneno" placeholder="Enter Phone no Here" required>
         </div>
-        <div class="col-md-6">
-        <label for="dob" class="form-label">Date of Birth</label>
-        <input type="date" class="form-control" id="dob" name="dob" min="1960-01-01" max="2011-12-31" required>
+        <div class="col-md-4">
+        <label for="dob" class="form-label" style="color:#ff7200;">Date of Birth * :</label>
+        <input type="date" class="form-control" id="dob" name="dob" min="1960-01-01" max="2011-12-31" placeholder="Select DOB " required>
         </div>
-        <div class="col-md-6">
-        <label for="gender" class="form-label">Gender</label>
+        <div class="col-md-4">
+        <label for="gender" class="form-label" style="color:#ff7200;">Gender (optional) :</label>
         <select id="gender" name="gender" class="form-select">
         <option selected>selected</option>
         <option value="male">Male</option>
         <option value="female">Female</option>
         </select>
         </div>
-        <div class="col-md-6">
-        <label for="password" class="form-label">Password</label>
-        <input type="password" class="form-control" id="password" name="password">
+        <div class="col-md-4">
+        <label for="password" class="form-label" style="color:#ff7200;">Password * :</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password Here" required>
         </div>
-        <div class="col-md-6">
-        <label for="cpassword" class="form-label">Confirm Password</label>
-        <input type="password" class="form-control" id="cpassword" name="cpassword">
+        <div class="col-md-4">
+        <label for="cpassword" class="form-label" style="color:#ff7200;">Confirm Password * :</label>
+        <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Confirm password" required>
         <div id="emailHelp" class="form-text">Make sure to enter the same Password.</div>
         </div>
         <br>
-        <div class="col-md-6">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">All Entered Data is correct</label>
+        <div class="col-md-4">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" style="color:#ff7200;">
+        <label class="form-check-label" for="exampleCheck1" style="color:#ff7200;">All Entered Data is correct</label>
         </div>
         <br>
         <button type="submit" class="btn btn-primary">Sign Up</button>

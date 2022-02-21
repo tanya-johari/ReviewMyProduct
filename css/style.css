@@ -41,3 +41,15 @@
     border-radius: 10px;
     cursor: pointer;
 }
+.content .cn a{
+    text-decoration: none;
+    color: black;
+    transition: .3s ease;
+}
+.cn:hover{
+    background-color: #fff;
+}
+.content span{
+    color: #ff7200;
+    font-size: 60px;
+}
