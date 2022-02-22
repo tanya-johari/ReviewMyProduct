@@ -128,7 +128,7 @@ while($rows1=$result1->fetch_assoc())
     $src="https://m.media-amazon.com/images/S/abs-image-upload-na/8/AmazonStores/A21TJRUUN4KGV/19dae191bb75eda8e3fc9ffc1e335b9f.w400.h400.jpg";
     
     ?>
-      <td><?php echo $rows1['store'];?></td>
+      <td><h5><?php echo $rows1['store'];?></h5></td>
       <td>
       <p><a href="<?php echo $rows1['reflink'];?>">
       <img src="<?php echo $src; ?>" width="80" height="100">
@@ -146,8 +146,9 @@ while($rows1=$result1->fetch_assoc())
 ?>
 <h4 align="center" style="color:blue;">Total Reviews and Ratings</h4>
 <h5 align="center">(<?php echo $tr['ttr'] ;?>) Reviews and (<?php echo $rt['rt'];?>) Ratings</h5>
+<?php if($ar['ar'] > 0) {?>
 <h4 align="center" style="color:orange;">Average Rating : <?php echo $ar['ar'];?></h4>
-
+<?php } ?>
 
 <div class="container p-2 my-4 bg-light text-white">
 <table class="table table-striped">
