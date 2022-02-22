@@ -74,7 +74,7 @@ ADD Product
 <select id="store" name="store">
   <option value="amazon">amazon</option>
   <option value="flipkart">flipkart</option>
-  <option value="snapdeal">snapdeal</option>
+  <option value="snapdeal">croma</option>
 </select></br></td>
 <td><div class="input_fields_wrap">
 Add Link: <div><textarea type="text" name="mytext"></textarea></div>
