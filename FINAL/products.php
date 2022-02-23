@@ -239,7 +239,7 @@ if($_SESSION['loggedin']==true){
 </div>
 <?php
 }
-include 'footer.php'
+include 'footer.php';
 ?>
 </body>
 </html>
