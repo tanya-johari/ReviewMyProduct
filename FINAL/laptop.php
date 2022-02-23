@@ -13,7 +13,7 @@
 
     <?php
     // require functions.php file
-    require ('functions.php');
+    require ('functions1.php');
     ?>
 
 </head>

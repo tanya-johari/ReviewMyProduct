@@ -66,7 +66,7 @@ $in_cart =getproduct();
                                 <span><i class="far fa-star"></i></span>
                             </div>
                             <div class="price py-2">
-                                <span>Rs <?php echo $item['item_price'] ?? 0 ?></span>
+                                <span><h4 style="color:green;"><?php echo $item['item_brand'] ?? 0 ?></h4></span>
                             </div>
                             <form method="post">
                                 

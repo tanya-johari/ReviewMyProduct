@@ -70,7 +70,7 @@ $_SESSION['iid']=0;
           </ul>
         </li>
           <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.php">Contact</a></li>
 
         </ul>
       </div>
@@ -166,13 +166,13 @@ $_SESSION['iid']=0;
     <!-- SECTION 1 -->
     <section class="grid margin text-center">
 
-      <a href="FINAL/index.php" class="s-12 m-6 l-3 padding-2x vertical-center margin-bottom background-red">
+      <a href="FINAL/mobile.php" class="s-12 m-6 l-3 padding-2x vertical-center margin-bottom background-red">
         <br>
         <img src="img/11.jpg"></img>
         <h3 class="text-strong text-size-20 text-line-height-1 margin-bottom-30 text-uppercase">MOBILE PHONES
         </h3>
       </a>
-      <a href="/" class="s-12 m-6 l-3 padding-2x vertical-center margin-bottom background-blue">
+      <a href="FINAL/laptop.php" class="s-12 m-6 l-3 padding-2x vertical-center margin-bottom background-blue">
         <br>
         <br>
         <img src="img/22.jfif" class="icon-sli-equalizer text-size-60 text-white center margin-bottom-15"
