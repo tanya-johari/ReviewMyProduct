@@ -101,11 +101,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
       <button class="btn btn-outline-success" type="submit">Search</button>
 </form>
 </nav>
-
-<img src="<?php echo $row2['item_image'] ?? "./assets/products/13.png"; ?>" alt="product1" class="img-fluid" style="width: 350px;"></br>
-<h3><?php echo $row2['item_name'];?></h3></br>
-<h3><?php echo $row2['item_brand']; ?></h3></br>
-
+<a>
+<img src="<?php echo $row2['item_image'] ?? "./assets/products/13.png"; ?>" alt="product1" class="img-fluid center" style="width: 350px;"></br>
+<h3 style="color:#810CA6; "><?php echo $row2['item_name'];?></h3></br>
+<h3 style="color:#311CA6; "><?php echo $row2['item_brand']; ?></h3></br>
+</a>
 
 <div class="container p-2 my-4 bg-light text-white">
 <table class="table table-striped">

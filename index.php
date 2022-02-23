@@ -144,7 +144,7 @@ $_SESSION['iid']=0;
     <section class=" margin-bottom background-dark">
       <center>
         <h2 class="s-12 l-6 center text-thin text-size-30 text-white text-uppercase margin-bottom-30">
-          <b>PRODUCTS</b>
+          <b>CATEGORIES</b>
         </h2>
       </center>
 
@@ -184,10 +184,10 @@ $_SESSION['iid']=0;
       <!-- Image-->
 
 
-      <a href="/" class="s-12 m-6 l-3 padding-2x vertical-center margin-bottom background-orange">
+      <a href="FINAL/headphone.php" class="s-12 m-6 l-3 padding-2x vertical-center margin-bottom background-orange">
         <br>
-        <img src="img/55.jfif" class="icon-sli-equalizer text-size-60 text-white center margin-bottom-15"></img>
-        <h3 class="text-strong text-size-20 text-line-height-1 margin-bottom-30 text-uppercase">BOOKS</h3>
+        <img src="img/headphones.jpg" class="icon-sli-equalizer text-size-60 text-white center margin-bottom-15"></img>
+        <h3 class="text-strong text-size-20 text-line-height-1 margin-bottom-30 text-uppercase">HEADPHONES</h3>
       </a>
       <a href="/" class="s-12 m-6 l-3 padding-2x vertical-center margin-bottom background-aqua">
         <br>
