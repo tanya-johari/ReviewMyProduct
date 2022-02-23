@@ -39,7 +39,7 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
             background-image: url("/ReviewMyProduct/img/1.jpg");
             background-position: center;
             background-size: cover;
-            height: 109vh;
+            height: 100%;
          }
       </style>
   </head>
@@ -60,8 +60,8 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
             LOGIN
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="../ReviewMyProduct/login.php">USER</a></li>
-            <li><a class="dropdown-item" href=" ../ReviewMyProduct/admin/login_admin.php">ADMIN</a></li>
+            <li><a class="dropdown-item" href="../login.php">USER</a></li>
+            <li><a class="dropdown-item" href=" ../admin/login_admin.php">ADMIN</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -69,8 +69,8 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
             SIGN UP
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="../ReviewMyProduct/signup.php">USER</a></li>
-            <li><a class="dropdown-item" href="../ReviewMyProduct/admin/signup_admin.php">ADMIN</a></li>
+            <li><a class="dropdown-item" href="../signup.php">USER</a></li>
+            <li><a class="dropdown-item" href="../admin/signup_admin.php">ADMIN</a></li>
           </ul>
         </li>
         <li class="nav-item">

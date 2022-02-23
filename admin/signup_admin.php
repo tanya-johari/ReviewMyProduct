@@ -84,8 +84,13 @@ $statusMsg = 'Please select an image file to upload.';
             LOGIN
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+<<<<<<< HEAD
             <li><a class="dropdown-item" href="../ReviewMyProduct/login.php">USER</a></li>
             <li><a class="dropdown-item" href="login_admin.php">ADMIN</a></li>
+=======
+            <li><a class="dropdown-item" href="../login.php">USER</a></li>
+            <li><a class="dropdown-item" href=" ../admin/login_admin.php">ADMIN</a></li>
+>>>>>>> 2ba143435c8d7ae7fd1ad462ec90fa4a9d561240
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -93,8 +98,8 @@ $statusMsg = 'Please select an image file to upload.';
             SIGN UP
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="../ReviewMyProduct/signup.php">USER</a></li>
-            <li><a class="dropdown-item" href="../ReviewMyProduct/admin/signup_admin.php">ADMIN</a></li>
+            <li><a class="dropdown-item" href="../signup.php">USER</a></li>
+            <li><a class="dropdown-item" href="../admin/signup_admin.php">ADMIN</a></li>
           </ul>
         </li>
         <li class="nav-item">
@@ -169,11 +174,11 @@ $statusMsg = 'Please select an image file to upload.';
         </div>
         <div class="col-md-6">
         <label for="password" class="form-label" style="color:#ff7200;">Password</label>
-        <input type="password" class="form-control" id="password" name="password">
+        <input type="password" class="form-control" id="password" name="password" required>
         </div>
         <div class="col-md-6">
         <label for="cpassword" class="form-label" style="color:#ff7200;">Confirm Password</label>
-        <input type="password" class="form-control" id="cpassword" name="cpassword">
+        <input type="password" class="form-control" id="cpassword" name="cpassword" required>
         <div id="emailHelp" class="form-text">Make sure to enter the same Password.</div>
         </div>
         <br>

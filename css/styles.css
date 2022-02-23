@@ -9,7 +9,9 @@
     height: 109vh;
 }
 .content{
-    width: 1200px;
+    width: 600px;
+    float: left;
+    left: 50px;
     height: auto;
     margin: auto;
     color: #fff;
@@ -33,7 +35,7 @@
 .content .cn{
     width: 160px;
     height: 40px;
-    background: #ff7200;
+    background: #00ff4c;
     border: none;
     margin-bottom: 10px;
     margin-left: 20px;
@@ -52,4 +54,15 @@
 .content span{
     color: #ff7200;
     font-size: 60px;
+}
+.container{
+    color: aqua;
+    float: right;
+    width: 600px;
+    size: 300px;
+    margin-top: 60px;
+}
+.container .col-md-5 label{
+    margin-top: 10px;
+    text-size-adjust: 100px;
 }
