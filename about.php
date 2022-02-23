@@ -3,7 +3,7 @@
  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Free responsive business website template</title>
+    <title>ABOUT US</title>
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/responsee.css">
@@ -35,20 +35,38 @@
     <header class="grid">
       <!-- Top Navigation -->
       <nav class="s-12 grid background-none background-primary-hightlight">
-         <!-- logo -->
-         <a href="index.html" class="m-12 l-3 padding-2x logo">
-         
-         </a>
-         <div class="top-nav s-12 l-9"> 
-            <ul class="top-ul right chevron">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about-us.html">About Us</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-         </div>
-      </nav>
+      <!-- logo -->
+      <a href="index.html" class="m-12 l-3 padding-2x logo">
+
+
+      </a>
+      <div class="top-nav s-12 l-9">
+        <ul class="top-ul right chevron">
+          <li><a href="index.php">Home</a></li>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            LOGIN
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="../ReviewMyProduct/login.php">USER</a></li>
+            <li><a class="dropdown-item" href=" ../ReviewMyProduct/admin/login_admin.php">ADMIN</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            SIGN UP
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="../ReviewMyProduct/signup.php">USER</a></li>
+            <li><a class="dropdown-item" href="../ReviewMyProduct/admin/signup_admin.php">ADMIN</a></li>
+          </ul>
+        </li>
+          <li><a href="about.php">ABOUT US</a></li>
+          <li><a href="#">Contact</a></li>
+
+        </ul>
+      </div>
+    </nav>
     </header>
       
       <!-- MAIN -->

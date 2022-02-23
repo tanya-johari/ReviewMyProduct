@@ -69,8 +69,8 @@ $_SESSION['iid']=0;
             <li><a class="dropdown-item" href="../ReviewMyProduct/admin/signup_admin.php">ADMIN</a></li>
           </ul>
         </li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.php">Contact</a></li>
+          <li><a href="about.php">ABOUT US</a></li>
+          <li><a href="#">Contact</a></li>
 
         </ul>
       </div>
