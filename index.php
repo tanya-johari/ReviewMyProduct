@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['loggedin']= false;
+$_SESSION['loggedin'];
 $_SESSION['counter']=0;
 $_SESSION['iid']=0;
 ?>
