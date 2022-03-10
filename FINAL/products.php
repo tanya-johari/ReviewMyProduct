@@ -68,28 +68,15 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         <li class="nav-item active">
           <a class="nav-link "  href="../index.php">HOME </a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            LOGIN
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="../login.php">USER</a></li>
-            <li><a class="dropdown-item" href=" ../admin/login_admin.php">ADMIN</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            SIGN UP
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="../signup.php">USER</a></li>
-            <li><a class="dropdown-item" href="../admin/signup_admin.php">ADMIN</a></li>
-          </ul>
-        </li>
+        
+            <li><a class="dropdown-item" href="../login.php">Login</a></li>
+            <li><a class="dropdown-item" href="../signup.php">Sign Up</a></li>
+          
         <li class="nav-item">
           <a class="nav-link" href="#">CONTACT</a>
         </li>
        
+
 
       </ul>
     </div>
