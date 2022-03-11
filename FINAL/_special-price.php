@@ -66,7 +66,13 @@ $in_cart =getproduct();
                                 <span><i class="far fa-star"></i></span>
                             </div>
                             <div class="price py-2">
-                                <span>Rs <?php echo $item['item_price'] ?? 0 ?></span>
+                                <?php
+                                include "../partials/connection.php"; 
+                                 $sql7 = "SELECT ROUND(AVG(rating),2) AS ar FROM reviews WHERE item_id='$item[item_id]'";
+                                 $avgrating = $conn->query($sql7);
+                                $ar=$avgrating->fetch_assoc();?>
+                                <span><h4 style="color:green;"><?php echo $item['item_brand'] ?? 0 ?></h4></span>
+                                <h4 align="center" style="color:orange;"><?php echo $ar['ar'];?>⭐</h4>
                             </div>
                             <form method="post">
                                 

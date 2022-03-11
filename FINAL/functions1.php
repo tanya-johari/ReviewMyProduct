@@ -18,7 +18,7 @@ class Product
     public function getData($table = 'product'){
         
        
-        $result = $this->db->con->query("SELECT * FROM {$table} WHERE category='mobile'");
+        $result = $this->db->con->query("SELECT * FROM {$table} WHERE category='laptop'");
 
         $resultArray = array();
 

@@ -22,7 +22,7 @@ include "dashboard_home.php";
 		e.preventDefault();
 		if(x < max_fields){ //max input box allowed
 			x++; //text box increment
-			$(wrapper).append('<div><textarea type="text" name="mytext"></textarea><a href="#" class="remove_field">Remove</a></div>'); //add input box
+			$(wrapper).append('<div><label >Choose a Store </label></br><select id="store" name="store"><option value="amazon">amazon</option><option value="flipkart">flipkart</option><option value="croma">croma</option></select></br><label>Add Link </label></br><textarea type="text" name="mytext"></textarea></br><label>Price </label></br><input type="text" name="price" required><a href="#" class="remove_field">Remove</a></div>'); //add input box
 		}
 	});
 	
@@ -69,16 +69,8 @@ ADD Product
 	
 	<button class="add_field_button">Add References </button>
     
-<label >Choose a Store </label>
+<div class="input_fields_wrap">
 
-<select id="store" name="store">
-  <option value="amazon">amazon</option>
-  <option value="flipkart">flipkart</option>
-  <option value="snapdeal">croma</option>
-</select></br></td>
-<td><div class="input_fields_wrap">
-Add Link: <div><textarea type="text" name="mytext"></textarea></div>
- </td>
 </div>
 </tr>
 
@@ -108,8 +100,8 @@ move_uploaded_file($_FILES["pimage"]["tmp_name"],$dst);
 mysqli_query($conn,"INSERT INTO `product` (`item_id`,`item_brand`, `item_name`, `item_price`, `category`, `item_image`) 
 VALUES('','$_POST[bnm]','$_POST[pnm]','$_POST[pprice]', '$_POST[cat]', '$dst1' )");
 
-mysqli_query($conn,"INSERT INTO `itemref` ( `item_id`, `store`, `reflink`) 
-VALUES((SELECT item_id FROM product where item_name='$_POST[pnm]'), '$_POST[store]', '$_POST[mytext]')");
+mysqli_query($conn,"INSERT INTO `itemref` ( `item_id`, `store`, `reflink`, `price`) 
+VALUES((SELECT item_id FROM product where item_name='$_POST[pnm]'), '$_POST[store]', '$_POST[mytext]', '$_POST[price]')");
 
 echo '<div class="alert alert-success alert-dismissable" id="flash-msg">
 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>

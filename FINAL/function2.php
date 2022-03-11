@@ -1,5 +1,9 @@
 <?php
 
+// require MySQL Connection
+require ('database/DBController.php');
+
+// require Product Class
 class Product
 {
     public $db = null;
@@ -14,7 +18,7 @@ class Product
     public function getData($table = 'product'){
         
        
-        $result = $this->db->con->query("SELECT * FROM {$table} WHERE category='mobile'");
+        $result = $this->db->con->query("SELECT * FROM {$table} WHERE category='headphones'");
 
         $resultArray = array();
 
@@ -25,7 +29,15 @@ class Product
 
         return $resultArray;
     }
-  
- 
-
 }
+
+
+
+
+// DBController object
+$db = new DBController();
+
+// Product object
+$product = new Product($db);
+$product_shuffle = $product->getData();
+

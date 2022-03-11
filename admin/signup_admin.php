@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             $lname=$_POST["lname"];
             $adusername=$_POST["username"];
             if(!empty($_POST["username"])){
-              $sql = "Select * from admin where adminusername ='$username'";
+              $sql = "Select * from admin where adminusername ='$adusername'";
               $result1 = mysqli_query($conn,$sql);
               $num = mysqli_num_rows($result1);
               if ($num == 1)
@@ -70,7 +70,7 @@ $statusMsg = 'Please select an image file to upload.';
   <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="../index.php">REVIEW.COM</a>
+    <a class="navbar-brand" href="../index.php">ReviewMyProduct</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -84,8 +84,13 @@ $statusMsg = 'Please select an image file to upload.';
             LOGIN
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+<<<<<<< HEAD
+            <li><a class="dropdown-item" href="../ReviewMyProduct/login.php">USER</a></li>
+            <li><a class="dropdown-item" href="login_admin.php">ADMIN</a></li>
+=======
             <li><a class="dropdown-item" href="../login.php">USER</a></li>
             <li><a class="dropdown-item" href=" ../admin/login_admin.php">ADMIN</a></li>
+>>>>>>> 2ba143435c8d7ae7fd1ad462ec90fa4a9d561240
           </ul>
         </li>
         <li class="nav-item dropdown">

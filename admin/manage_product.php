@@ -56,7 +56,7 @@ $result = $conn->query($sql);
       <th scope="col">CATEGORY</th>
       <th scope="col">PRODUCT BRAND</th>
       <th scope="col">PRODUCT NAME</th>
-      <th scope="col">PRICE</th>
+     
       <th scope="col">IMAGE</th>
       <th scope="col">Delete</th>
 
@@ -73,7 +73,7 @@ $result = $conn->query($sql);
       <td><?php echo $rows['category'];?></td>
       <td><?php echo $rows['item_brand'];?></td>
       <td><?php echo $rows['item_name'];?></td>
-      <td><?php echo $rows['item_price'];?></td>
+      
       <td><image src="<?php echo $rows['item_image'];?>" width="100px" height="100px" alt=""></td>
 
       

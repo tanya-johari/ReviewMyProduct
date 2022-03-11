@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['loggedin'] = false;
+$_SESSION['loggedin'] = true;
 $_SESSION['counter']=0;
 $_SESSION['iid']=0;
 ?>
@@ -50,27 +50,11 @@ $_SESSION['iid']=0;
       </a>
       <div class="top-nav s-12 l-9">
         <ul class="top-ul right chevron">
-          <li><a href="#">Home</a></li>
-          <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            LOGIN
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="../ReviewMyProduct/login.php">USER</a></li>
-            <li><a class="dropdown-item" href=" ../ReviewMyProduct/admin/login_admin.php">ADMIN</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            SIGN UP
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="../ReviewMyProduct/signup.php">USER</a></li>
-            <li><a class="dropdown-item" href="../ReviewMyProduct/admin/signup_admin.php">ADMIN</a></li>
-          </ul>
-        </li>
+          
+          <li><a href="user/profile.php">MY ACCOUNT</a></li>
+        
           <li><a href="about.php">ABOUT US</a></li>
-          <li><a href="contact.php">Contact</a></li>
+          <li><a href="#">Contact</a></li>
 
         </ul>
       </div>

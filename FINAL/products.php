@@ -66,6 +66,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
+<<<<<<< HEAD
           <a class="nav-link "  href="index.php">HOME </a>
         </li>
         <li class="nav-item dropdown">
@@ -85,11 +86,17 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             <li><a class="dropdown-item" href="../signup.php">USER</a></li>
             <li><a class="dropdown-item" href="../admin/signup_admin.php">ADMIN</a></li>
           </ul>
-        </li>
+          <a class="nav-link "  href="../index.php">HOME </a>
+ </li>
+        
+            <li><a class="dropdown-item" href="../login.php">Login</a></li>
+            <li><a class="dropdown-item" href="../signup.php">Sign Up</a></li>
+          
         <li class="nav-item">
           <a class="nav-link" href="#">CONTACT</a>
         </li>
        
+
 
       </ul>
     </div>
@@ -101,11 +108,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
       <button class="btn btn-outline-success" type="submit">Search</button>
 </form>
 </nav>
-
-<img src="<?php echo $row2['item_image'] ?? "./assets/products/13.png"; ?>" alt="product1" class="img-fluid" style="width: 350px;"></br>
-<h3>NAME: <?php echo $row2['item_name'];?></h3></br>
-<h3>BRAND: <?php echo $row2['item_brand']; ?></h3></br>
-<h3>PRICE: Rs <?php echo $row2['item_price']; ?></h3></br>
+<a>
+<img src="<?php echo $row2['item_image'] ?? "./assets/products/13.png"; ?>" alt="product1" class="img-fluid center" style="width: 350px;"></br>
+<h3 style="color:#810CA6; "><?php echo $row2['item_name'];?></h3></br>
+<h3 style="color:#311CA6; "><?php echo $row2['item_brand']; ?></h3></br>
+</a>
 
 <div class="container p-2 my-4 bg-light text-white">
 <table class="table table-striped">
@@ -113,6 +120,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     <tr>
       <th scope="row"><h4>Store</h4></th>
       <th scope="row"><h4>Link</h4></th>
+      <th scope="row"><h4>Price</h4></th>
      </tr>
   </thead>
   <tbody>
@@ -133,6 +141,7 @@ while($rows1=$result1->fetch_assoc())
       <p><a href="<?php echo $rows1['reflink'];?>">
       <img src="<?php echo $src; ?>" width="80" height="100">
       </a></p></td>
+      <td><h5>Rs <?php echo $rows1['price']; ?></h5></td>
     </tr>
     
     <?php }
@@ -237,7 +246,7 @@ if($_SESSION['loggedin']==true){
 </div>
 <?php
 }
-include 'footer.php'
+include 'footer.php';
 ?>
 </body>
 </html>
