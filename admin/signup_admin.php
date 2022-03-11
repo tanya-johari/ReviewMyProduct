@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             $lname=$_POST["lname"];
             $adusername=$_POST["username"];
             if(!empty($_POST["username"])){
-              $sql = "Select * from admin where username ='$username'";
+              $sql = "Select * from admin where adminusername ='$username'";
               $result1 = mysqli_query($conn,$sql);
               $num = mysqli_num_rows($result1);
               if ($num == 1)

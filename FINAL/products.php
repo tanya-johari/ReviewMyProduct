@@ -59,7 +59,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="../index.php">ReviewMyProduct</a>
+    <a class="navbar-brand" href="../index.php">REVIEW.COM</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -73,8 +73,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             LOGIN
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="../ReviewMyProduct/login.php">USER</a></li>
-            <li><a class="dropdown-item" href=" ../ReviewMyProduct/admin/login_admin.php">ADMIN</a></li>
+            <li><a class="dropdown-item" href="../login.php">USER</a></li>
+            <li><a class="dropdown-item" href=" ../admin/login_admin.php">ADMIN</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -82,8 +82,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             SIGN UP
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="../ReviewMyProduct/signup.php">USER</a></li>
-            <li><a class="dropdown-item" href="../ReviewMyProduct/admin/signup_admin.php">ADMIN</a></li>
+            <li><a class="dropdown-item" href="../signup.php">USER</a></li>
+            <li><a class="dropdown-item" href="../admin/signup_admin.php">ADMIN</a></li>
           </ul>
         </li>
         <li class="nav-item">
