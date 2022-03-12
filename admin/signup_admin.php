@@ -71,6 +71,7 @@ $statusMsg = 'Please select an image file to upload.';
   <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
+  <a><img src="../img/favicon.png" alt="logo" width="50" height="50"/></a>
     <a class="navbar-brand" href="../index.php">ReviewMyProduct</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
