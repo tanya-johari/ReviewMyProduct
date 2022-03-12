@@ -2,11 +2,7 @@
 <?php
 include 'dashboard_home.php';
 include '../partials/connection.php';
-session_start();
-if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
-	header("location:/ReviewMyProduct/admin/login_admin.php");
-	exit;
-  }
+
   
 ?>
 
@@ -16,7 +12,8 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Change Password</title>
+	<title>Account- <?php echo $_SESSION['adminusername'] ?></title>
+	<link rel="icon" href="../img/favicon.png" sizes="32x32" type="image/png">
 </head>
 <body>
 <div class="grid_10">

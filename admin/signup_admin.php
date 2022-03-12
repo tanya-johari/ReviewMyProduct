@@ -57,6 +57,7 @@ $statusMsg = 'Please select an image file to upload.';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <title>Signup</title>
+    <link rel="icon" href="../img/favicon.png" sizes="32x32" type="image/png">
     <style>
          body {
           width: 100%;
@@ -84,13 +85,10 @@ $statusMsg = 'Please select an image file to upload.';
             LOGIN
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-<<<<<<< HEAD
+
             <li><a class="dropdown-item" href="../ReviewMyProduct/login.php">USER</a></li>
             <li><a class="dropdown-item" href="login_admin.php">ADMIN</a></li>
-=======
-            <li><a class="dropdown-item" href="../login.php">USER</a></li>
-            <li><a class="dropdown-item" href=" ../admin/login_admin.php">ADMIN</a></li>
->>>>>>> 2ba143435c8d7ae7fd1ad462ec90fa4a9d561240
+
           </ul>
         </li>
         <li class="nav-item dropdown">

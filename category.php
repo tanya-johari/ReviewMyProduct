@@ -11,6 +11,7 @@ $_SESSION['iid']=0;
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ReviewMyProduct</title>
+  <link rel="icon" href="img/favicon.png" sizes="32x32" type="image/png">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/icons.css">
   <link rel="stylesheet" href="css/responsee.css">
@@ -206,7 +207,7 @@ $_SESSION['iid']=0;
         <img src="img/headphones.jpg" class="icon-sli-equalizer text-size-60 text-white center margin-bottom-15"></img>
         <h3 class="text-strong text-size-20 text-line-height-1 margin-bottom-30 text-uppercase">HEADPHONES</h3>
       </a>
-      <a href="/" class="s-12 m-6 l-3 padding-2x vertical-center margin-bottom background-aqua">
+      <a href="FINAL/smartwatches.php" class="s-12 m-6 l-3 padding-2x vertical-center margin-bottom background-aqua">
         <br>
         <img src="img/HP.jpg" class="icon-sli-equalizer text-size-60 text-white center margin-bottom-15"></img>
         <h3 class="text-strong text-size-20 text-line-height-1 margin-bottom-30 text-uppercase">SMART WATCHES</h3>

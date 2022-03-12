@@ -45,6 +45,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $_GET['itemname'] ?></title>
+    <link rel="icon" href="../img/favicon.png" sizes="32x32" type="image/png">
     <!-- Bootstrap CDN -->
   
     <script src="https://kit.fontawesome.com/a720dc54e5.js" crossorigin="anonymous"></script>
@@ -59,33 +60,15 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="../index.php">REVIEW.COM</a>
+    <a class="navbar-brand" href="../index.php">ReviewMyProduct</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-<<<<<<< HEAD
-          <a class="nav-link "  href="index.php">HOME </a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            LOGIN
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="../login.php">USER</a></li>
-            <li><a class="dropdown-item" href=" ../admin/login_admin.php">ADMIN</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            SIGN UP
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="../signup.php">USER</a></li>
-            <li><a class="dropdown-item" href="../admin/signup_admin.php">ADMIN</a></li>
-          </ul>
+
+          
           <a class="nav-link "  href="../index.php">HOME </a>
  </li>
         

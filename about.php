@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ABOUT US</title>
+    <link rel="icon" href="img/favicon.png" sizes="32x32" type="image/png">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/responsee.css">
@@ -84,13 +85,9 @@
             
               <h4 class="text-size-10 margin-top-30 margin-bottom-10  text-dark">We provide a platform where people can rate and review services and products and the shops that sell them. It is consumer response - satisfied or not!
 
-<<<<<<< HEAD
-              <h2 class="text-size-20 margin-top-30 margin-bottom-10 text-strong text-uppercase text-dark">E-mail</h2>                
-              <p><a class="text-primary-hover" href="mailto:lavichadha.s1mca21@bvicam.in">helpreviewmyproduct@gmail.com</a></p>
-              <p><a class="text-primary-hover" href="#">office@reviewmyproduct.com</a></p>               
-=======
+
 On this site you will find real-life experiences and opinions voiced by people. We provide our users with the tools to easily find the items they are interested in, read what others have said about them and share their own experiences.
->>>>>>> d589ee106f748efe141c8d78ad640a50bb927e2a
+
 
 We believe consumers shape and change products and are the driving force behind innovation. In addition to the obvious value provided to the consumer, our unbiased user experiences also provide manufacturers and retailers insight into consumer trends.
 </h4>

@@ -1,3 +1,11 @@
+<?php 
+session_start();
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+  header("location:/ReviewMyProduct/admin/login_admin.php");
+  exit;
+}
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -9,7 +17,7 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 <title>Account- <?php echo $_SESSION['adminusername'] ?></title>
-
+<link rel="icon" href="../img/favicon.png" sizes="32x32" type="image/png">
 <style>
 body {
   font-family: "Lato", sans-serif;

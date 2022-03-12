@@ -4,7 +4,8 @@
 
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ABOUT US</title>
+    <title>Contact US</title>
+    <link rel="icon" href="img/favicon.png" sizes="32x32" type="image/png">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/responsee.css">
