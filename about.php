@@ -35,7 +35,9 @@
       <!-- Top Navigation -->
       <nav class="s-12 grid background-none background-primary-hightlight">
       <!-- logo -->
-      <a href="index.html" class="m-12 l-3 padding-2x logo">
+      <a>
+      <img src="img/favicon.png" alt="logo" width="50" height="50"/>
+      </a>
 
 
       </a>
