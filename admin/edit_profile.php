@@ -30,7 +30,20 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
 </div>';
     }
         else{ 
-            $statusMsg = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.'; 
+        $Email=$_POST["email"];
+        $fname=$_POST["fname"];
+        $lname=$_POST["lname"];
+        $usname=$_POST["adminusername"];
+        $phoneno=$_POST["phoneno"];
+        $dob=$_POST["dob"];
+        $gender=$_POST["gender"];
+        $update = "UPDATE admin SET fname='$fname',lname='$lname',email='$Email',phoneno='$phoneno',
+        dob='$dob',gender='$gender' where adminusername='$usname'";
+        $sql3=mysqli_query($conn,$update);
+        echo '<div class="alert alert-success alert-dismissable" id="flash-msg">
+<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+<h5><i class="icon fa fa-check"></i>Successfully Updated your Profile!</h5>
+</div>';
            } 
     }         
     }
