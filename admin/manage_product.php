@@ -34,8 +34,8 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Product</title>
-
+    <title>Account- <?php echo $_SESSION['adminusername'] ?></title>
+    <link rel="icon" href="../img/favicon.png" sizes="32x32" type="image/png">
 </head>
 <body>
 <div class="container p-2 my-4 bg-light text-white">

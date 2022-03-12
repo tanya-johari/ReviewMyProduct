@@ -1,9 +1,5 @@
 <?php 
-session_start();
-if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
-  header("location:/ReviewMyProduct/admin/login_admin.php");
-  exit;
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +7,8 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Profile</title>
+    
+    <link rel="icon" href="../img/favicon.png" sizes="32x32" type="image/png">
 </head>
 <body>
   <?php  

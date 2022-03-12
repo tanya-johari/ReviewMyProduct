@@ -1,4 +1,10 @@
-
+<?php 
+session_start();
+if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true){
+  header("location:/ReviewMyProduct/login.php");
+  exit;
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -11,7 +17,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
     <title>Account- <?php echo $_SESSION['username'] ?></title>
-
+    <link rel="icon" href="../img/favicon.png" sizes="32x32" type="image/png">
     <style>
 body {
   font-family: "Lato", sans-serif;

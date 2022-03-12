@@ -6,6 +6,8 @@ include "dashboard_home.php";
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Account- <?php echo $_SESSION['adminusername'] ?></title>
+<link rel="icon" href="../img/favicon.png" sizes="32x32" type="image/png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -57,18 +59,28 @@ ADD Product
 <td> <input type="text" name="pnm"  ></td>
 </tr>
 <tr>
- <td> Price    </td>
-<td> <input type="text" name="pprice"  ></td>
+  
+ <td> Product Description    </td>
+<td> <textarea type="text" name="det"></textarea></td>
 </tr>
+
 <td> Category     </td>
 <td> <input type="text" name="cat"  ></td>
 </tr>
-<tr>
-
-	<td>
-	
+<tr>	
 	<button class="add_field_button">Add References </button>
-    
+    <div>
+		<label >Choose a Store </label>
+	<select id="store" name="store">
+		<option value="amazon">amazon</option>
+		<option value="flipkart">flipkart</option>
+		<option value="croma">croma</option>
+	</select></br>
+	<label>Add Link </label>
+	<textarea type="text" name="mytext"></textarea></br>
+	<label>Price </label>
+	<input type="text" name="price" required><a href="#" class="remove_field">Remove</a>
+</div>
 <div class="input_fields_wrap">
 
 </div>
@@ -97,8 +109,8 @@ $dst="../assets/products/".$v3.$fnm;
 $dst1="../assets/products/".$v3.$fnm;
 move_uploaded_file($_FILES["pimage"]["tmp_name"],$dst);
 
-mysqli_query($conn,"INSERT INTO `product` (`item_id`,`item_brand`, `item_name`, `item_price`, `category`, `item_image`) 
-VALUES('','$_POST[bnm]','$_POST[pnm]','$_POST[pprice]', '$_POST[cat]', '$dst1' )");
+mysqli_query($conn,"INSERT INTO `product` (`item_id`,`item_brand`, `item_name`, `category`, `details`, `item_image`) 
+VALUES('','$_POST[bnm]','$_POST[pnm]', '$_POST[cat]', '$_POST[det]', '$dst1'  )");
 
 mysqli_query($conn,"INSERT INTO `itemref` ( `item_id`, `store`, `reflink`, `price`) 
 VALUES((SELECT item_id FROM product where item_name='$_POST[pnm]'), '$_POST[store]', '$_POST[mytext]', '$_POST[price]')");

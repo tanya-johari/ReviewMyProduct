@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ABOUT US</title>
+    <link rel="icon" href="img/favicon.png" sizes="32x32" type="image/png">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/responsee.css">
@@ -29,9 +30,7 @@
   -->
 
  <body class="size-1520 primary-color-red background-dark">
-    <!-- PREMIUM FEATURES BUTTON -->
-  	<a target="_blank" class="hide-s" href="../template/bricker-premium-responsive-business-template/" style="position:fixed;top:120px;right:-14px;z-index:10;"><img src="img/premium-features.png" alt=""></a>
-    <!-- HEADER -->
+   
     <header class="grid">
       <!-- Top Navigation -->
       <nav class="s-12 grid background-none background-primary-hightlight">
@@ -62,7 +61,7 @@
           </ul>
         </li>
           <li><a href="about.php">ABOUT US</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="contact-form.php">Contact</a></li>
 
         </ul>
       </div>
@@ -80,19 +79,34 @@
         
         <!-- SECTION 1 -->
         <section class="grid margin-bottom-20">
-          <div class="m-12 l-7 center">
+          <div class="m-18 l-10 center">
             <!-- Contact Information-->
-            <div class="s-12 padding-2x background-white text-center">                  
+            <div class="s-20 padding-2x background-white text-left">                  
             
+              <h4 class="text-size-10 margin-top-30 margin-bottom-10  text-dark">We provide a platform where people can rate and review services and products and the shops that sell them. It is consumer response - satisfied or not!
 
-              <h2 class="text-size-20 margin-top-30 margin-bottom-10 text-strong text-uppercase text-dark">E-mail</h2>                
-              <p><a class="text-primary-hover" href="mailto:lavichadha.s1mca21@bvicam.in">lavichadha.s1mca21@bvicam.in</a></p>
-              <p><a class="text-primary-hover" href="#">office@sampledomain.com</a></p>               
 
-              <h2 class="text-size-20 margin-top-30 margin-bottom-10 text-strong text-uppercase text-dark">Phone Numbers</h2>                
-              <p>0800 4521 800 50</p>
-              <p>0450 5896 625 16</p>
-              <p>0798 6546 465 </p>               
+On this site you will find real-life experiences and opinions voiced by people. We provide our users with the tools to easily find the items they are interested in, read what others have said about them and share their own experiences.
+
+
+We believe consumers shape and change products and are the driving force behind innovation. In addition to the obvious value provided to the consumer, our unbiased user experiences also provide manufacturers and retailers insight into consumer trends.
+</h4>
+<h3 class="text-size-20  text-strong  text-dark">Our objectives</h3>
+<h4 class="text-size-10 margin-top-30 margin-bottom-10 text-strong text-dark ">
+  <ul>
+
+<li>To provide unbiased user opinions so people can make better informed shopping choices.</li>
+<li>To provide the platform where consumers can share their personal experiences using a product, service or shop.</li>
+<li>Drive public opinion to influence retailers and manufacturers to provide higher quality products and better service.</li>
+</ul></h4>
+              <h2 class="text-size-20 margin-top-30 margin-bottom-10 text-strong text-uppercase text-center text-dark">E-mail</h2>                
+              <p align="center"><a class="text-primary-hover" href="mailto:helpreviewmyproduct@gmail.com">helpreviewmyproduct@gmail.com</a></p>
+                           
+
+              <h2 class="text-size-20 margin-top-30 margin-bottom-10 text-strong text-uppercase text-center text-dark">Phone Numbers</h2>                
+              <p align="center">0800 4521 800 50</p>
+              <p align="center">0450 5896 625 16</p>
+              <p align="center">0798 6546 465 </p>               
             </div>
 
            

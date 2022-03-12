@@ -38,6 +38,7 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
     <link rel="stylesheet" href="css/styles.css">
 
     <title>LOGIN</title>
+    <link rel="icon" href="img/favicon.png" sizes="32x32" type="image/png">
     <style>
          body {
           width: 100%;
@@ -79,7 +80,7 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">CONTACT</a>
+          <a class="nav-link" href="contact-form.php">CONTACT</a>
         </li>
        
 
