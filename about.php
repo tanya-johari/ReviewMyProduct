@@ -99,8 +99,8 @@ We believe consumers shape and change products and are the driving force behind 
 <li>Drive public opinion to influence retailers and manufacturers to provide higher quality products and better service.</li>
 </ul></h4>
               <h2 class="text-size-20 margin-top-30 margin-bottom-10 text-strong text-uppercase text-center text-dark">E-mail</h2>                
-              <p align="center"><a class="text-primary-hover" href="mailto:lavichadha.s1mca21@bvicam.in">lavichadha.s1mca21@bvicam.in</a></p>
-              <p align="center"><a class="text-primary-hover" href="#">office@sampledomain.com</a></p>               
+              <p align="center"><a class="text-primary-hover" href="mailto:helpreviewmyproduct@gmail.com">helpreviewmyproduct@gmail.com</a></p>
+                           
 
               <h2 class="text-size-20 margin-top-30 margin-bottom-10 text-strong text-uppercase text-center text-dark">Phone Numbers</h2>                
               <p align="center">0800 4521 800 50</p>
