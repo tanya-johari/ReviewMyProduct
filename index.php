@@ -47,10 +47,10 @@ $_SESSION['iid']=0;
     <!-- Top Navigation -->
     <nav class="s-12 grid background-none background-primary-hightlight">
       <!-- logo -->
-      <a href="index.html" class="m-12 l-3 padding-2x logo">
-
-
+      <a>
+      <img src="img/favicon.png" alt="logo" width="50" height="50"/>
       </a>
+      
       <div class="top-nav s-12 l-9">
       
         <ul class="top-ul right chevron">
@@ -79,75 +79,14 @@ $_SESSION['iid']=0;
 
         </ul>
       </div>
-    </nav>
+     </nav>
   </header>
 
   <br>
   <br>
 
 
-  <!-- MAIN -->
-  <main role="main">
-    <!-- TOP SECTION -->
-    <section class="grid">
-      <!-- Main Carousel -->
-      <div
-        class="s-12 margin-bottom carousel-fade-transition owl-carousel carousel-main carousel-nav-white carousel-hide-arrows background-dark">
-        <div class="item background-image" style="background-image:url(img/carousel-01.jpg)">
-          <center>
-            <button type="submit"
-              style="height: 45px ;width: 75px; color:darkblue; background-color: burlywood; font-weight: bold;"><i
-                class="fa fa-search">
-                SEARCH</i></button>
-            <br>
-            <br>
-            <form action="/action_page.php">
-              <input type="text" style="height: 45px ;width: 260px" placeholder="Search.." name="search">
-
-            </form>
-          </center>
-        </div>
-        <div class="item background-image" style="background-image:url(img/carousel-02.jpg)">
-          <center>
-            <button type="submit"
-              style="height: 45px ;width: 75px; color:darkblue; background-color: burlywood; font-weight: bold;"><i
-                class="fa fa-search">
-                SEARCH</i></button>
-
-
-
-            <br>
-            <br>
-
-            <form action="/action_page.php">
-              <input type="text" style="height: 45px ;width: 260px" placeholder="Search.." name="search">
-
-
-            </form>
-          </center>
-        </div>
-        <div class="item background-image" style="background-image:url(img/carousel-03.jpg)">
-          <center>
-            <button type="submit"
-              style="height: 45px ;width: 75px; color:darkblue; background-color: burlywood; font-weight: bold;"><i
-                class="fa fa-search">
-                SEARCH</i></button>
-            <br>
-
-            <br>
-            <form action="/action_page.php">
-              <input type="text" style="height: 45px ;width: 260px" placeholder="Search.." name="search">
-
-            </form>
-          </center>
-        </div>
-      </div>
-    </section>
-
-    <br>
-    <br>
-    <section class=" margin-bottom background-dark">
-      <center>
+       <center>
       <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
