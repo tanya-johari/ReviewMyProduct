@@ -102,6 +102,7 @@ $servername='localhost';
       if(!$conn){
           die('Could not Connect MySql Server:' .mysql_error());
         }
+        
 if(!empty($_POST["send"])) {
 $name = $_POST["name"];
 $email = $_POST["email"];
