@@ -86,7 +86,7 @@
             
               <h4 class="text-size-10 margin-top-30 margin-bottom-10  text-dark">We provide a platform where people can rate and review services and products and the shops that sell them. It is consumer response - satisfied or not!
 
-On this site you will find real-life experiences and opinions voiced by Australians. We provide our users with the tools to easily find the items they are interested in, read what others have said about them and share their own experiences.
+On this site you will find real-life experiences and opinions voiced by people. We provide our users with the tools to easily find the items they are interested in, read what others have said about them and share their own experiences.
 
 We believe consumers shape and change products and are the driving force behind innovation. In addition to the obvious value provided to the consumer, our unbiased user experiences also provide manufacturers and retailers insight into consumer trends.
 </h4>
@@ -94,7 +94,7 @@ We believe consumers shape and change products and are the driving force behind 
 <h4 class="text-size-10 margin-top-30 margin-bottom-10 text-strong text-dark ">
   <ul>
 
-<li>To provide unbiased user opinions so Australians can make better informed shopping choices.</li>
+<li>To provide unbiased user opinions so people can make better informed shopping choices.</li>
 <li>To provide the platform where consumers can share their personal experiences using a product, service or shop.</li>
 <li>Drive public opinion to influence retailers and manufacturers to provide higher quality products and better service.</li>
 </ul></h4>
