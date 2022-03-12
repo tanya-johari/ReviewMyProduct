@@ -29,9 +29,7 @@
   -->
 
  <body class="size-1520 primary-color-red background-dark">
-    <!-- PREMIUM FEATURES BUTTON -->
-  	<a target="_blank" class="hide-s" href="../template/bricker-premium-responsive-business-template/" style="position:fixed;top:120px;right:-14px;z-index:10;"><img src="img/premium-features.png" alt=""></a>
-    <!-- HEADER -->
+   
     <header class="grid">
       <!-- Top Navigation -->
       <nav class="s-12 grid background-none background-primary-hightlight">
@@ -62,7 +60,7 @@
           </ul>
         </li>
           <li><a href="about.php">ABOUT US</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="contact-form.php">Contact</a></li>
 
         </ul>
       </div>
@@ -86,8 +84,8 @@
             
 
               <h2 class="text-size-20 margin-top-30 margin-bottom-10 text-strong text-uppercase text-dark">E-mail</h2>                
-              <p><a class="text-primary-hover" href="mailto:lavichadha.s1mca21@bvicam.in">lavichadha.s1mca21@bvicam.in</a></p>
-              <p><a class="text-primary-hover" href="#">office@sampledomain.com</a></p>               
+              <p><a class="text-primary-hover" href="mailto:lavichadha.s1mca21@bvicam.in">helpreviewmyproduct@gmail.com</a></p>
+              <p><a class="text-primary-hover" href="#">office@reviewmyproduct.com</a></p>               
 
               <h2 class="text-size-20 margin-top-30 margin-bottom-10 text-strong text-uppercase text-dark">Phone Numbers</h2>                
               <p>0800 4521 800 50</p>

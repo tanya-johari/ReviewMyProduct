@@ -287,6 +287,18 @@ ALTER TABLE `reviews`
   ADD CONSTRAINT `con2` FOREIGN KEY (`userid`) REFERENCES `usertable` (`userid`);
 COMMIT;
 
+CREATE TABLE `contacts_list` (
+  `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(50) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `Message` text NOT NULL,
+  `sent_date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+

@@ -70,7 +70,7 @@ $_SESSION['iid']=0;
           </ul>
         </li>
           <li><a href="about.php">ABOUT US</a></li>
-          <li><a href="contact.php">Contact</a></li>
+          <li><a href="contact-form.php">Contact</a></li>
 
         </ul>
       </div>

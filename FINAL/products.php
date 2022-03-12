@@ -73,7 +73,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             <li><a class="dropdown-item" href="../signup.php">Sign Up</a></li>
           
         <li class="nav-item">
-          <a class="nav-link" href="#">CONTACT</a>
+          <a class="nav-link" href="../contact-form.php">CONTACT</a>
         </li>
        
 
