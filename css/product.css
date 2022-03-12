@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    height: 109vh;
+}
+.container{
+    top:30px;
+}
+.f2{
+    width: 400px;
+    margin-top: 40px;
+    size: 290px;
+    float: right;
+    margin-right: 60px;
+    color: #7e1251;
+}
+.f1 {
+    float: left;
+    margin-top: 30px;
+    width: 500px;
+    margin-left: 30px;
+}
+.f1 .col-md-5{
+    margin-top: 5px;
+}
+.btn btn-primary{
+    left:600px;
+}

@@ -54,19 +54,19 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/product.css">
 
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="../index.php">REVIEW.COM</a>
+    <a class="navbar-brand" href="../index.php">ReviewMyProduct</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-<<<<<<< HEAD
           <a class="nav-link "  href="index.php">HOME </a>
         </li>
         <li class="nav-item dropdown">
@@ -74,8 +74,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             LOGIN
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="../login.php">USER</a></li>
-            <li><a class="dropdown-item" href=" ../admin/login_admin.php">ADMIN</a></li>
+            <li><a class="dropdown-item" href="../ReviewMyProduct/login.php">USER</a></li>
+            <li><a class="dropdown-item" href="login_admin.php">ADMIN</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -86,17 +86,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             <li><a class="dropdown-item" href="../signup.php">USER</a></li>
             <li><a class="dropdown-item" href="../admin/signup_admin.php">ADMIN</a></li>
           </ul>
-          <a class="nav-link "  href="../index.php">HOME </a>
- </li>
-        
-            <li><a class="dropdown-item" href="../login.php">Login</a></li>
-            <li><a class="dropdown-item" href="../signup.php">Sign Up</a></li>
-          
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="#">CONTACT</a>
         </li>
        
-
 
       </ul>
     </div>
@@ -108,11 +102,18 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
       <button class="btn btn-outline-success" type="submit">Search</button>
 </form>
 </nav>
-<a>
+<div class=f1>
 <img src="<?php echo $row2['item_image'] ?? "./assets/products/13.png"; ?>" alt="product1" class="img-fluid center" style="width: 350px;"></br>
-<h3 style="color:#810CA6; "><?php echo $row2['item_name'];?></h3></br>
-<h3 style="color:#311CA6; "><?php echo $row2['item_brand']; ?></h3></br>
-</a>
+<div class="col-md-5">
+<h4 style="color:#810CA6; "><?php echo $row2['item_name'];?></h4></br></div>
+<div class="col-md-5">
+<h4 style="color:#311CA6; "><?php echo $row2['item_brand']; ?></h4></br></div>
+</div>
+<div class=f2>
+  <h3 style="color:#336296">SPECFICATIONS:</h3>
+<h5><?php echo $row2['description']; ?></h5></br>
+</div>
+
 
 <div class="container p-2 my-4 bg-light text-white">
 <table class="table table-striped">
