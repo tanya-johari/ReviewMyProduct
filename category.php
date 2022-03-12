@@ -57,7 +57,7 @@ $_SESSION['iid']=0;
           <li><a href="user/profile.php">MY ACCOUNT</a></li>
         
           <li><a href="about.php">ABOUT US</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="contact-form.php">Contact</a></li>
 
         </ul>
       </div>

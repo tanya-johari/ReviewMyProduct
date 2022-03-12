@@ -68,28 +68,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-<<<<<<< HEAD
-          <a class="nav-link "  href="index.php">HOME </a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            LOGIN
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="../ReviewMyProduct/login.php">USER</a></li>
-            <li><a class="dropdown-item" href="login_admin.php">ADMIN</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            SIGN UP
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="../signup.php">USER</a></li>
-            <li><a class="dropdown-item" href="../admin/signup_admin.php">ADMIN</a></li>
-          </ul>
-        </li>
-=======
 
           
           <a class="nav-link "  href="../index.php">HOME </a>
@@ -98,7 +76,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             <li><a class="dropdown-item" href="../login.php">Login</a></li>
             <li><a class="dropdown-item" href="../signup.php">Sign Up</a></li>
           
->>>>>>> 51bcb1a01ba74d0de99de78ec619eee06d8c8a44
         <li class="nav-item">
           <a class="nav-link" href="../contact-form.php">CONTACT</a>
         </li>
