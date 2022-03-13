@@ -101,27 +101,27 @@ $_SESSION['iid']=0;
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-        <h2 class="s-12 l-6 center text-thin text-size-30 text-white text-uppercase margin-bottom-30">
-          <b>CATEGORIES</b>
-        </h2>
+        
       </center>
 
       <center>
-        <p class="s-12 l-6 center">
-          <span>
-            MOBILES
-            LAPTOP
-            HEADPHONES
-            SMART WATCHES
+        
+        <h2><b>KNOW BETTER, CHOOSE BETTER.</b></h2>
+            <h6><i>Reviews by people like you.</i></h6>
+            <p class="s-12 l-6 center">
+            <span>
             It's a good idea to headline each category and to write succinct explanations for each part of the
             phone; a potential buyer won't linger too long for the advice. Talk about what you like about the smartphone
             you're reviewing, how easy it is to use, what features in particular are of worthy note.
           </span>
         </p>
+</br>
+        <h2 class="s-12 l-6 center text-thin text-size-30 text-white text-uppercase margin-bottom-30">
+          <b>CATEGORIES</b>
+        </h2>
       </center>
     </section>
-    <BR>
-    <BR>
+    
     <!-- SECTION 1 -->
     <section class="grid margin text-center">
 
