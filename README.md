@@ -11,12 +11,12 @@ ReviewMyProduct is a [MINOR project] with both admin and user layouts.
 
 2. Open XAMPP Control panal and start [apache] and [mysql] .
 
-3. Download project from github(https://github.com/tanya-johari/ReviewMyProduct)  
+3. Download project from github(https://github.com/tanya-johari/ReviewMyProduct.git)  
     OR follow gitbash commands
     
     i>cd C:\\xampp\htdocs\
     
-    ii>git clone https://github.com/tanya-johari/ReviewMyProduct
+    ii>git clone https://github.com/tanya-johari/ReviewMyProduct.git
     
 4. extract files in C:\\xampp\htdocs\.
 
