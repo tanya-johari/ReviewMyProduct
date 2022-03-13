@@ -18,9 +18,6 @@
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>  
 
 
-
-<meta charset="utf-8">
-<title>Contact Form in PHP</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <style>
 .container {

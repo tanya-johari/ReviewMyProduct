@@ -13,6 +13,8 @@ include "dashboard_home.php";
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+
+<body>
 <script>
 	$(document).ready(function() {
 	var max_fields      = 10; //maximum input boxes allowed
@@ -32,8 +34,7 @@ include "dashboard_home.php";
 		e.preventDefault(); $(this).parent('div').remove(); x--;
 	})
 });
-	</script>
-<body>  
+	</script>  
 </body>
 </html> 
 <?php
@@ -79,7 +80,7 @@ ADD Product
 	<label>Add Link </label>
 	<textarea type="text" name="mytext"></textarea></br>
 	<label>Price </label>
-	<input type="text" name="price" required><a href="#" class="remove_field">Remove</a>
+	<input type="text" name="price" required>
 </div>
 <div class="input_fields_wrap">
 
@@ -109,7 +110,7 @@ $dst="../assets/products/".$v3.$fnm;
 $dst1="../assets/products/".$v3.$fnm;
 move_uploaded_file($_FILES["pimage"]["tmp_name"],$dst);
 
-mysqli_query($conn,"INSERT INTO `product` (`item_id`,`item_brand`, `item_name`, `category`, `details`, `item_image`) 
+mysqli_query($conn,"INSERT INTO `product` (`item_id`,`item_brand`, `item_name`, `category`, `description`, `item_image`) 
 VALUES('','$_POST[bnm]','$_POST[pnm]', '$_POST[cat]', '$_POST[det]', '$dst1'  )");
 
 mysqli_query($conn,"INSERT INTO `itemref` ( `item_id`, `store`, `reflink`, `price`) 
