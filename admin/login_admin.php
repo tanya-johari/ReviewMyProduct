@@ -28,10 +28,10 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="../css/styles.css">
     <title>LOGIN</title>
     <link rel="icon" href="../img/favicon.png" sizes="32x32" type="image/png">
     <style>
@@ -40,7 +40,7 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
             background-image: url("/ReviewMyProduct/img/1.jpg");
             background-position: center;
             background-size: cover;
-            height: 100%;
+            height: 109vh;
          }
       </style>
   </head>
@@ -106,15 +106,23 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>';}
     ?>
+    <h1 class="text-center" style="color:#ff7200;">Welcome To ReviewMyProduct</h1>
+    <div class="content">
+      <h2>Find Trends OR <br> <span>Make Them</span></h2>
+      <p class="par">ReviewMyProduct is the best platform to turn your likes 
+        into the Trends. But as admin its our responsiblity to make our user comfortable and maintain records.</p>
+
+        <button class="cn"><a href="signup_admin.php">JOIN US</a></button>
+    </div>  
     <div class="container">
-        <h1 class="text-center">Welcome Back to ReviewMyProduct</h1>
+        <h3> LOGIN HERE: </h3>
         <form action="../admin/login_admin.php" method="post">
-        <div class="col-md-4">
-        <label for="username" class="form-label" style="color:#ff7200;">Username : </label>
+        <div class="col-md-6">
+        <label for="username" class="form-label">Username : </label>
         <input type="text" class="form-control" id="adusername" name="adusername" >
         </div>
-        <div class="col-md-4">
-        <label for="password" class="form-label" style="color:#ff7200;">Password : </label>
+        <div class="col-md-6">
+        <label for="password" class="form-label">Password : </label>
         <input type="password" class="form-control" id="passwrd" name="passwrd">
         </div>
         <br>

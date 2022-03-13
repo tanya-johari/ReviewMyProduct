@@ -12,15 +12,23 @@
     top:30px;
 }
 .form2{
-    width: 554px;
+    width: 465px;
+    height: 300px;
     margin-top: 40px;
     size: 290px;
     float: right;
+    padding-left: 100px;
 }
 .form1 {
     float: left;
-    margin-top: 100%;
-    width: 400px;
+    height: 300px;
+    padding-left: 90px;
+    margin-top: 40px;
+    width: 465px;
+}
+.f3{
+    padding-top: 450px;
+    padding-left: 350px;
 }
 .form1 .col-md-5{
     margin-top: 10px;

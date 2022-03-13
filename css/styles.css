@@ -9,7 +9,7 @@
     height: 109vh;
 }
 .content{
-    width: 600px;
+    width: 435px;
     float: left;
     left: 50px;
     height: auto;
@@ -58,11 +58,12 @@
 .container{
     color: aqua;
     float: right;
-    width: 600px;
+    width: 500px;
     size: 300px;
     margin-top: 60px;
+    padding-left: 75px;
 }
-.container .col-md-5 label{
+.container .col-md-6 label{
     margin-top: 10px;
     text-size-adjust: 100px;
 }
