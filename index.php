@@ -129,7 +129,7 @@ $_SESSION['iid']=0;
             <p class="s-12 l-6 center">
             <span>
             It's a good idea to headline each category and to write succinct explanations for each part of the
-            phone; a potential buyer won't linger too long for the advice. Talk about what you like about the smartphone
+            product; a potential buyer won't linger too long for the advice. Talk about what you like about the products
             you're reviewing, how easy it is to use, what features in particular are of worthy note.
           </span>
         </p>
