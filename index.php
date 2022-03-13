@@ -181,5 +181,15 @@ $_SESSION['iid']=0;
     <script type="text/javascript" src="js/template-scripts.js"></script>
 
 </body>
+</br>
+<h5 align="center">
+© <?php echo date("Y"); ?> 
+</br>
+Made by : <a href="https://github.com/tanya-johari" style="color:orange;"> Tanya Johari </a>
+<a href="https://github.com/YesVishakha" style="color:yellow;"> Vishakha Yadav </a>
+<a href="https://github.com/lavi-chadha" style="color:lightblue;"> Lavi Chadha </a>
+</br>
+</br>
 
+</h5>
 </html>
