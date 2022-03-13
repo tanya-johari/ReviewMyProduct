@@ -55,16 +55,16 @@ $statusMsg = 'Please select an image file to upload.';
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="../css/signup.css">
     <title>Signup</title>
     <link rel="icon" href="../img/favicon.png" sizes="32x32" type="image/png">
     <style>
          body {
           width: 100%;
-            background-image: url("/ReviewMyProduct/img/1.jpg");
+            background-image: url("/ReviewMyProduct/img/4.jpeg");
             background-position: center;
             background-size: cover;
-            height: 135vh;
+            height: 130vh;
          }
       </style>
   </head>
@@ -87,10 +87,8 @@ $statusMsg = 'Please select an image file to upload.';
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-
             <li><a class="dropdown-item" href="../ReviewMyProduct/login.php">USER</a></li>
             <li><a class="dropdown-item" href="login_admin.php">ADMIN</a></li>
-
 
           </ul>
         </li>
@@ -116,7 +114,8 @@ $statusMsg = 'Please select an image file to upload.';
     <form class="d-flex">
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success" type="submit">Search</button>
-</form>
+    </form>
+  </div>
 </nav>
     <?php
     if($err){
@@ -137,6 +136,7 @@ $statusMsg = 'Please select an image file to upload.';
     <div class="container">
         <h1 class="text-center" style="color:#ff7200;">Welcome To ReviewMyProduct</h1>
         <form action="/ReviewMyProduct/admin/signup_admin.php" method="post" enctype="multipart/form-data">
+        <div class="form1">
         <div class="col-md-6">
         <label style="color:#ff7200;" >Select profile photo</label>
         <input type="file" name="image">
@@ -157,6 +157,8 @@ $statusMsg = 'Please select an image file to upload.';
         <label for="username" class="form-label" style="color:#ff7200;">Username</label>
         <input type="text" class="form-control" id="username" name="username" required>
         </div>
+        </div>
+    <div class="form2">
         <div class="col-md-6">
         <label for="phoneno" class="form-label" style="color:#ff7200;">Mobile Number</label>
         <input type="tel" class="form-control" id="phoneno" name="phoneno" pattern="[6789][0-9]{9}" title="Please enter valid phone number" required>
@@ -183,12 +185,14 @@ $statusMsg = 'Please select an image file to upload.';
         <div id="emailHelp" class="form-text">Make sure to enter the same Password.</div>
         </div>
         <br>
-        <div class="col-md-6">
+        <br>
+    </div>
+    <div class="f3">
         <input type="checkbox" class="form-check-input" id="exampleCheck1">
         <label class="form-check-label" for="exampleCheck1" style="color:#ff7200;">All Entered Data is correct</label>
-        </div>
         <br>
         <button type="submit" class="btn btn-primary">Sign Up</button>
+    </div>
         </form>
     </div>
     <!-- Optional JavaScript; choose one of the two! -->

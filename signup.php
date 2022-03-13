@@ -134,33 +134,33 @@ echo $statusMsg;
         <h1 class="text-center" style="color:#ff7200;">Welcome To ReviewMyProduct</h1>
         <form action="/ReviewMyProduct/signup.php" method="post" enctype="multipart/form-data">
         <div class="form1">
-        <div class="col-md-5">
+        <div class="col-md-6">
         <label style="color:#ff7200;">Select profile photo * :</label>
         <input type="file" name="image" required>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-6">
         <label for="email" class="form-label" style="color:#ff7200;">Email-id * :</label>
         <input type="text" class="form-control" id="email" name=email aria-describedby="emailHelp" placeholder="Enter Email Id Here" required>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-6">
         <label for="name" class="form-label" style="color:#ff7200;">Name * :</label>
         <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name Here" required>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-6">
         <label for="username" class="form-label" style="color:#ff7200;">Username * :</label>
         <input type="text" class="form-control" id="username" name="username" placeholder="Enter UserName Here" required>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-6">
         <label for="phoneno" class="form-label" style="color:#ff7200;">Mobile Number * :</label>
         <input type="tel" class="form-control" id="phoneno" name="phoneno" placeholder="Enter Phone no Here" required>
         </div>
     </div>
     <div class="form2">
-        <div class="col-md-5">
+        <div class="col-md-6">
         <label for="dob" class="form-label" style="color:#ff7200;">Date of Birth * :</label>
         <input type="date" class="form-control" id="dob" name="dob" min="1960-01-01" max="2011-12-31" placeholder="Select DOB " required>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-6">
         <label for="gender" class="form-label" style="color:#ff7200;">Gender (optional) :</label>
         <select id="gender" name="gender" class="form-select">
         <option selected>selected</option>
@@ -168,11 +168,11 @@ echo $statusMsg;
         <option value="female">Female</option>
         </select>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-6">
         <label for="password" class="form-label" style="color:#ff7200;">Password * :</label>
         <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password Here" required>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-6">
         <label for="cpassword" class="form-label" style="color:#ff7200;">Confirm Password * :</label>
         <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Confirm password" required>
         <div id="emailHelp" class="form-text">Make sure to enter the same Password.</div>
@@ -180,13 +180,15 @@ echo $statusMsg;
         <br>
         <br>
     </div>
-        <div class="col-md-5">
+    <div class="f3">
+        <div class="col-md-6">
         <input type="checkbox" class="form-check-input" id="exampleCheck1" style="color:#ff7200;">
         <label class="form-check-label" for="exampleCheck1" style="color:#ff7200;">All Entered Data is correct</label>
         </div>
         <br>
         <button type="submit" class="btn btn-primary" style="color:#ffffff;">Sign Up</button>
-        </form>
+    </div>  
+      </form>
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
