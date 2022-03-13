@@ -18,9 +18,6 @@
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>  
 
 
-
-<meta charset="utf-8">
-<title>Contact Form in PHP</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <style>
 .container {
@@ -60,7 +57,9 @@ padding: .375rem .75rem;
       <!-- Top Navigation -->
       <nav class="s-12 grid background-none background-primary-hightlight">
       <!-- logo -->
-      <a href="index.html" class="m-12 l-3 padding-2x logo">
+      <a>
+      <img src="img/favicon.png" alt="logo" width="50" height="50"/>
+      </a>
 
 
       </a>
@@ -111,11 +110,13 @@ $phone = $_POST["phone"];
 $subject = $_POST["subject"];
 $message = $_POST["message"];
 // Recipient email
-$toMail = "helpreviewmyproduct@gmail.com";
+$toMail = $email;
+$frommail = "helpreviewmyproduct@gmail.com";
+$answer = "Dear " .$name. ", \r\n Thank You so much ! We'll soon get back to you.";
 // Build email header
-$header = "From: " . $name . "<". $email .">\r\n";
+$header = "From: ReviewMyProduct <".$frommail.">\r\n";
 // Send email
-if(mail($toMail, $subject, $message, $header)) {
+if(mail($toMail, $subject, $answer, $header)) {
 // Store contactor data in database
 $sql = $conn->query("INSERT INTO contacts_list(name, email, phone, subject, message, sent_date)
 VALUES ('{$name}', '{$email}', '{$phone}', '{$subject}', '{$message}', now())");
@@ -221,4 +222,13 @@ form.submit();
 });    
 </script>
 </body>
+</br>
+<h5 align="center">
+© <?php echo date("Y"); ?> 
+</br>
+Made by : <a href="https://github.com/tanya-johari" style="color:orange;"> Tanya Johari </a>
+<a href="https://github.com/YesVishakha" style="color:yellow;"> Vishakha Yadav </a>
+<a href="https://github.com/lavi-chadha" style="color:lightblue;"> Lavi Chadha </a>
+</br>
+</br>
 </html>

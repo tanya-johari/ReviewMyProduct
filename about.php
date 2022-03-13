@@ -35,7 +35,9 @@
       <!-- Top Navigation -->
       <nav class="s-12 grid background-none background-primary-hightlight">
       <!-- logo -->
-      <a href="index.html" class="m-12 l-3 padding-2x logo">
+      <a>
+      <img src="img/favicon.png" alt="logo" width="50" height="50"/>
+      </a>
 
 
       </a>
@@ -113,11 +115,15 @@ We believe consumers shape and change products and are the driving force behind 
           </div>                  
 
         </section>
-      </main>
-      
-       
-    
-        
-     
+      </main> 
    </body>
+   </br>
+<h5 align="center">
+© <?php echo date("Y"); ?> 
+</br>
+Made by : <a href="https://github.com/tanya-johari" style="color:orange;"> Tanya Johari </a>
+<a href="https://github.com/YesVishakha" style="color:yellow;"> Vishakha Yadav </a>
+<a href="https://github.com/lavi-chadha" style="color:lightblue;"> Lavi Chadha </a>
+</br>
+</br>
 </html>

@@ -43,7 +43,7 @@
           <a class="nav-link" href="../signup.php">SIGNUP</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">CONTACT</a>
+          <a class="nav-link" href="../contact-form.php">CONTACT</a>
         </li>
        
 
