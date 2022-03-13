@@ -3,7 +3,7 @@
 # ReviewMyProduct
 
 
-ReviewMyProduct is a [DBMS project] with both admin and user layouts.
+ReviewMyProduct is a [MINOR project] with both admin and user layouts.
 
 # Installation
 
