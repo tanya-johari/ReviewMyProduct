@@ -53,7 +53,7 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
   <a><img src="img/favicon.png" alt="logo" width="50" height="50"/></a>
-     <a class="navbar-brand" href="../index.php">ReviewMyProduct</a>
+     <a class="navbar-brand" href="index.php">ReviewMyProduct</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -133,7 +133,12 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
         </div>
         <br>
         <button type="submit" class="btn btn-primary">LOGIN</button>
+    </br>
+    </br>
+        
         </form>
+        <button type="submit" class="btn btn-primary btn-lg float-right" onclick="window.location.href='forgot_pass.php'">Forgot Password</button>
+
     </div>
     <!-- Optional JavaScript; choose one of the two! -->
 
