@@ -1,4 +1,13 @@
-# SEM 1 MINOR PROJECT
+# SEM 1 MINOR PROJECT 
+<h3 align="center">
+
+</br>
+Made by : <a href="https://github.com/tanya-johari" style="color:orange;"> Tanya Johari </a>
+<a href="https://github.com/YesVishakha" style="color:yellow;"> Vishakha Yadav </a>
+<a href="https://github.com/lavi-chadha" style="color:lightblue;"> Lavi Chadha </a>
+</br>
+</h3>
+<img src="img\favicon.png" alt="logo" width="90px" height="90px"/> 
 
 # ReviewMyProduct
 
