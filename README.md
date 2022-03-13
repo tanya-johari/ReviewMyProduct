@@ -1,9 +1,18 @@
-# SEM 1 MINOR PROJECT
+# SEM 1 MINOR PROJECT 
+<h3 align="center">
+
+</br>
+Made by : <a href="https://github.com/tanya-johari" style="color:orange;"> Tanya Johari </a>
+<a href="https://github.com/YesVishakha" style="color:yellow;"> Vishakha Yadav </a>
+<a href="https://github.com/lavi-chadha" style="color:lightblue;"> Lavi Chadha </a>
+</br>
+</h3>
+<img src="img\favicon.png" alt="logo" width="90px" height="90px"/> 
 
 # ReviewMyProduct
 
 
-ReviewMyProduct is a [DBMS project] with both admin and user layouts.
+ReviewMyProduct is a [MINOR project] with both admin and user layouts.
 
 # Installation
 
@@ -11,12 +20,12 @@ ReviewMyProduct is a [DBMS project] with both admin and user layouts.
 
 2. Open XAMPP Control panal and start [apache] and [mysql] .
 
-3. Download project from github(https://github.com/tanya-johari/ReviewMyProduct)  
+3. Download project from github(https://github.com/tanya-johari/ReviewMyProduct.git)  
     OR follow gitbash commands
     
     i>cd C:\\xampp\htdocs\
     
-    ii>git clone https://github.com/tanya-johari/ReviewMyProduct
+    ii>git clone https://github.com/tanya-johari/ReviewMyProduct.git
     
 4. extract files in C:\\xampp\htdocs\.
 
