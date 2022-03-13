@@ -86,15 +86,12 @@ $statusMsg = 'Please select an image file to upload.';
             LOGIN
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-<<<<<<< HEAD
-            <li><a class="dropdown-item" href="../ReviewMyProduct/login.php">USER</a></li>
-            <li><a class="dropdown-item" href="login_admin.php">ADMIN</a></li>
-=======
+
 
             <li><a class="dropdown-item" href="../ReviewMyProduct/login.php">USER</a></li>
             <li><a class="dropdown-item" href="login_admin.php">ADMIN</a></li>
 
->>>>>>> 51bcb1a01ba74d0de99de78ec619eee06d8c8a44
+
           </ul>
         </li>
         <li class="nav-item dropdown">

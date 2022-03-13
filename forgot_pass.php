@@ -64,8 +64,8 @@ if(isset($_POST['submit']))
             LOGIN
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="../ReviewMyProduct/login.php">USER</a></li>
-            <li><a class="dropdown-item" href=" ../ReviewMyProduct/admin/login_admin.php">ADMIN</a></li>
+            <li><a class="dropdown-item" href="login.php">USER</a></li>
+            <li><a class="dropdown-item" href="admin/login_admin.php">ADMIN</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -73,8 +73,8 @@ if(isset($_POST['submit']))
             SIGN UP
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="../ReviewMyProduct/signup.php">USER</a></li>
-            <li><a class="dropdown-item" href="../ReviewMyProduct/admin/signup_admin.php">ADMIN</a></li>
+            <li><a class="dropdown-item" href="signup.php">USER</a></li>
+            <li><a class="dropdown-item" href="admin/signup_admin.php">ADMIN</a></li>
           </ul>
         </li>
         <li class="nav-item">
@@ -114,4 +114,6 @@ if(isset($_POST['submit']))
 </table>
 </form>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
 </html>
