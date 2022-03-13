@@ -26,7 +26,7 @@ include "dashboard_home.php";
 		e.preventDefault();
 		if(x < max_fields){ //max input box allowed
 			x++; //text box increment
-			$(wrapper).append('<div><label >Choose a Store </label></br><select id="store" name="store"><option value="amazon">amazon</option><option value="flipkart">flipkart</option><option value="croma">croma</option></select></br><label>Add Link </label></br><textarea type="text" name="mytext"></textarea></br><label>Price </label></br><input type="text" name="price" required><a href="#" class="remove_field">Remove</a></div>'); //add input box
+			$(wrapper).append('<div><label >Choose a Store </label></br><select id="store" name="store"><option value="amazon">amazon</option><option value="flipkart">flipkart</option><option value="croma">croma</option><option value="tata">Tata CliQ</option></select></br><label>Add Link </label></br><textarea type="text" name="mytext"></textarea></br><label>Price </label></br><input type="text" name="price" required><a href="#" class="remove_field">Remove</a></div>'); //add input box
 		}
 	});
 	
@@ -76,6 +76,7 @@ ADD Product
 		<option value="amazon">amazon</option>
 		<option value="flipkart">flipkart</option>
 		<option value="croma">croma</option>
+		<option value="tata cliq">Tata CliQ</option>
 	</select></br>
 	<label>Add Link </label>
 	<textarea type="text" name="mytext"></textarea></br>

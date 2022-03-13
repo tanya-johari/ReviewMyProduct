@@ -125,7 +125,8 @@ while($rows1=$result1->fetch_assoc())
     $src="https://i.pinimg.com/originals/15/aa/16/15aa1678d4ee5615c5c53ed5c9968126.png";
     if($rows1['store'] == 'croma')
     $src="https://m.media-amazon.com/images/S/abs-image-upload-na/8/AmazonStores/A21TJRUUN4KGV/19dae191bb75eda8e3fc9ffc1e335b9f.w400.h400.jpg";
-    
+    if($rows1['store'] == 'tata cliq')
+    $src="https://1000logos.net/wp-content/uploads/2020/07/Tata-Cliq-Logo1.jpg";
     ?>
       <td><h5><?php echo $rows1['store'];?></h5></td>
       <td>
