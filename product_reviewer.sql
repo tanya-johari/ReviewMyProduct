@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 13, 2022 at 10:07 AM
+-- Generation Time: Mar 13, 2022 at 06:01 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -228,7 +228,10 @@ INSERT INTO `reviews` (`review_id`, `item_id`, `userid`, `content`, `rating`, `s
 (10040, 53, 20, 'Really Satisfied with the product and hope it continues to function with zero issues.', 5, '2022-02-21 22:20:50'),
 (10042, 35, 19, 'Excellant!', 4, '2022-02-22 17:33:45'),
 (10043, 52, 19, 'Pros- Amoled Screen, Battery easily lasts a day or day n half on moderate usage.Charging Speed, Size of the mobile which is handy can b accessed though single hand..Separate SD card slot.\r\nCONS- CAMERA low light pictures are worst...A Big Dissapoinment, Price should have been a 1000 less considering processor, No 5G..', 2, '2022-02-22 17:35:10'),
-(10044, 47, 19, 'Pros\r\nGood performance\r\nLong battery life\r\nExcellent low-light photo capabilities\r\n\r\nCons\r\nMacro and depth sensors not very useful\r\nLacks stereo speakers\r\nLots of bloatware\r\n\r\nOne of the best affordable 5g phones in the market with all the necessary features .It has got a good camera with 64MP\r\nThe charging is also very very fast tooo fast. I don\'t expect that fast charging but the charger is really too fast. The camera also click very good photos.\r\nThe best 5g phone under this price segment I loved it ???❤️❤️????\r\nJust go for it. Also good packaging\r\nThanks ?????? Flipkart\r\nI\'m very happy ??', 5, '2022-02-22 17:37:57');
+(10044, 47, 19, 'Pros\r\nGood performance\r\nLong battery life\r\nExcellent low-light photo capabilities\r\n\r\nCons\r\nMacro and depth sensors not very useful\r\nLacks stereo speakers\r\nLots of bloatware\r\n\r\nOne of the best affordable 5g phones in the market with all the necessary features .It has got a good camera with 64MP\r\nThe charging is also very very fast tooo fast. I don\'t expect that fast charging but the charger is really too fast. The camera also click very good photos.\r\nThe best 5g phone under this price segment I loved it ???❤️❤️????\r\nJust go for it. Also good packaging\r\nThanks ?????? Flipkart\r\nI\'m very happy ??', 5, '2022-02-22 17:37:57'),
+(10049, 79, 15, 'The Watch comes with very good fitness activity tracking supported by Garmin coach to increase ur fitness to the Nxt level. \r\nI just use this everyday not as a smart watch but for ways to build up endurance. Happy with this purchase', 5, '2022-03-13 22:28:43'),
+(10050, 65, 15, 'the product is very comfortable and perfect voice', 4, '2022-03-13 22:29:29'),
+(10051, 83, 15, 'nice laptop', 3, '2022-03-13 22:30:32');
 
 -- --------------------------------------------------------
 
@@ -343,7 +346,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10049;
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10052;
 
 --
 -- AUTO_INCREMENT for table `usertable`

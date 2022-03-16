@@ -40,7 +40,8 @@ $in_cart =getproduct();
 
 
 ?>
-
+<head>
+<meta name="viewport" content="width=960px">
 <form method="post">
 <section id="special-price">
     <div class="container">
@@ -54,7 +55,7 @@ $in_cart =getproduct();
                 <div class="item py-2" style="width:20px height:20px; ">
                     <div class="product font-rale">
                         
-                        <a href="products.php?itemid=<?php echo $item['item_id']; ?>&itemname=<?php echo $item['item_name']; ?>"><img src="<?php echo $item['item_image'] ?? "./assets/products/13.png"; ?>" alt="product1" width="200px" height="200px" class="img-fluid" style="object-fit: cover;"></a>
+                        <a href="products.php?itemid=<?php echo $item['item_id']; ?>&itemname=<?php echo $item['item_name']; ?>"><img src="<?php echo $item['item_image'] ?? "./assets/products/13.png"; ?>" alt="product1" width="180px" height="180px"  object-fit= "cover"></a>
                         
                         <div class="text-center">
                             <h6><?php echo $item['item_name'] ?? "Unknown"; ?></h6>
@@ -89,3 +90,4 @@ $in_cart =getproduct();
     </div>
 </section>
 <!-- !Special Price -->
+<head>
