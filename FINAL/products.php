@@ -93,15 +93,19 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 </form>
 </nav>
 <div class=f1>
+  <center>
 <img src="<?php echo $row2['item_image'] ?? "./assets/products/13.png"; ?>" alt="product1" class="img-fluid center" style="width: 350px;"></br>
 <div class="col-md-5">
 <h4 style="color:#810CA6; "><?php echo $row2['item_name'];?></h4></br></div>
 <div class="col-md-5">
 <h4 style="color:#311CA6; "><?php echo $row2['item_brand']; ?></h4></br></div>
+</center>
 </div>
 <div class=f2>
+  <center>
   <h3 style="color:#336296">SPECFICATIONS:</h3>
 <h5><?php echo $row2['description']; ?></h5></br>
+</center>
 </div>
 
 
