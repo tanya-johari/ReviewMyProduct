@@ -40,7 +40,8 @@ $in_cart =getproduct();
 
 
 ?>
-
+<head>
+<meta name="viewport" content="width=960px">
 <form method="post">
 <section id="special-price">
     <div class="container">
@@ -89,3 +90,4 @@ $in_cart =getproduct();
     </div>
 </section>
 <!-- !Special Price -->
+<head>
