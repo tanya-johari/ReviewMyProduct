@@ -69,13 +69,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-
-          
           <a class="nav-link "  href="../index.php">HOME </a>
  </li>
-        
-            <li><a class="dropdown-item" href="../login.php">Login</a></li>
-            <li><a class="dropdown-item" href="../signup.php">Sign Up</a></li>
+            <li><a class="nav-link" href="../login.php">Login</a></li>
+            <li><a class="nav-link" href="../signup.php">Sign Up</a></li>
           
         <li class="nav-item">
           <a class="nav-link" href="../contact-form.php">CONTACT</a>
@@ -87,10 +84,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
   </div>
   <div class="navbar-brand">
   
-    <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-</form>
+    
 </nav>
 <div class=f1>
   <center>

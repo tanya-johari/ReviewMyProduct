@@ -1,6 +1,6 @@
 # SEM 1 MINOR PROJECT 
 <h3 align="center">
-hello
+
 </br>
 Made by : <a href="https://github.com/tanya-johari" style="color:orange;"> Tanya Johari </a>
 <a href="https://github.com/YesVishakha" style="color:yellow;"> Vishakha Yadav </a>
