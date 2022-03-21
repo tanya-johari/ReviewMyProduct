@@ -52,7 +52,4 @@ ReviewMyProduct is a [MINOR project] with both admin and user layouts.
 
 
 
-# Screenshots
-![Image of adduser](https://github.com/..)
-
 
