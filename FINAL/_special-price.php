@@ -49,7 +49,7 @@ $in_cart =getproduct();
      
 
 </form>
-        <div class="grid">
+        <div class="row row-cols-5">
             <?php array_map(function ($item) use($in_cart){ ?>
             <div class="grid-item border <?php echo $item['item_brand'] ?? "Brand" ; ?>">
                 <div class="item py-2" style="width:20px height:20px; ">

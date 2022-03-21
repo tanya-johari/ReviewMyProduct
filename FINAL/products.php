@@ -101,11 +101,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 <h4 style="color:#311CA6; "><?php echo $row2['item_brand']; ?></h4></br></div>
 </center>
 </div>
-<div class=f2>
-  <center>
+<div class=f1>
   <h3 style="color:#336296">SPECFICATIONS:</h3>
 <h5><?php echo $row2['description']; ?></h5></br>
-</center>
+
 </div>
 
 
