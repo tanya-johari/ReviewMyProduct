@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 13, 2022 at 06:01 PM
+-- Generation Time: Mar 21, 2022 at 11:35 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 7.4.27
 
@@ -69,7 +69,9 @@ CREATE TABLE `contacts_list` (
 --
 
 INSERT INTO `contacts_list` (`id`, `name`, `email`, `phone`, `subject`, `Message`, `sent_date`) VALUES
-(5, 'Tanya Johari', 'johtanya@gmail.com', '7779064922', 'Love the website', 'Its a great place to see authentic product reviews.', '2022-03-12 22:56:16');
+(5, 'Tanya Johari', 'johtanya@gmail.com', '7779064922', 'Love the website', 'Its a great place to see authentic product reviews.', '2022-03-12 22:56:16'),
+(6, 'Demo User', 'johtanya11@gmail.com', '9212377554', 'OPPO MOBILES', 'Can you please add OPPO company products also.', '2022-03-21 12:15:26'),
+(7, 'Demo User', 'johtanya11@gmail.com', '9212377554', 'OPPO MOBILES', 'Can you please add OPPO company products also.', '2022-03-21 12:15:30');
 
 -- --------------------------------------------------------
 
@@ -128,7 +130,14 @@ INSERT INTO `itemref` (`refid`, `item_id`, `reflink`, `store`, `price`) VALUES
 (52, 80, 'https://www.tatacliq.com/lenovo-ideapad-flex-5-14itl05-flip-laptop-82hs00w7in-i5-11th-gen-8gb-512gbssd-14in-w11hmso-int-grey/p-mp000000011276245', 'tata cliq', '65169.00'),
 (53, 81, 'https://www.tatacliq.com/asus-laptop-x409fa-ek617t-intel-i310th-gen4gb1tbhdd14-inchw10hintstar-grey/p-mp000000010301335', 'tata cliq', '30996.00'),
 (54, 82, 'https://www.tatacliq.com/hp-pavilion-aero-13-be0205au-laptop-50n42paacj-r55600u16-gb512gb-ssd13-3-inchw11hmsointgold/p-mp000000011570569', 'tata cliq', '65990.00'),
-(55, 83, 'https://www.tatacliq.com/dell-inspiron-3511-laptop-d560675win9be-i311th-gen8-gb1-tb-hdd256gb-ssd15-6inw11msointblack/p-mp000000011635064', 'tata cliq', '44038.00');
+(55, 83, 'https://www.tatacliq.com/dell-inspiron-3511-laptop-d560675win9be-i311th-gen8-gb1-tb-hdd256gb-ssd15-6inw11msointblack/p-mp000000011635064', 'tata cliq', '44038.00'),
+(56, 55, 'https://www.amazon.in/Samsung-Galaxy-Olive-128GB-Storage/dp/B09P7FYXJX', 'amazon', '54999.00'),
+(57, 52, 'https://www.flipkart.com/redmi-note-11t-5g-aquamarine-blue-128-gb/p/itm0dd08e65983e7', 'flipkart', '17240.00'),
+(58, 69, 'https://www.flipkart.com/samsung-galaxy-watch-active-2-aluminium-smartwatch/p/itmdf82694656d9d', 'flipkart', '14940.00'),
+(59, 80, 'https://www.flipkart.com/lenovo-ideapad-flex-5-core-i5-10th-gen-8-gb-512-gb-ssd-windows-10-home-14iil05-2-1-laptop/p/itmbb6f027ee5048', 'flipkart', '48971.00'),
+(60, 60, 'https://www.amazon.in/HP-Pavilion-15-6-inch-5-4600H-15-ec1024AX/dp/B08CZ2KNS4', 'amazon', '77500.00'),
+(61, 82, 'https://www.amazon.in/HP-Pavilion-Aero-Fingerprint-13-be0030AU/dp/B098NNGNVC', 'amazon', '65990.00'),
+(62, 66, 'https://www.amazon.in/Apple-MacBook-16-inch-Storage-Intel-Core-i7/dp/B081JWZQJB', 'amazon', '299999.00');
 
 -- --------------------------------------------------------
 
@@ -231,7 +240,34 @@ INSERT INTO `reviews` (`review_id`, `item_id`, `userid`, `content`, `rating`, `s
 (10044, 47, 19, 'Pros\r\nGood performance\r\nLong battery life\r\nExcellent low-light photo capabilities\r\n\r\nCons\r\nMacro and depth sensors not very useful\r\nLacks stereo speakers\r\nLots of bloatware\r\n\r\nOne of the best affordable 5g phones in the market with all the necessary features .It has got a good camera with 64MP\r\nThe charging is also very very fast tooo fast. I don\'t expect that fast charging but the charger is really too fast. The camera also click very good photos.\r\nThe best 5g phone under this price segment I loved it ???❤️❤️????\r\nJust go for it. Also good packaging\r\nThanks ?????? Flipkart\r\nI\'m very happy ??', 5, '2022-02-22 17:37:57'),
 (10049, 79, 15, 'The Watch comes with very good fitness activity tracking supported by Garmin coach to increase ur fitness to the Nxt level. \r\nI just use this everyday not as a smart watch but for ways to build up endurance. Happy with this purchase', 5, '2022-03-13 22:28:43'),
 (10050, 65, 15, 'the product is very comfortable and perfect voice', 4, '2022-03-13 22:29:29'),
-(10051, 83, 15, 'nice laptop', 3, '2022-03-13 22:30:32');
+(10051, 83, 15, 'nice laptop', 3, '2022-03-13 22:30:32'),
+(10052, 56, 21, '1.Display clearity is not as expected\r\n2. Battery performance is poor 2Days\r\n3. SPO2, Heart & Step counting is inaccurate.\r\n4.Looks & Build quality is awesome.', 4, '2022-03-21 14:39:45'),
+(10053, 69, 21, 'I have been using smart watches for three year. All of them have been Fitbit. I got bored of them and was looking for a good SMWatch which is when I looked at Samsung Galaxy Active 2 LTE. Been 1 week since I started using it and I should say, this is an amazing piece of art both inside and out. The following are the highlights I noticed\r\n\r\n1. Beautiful round shaped ergonomically designed body dial with responsive bezel control.\r\n2. Cross checked the step count and hear rate with Fitbit. Step count is super accurate. Heart rate varies 1 to 2 bpm which is OK. Very much under tolerance level.\r\n', 3, '2022-03-21 14:40:52'),
+(10054, 72, 22, 'Worst of the worst battery experience. Lasts only for few hours. I have to charge it at least twice a day. Even kept it on extended battery mode with almost all features off. The battery is still same.', 1, '2022-03-21 14:44:01'),
+(10055, 76, 22, 'Super stylish, well designed to do the job. Unless you’re a pro athlete, this makes for a great smart watch / activity tracker.', 5, '2022-03-21 14:44:42'),
+(10056, 40, 22, 'First look amazing just love the look??❤️\r\nPretty decent and light weight with nice shape\r\n1)First of all sound quality is pretty much good\r\nFor quality of sound 5/5\r\nFor deep bass 4/5\r\nTheirs not much difference between normal mode and deep mode unless n until u play deep bass boosted sound', 5, '2022-03-21 14:45:21'),
+(10057, 82, 22, 'love the product!!', 4, '2022-03-21 14:47:22'),
+(10058, 60, 22, 'Very excellent product,mat look is amazing, nice for gaming and video editing', 5, '2022-03-21 14:48:53'),
+(10059, 80, 22, 'Pros\r\nLooks professional \r\nTouch and Pen\r\nBattery backup \r\nCons\r\nExtremely color faded out display. Very disappointing. ', 4, '2022-03-21 14:49:35'),
+(10060, 51, 22, 'In my first review given within 24 hrs l found it amazing but after 10 days of usage l can say it is full of bugs; l checked my return window it passed on 3rd Aug ; l regret to choose one plus over samsung.. sooner l have to exchange or throw this mobile if bugs not fixed.One plus no never purchase; frustrated with this mobile.', 1, '2022-03-21 14:50:29'),
+(10061, 50, 22, 'Product is good but speaker sound is very very low at the moment warrenty is here so what\'s the procedure', 3, '2022-03-21 14:51:54'),
+(10062, 55, 22, 'worth buying', 4, '2022-03-21 14:53:09'),
+(10063, 81, 22, 'Product performance is very bad not working fine..', 1, '2022-03-21 14:54:11'),
+(10064, 61, 19, 'Excellent laptop by dell, packing should be more strong and careful, faster delivery by flipkart in 2 days, laptop performance as expected, if they give Dell bag also we might feel happy for the price', 4, '2022-03-21 14:55:38'),
+(10065, 66, 19, 'Awesome buy:)', 5, '2022-03-21 14:56:28'),
+(10066, 59, 19, 'Beautiful laptop , great design . Found no problem s in this laptop . I can say this is the best gaming laptop in this range and the RGB keyboard makes this product awesome . Thermals are great .Go for this version rather than intel . U will get one month Xbox gaming pass with this .', 5, '2022-03-21 14:57:10'),
+(10067, 67, 19, 'worth buying.', 4, '2022-03-21 14:57:59'),
+(10068, 42, 19, 'Best thing about this laptop is that it is Ryzen 5 but this is equivalent to Intel 10 gen i5 which is still powerful enough .8gb of Ram will make sure your OS won\'t crash .Laptop has Vega graphics which is good to play small games but not heavy .\r\n\r\nPros :\r\n\r\n-Ryzen 5\r\n- 8GB ram\r\n- Backlit keyboard\r\n- Vega graphics\r\n- Decent battery life ( 4 hours )\r\n- Win 11\r\n\r\nCons :\r\nNot found yet', 5, '2022-03-21 15:00:38'),
+(10069, 63, 19, 'not satisfactory', 3, '2022-03-21 15:01:40'),
+(10070, 64, 19, 'Good buy', 4, '2022-03-21 15:02:16'),
+(10071, 38, 19, 'Liked the product. Built quality is not tht good but overall ok. Sound quality is ok. BASS won\'t be as expected. Battery backup is very good average 2-3 days depend on your use. A decent product with nice feature.', 5, '2022-03-21 15:03:54'),
+(10072, 78, 19, 'product quality is not good', 3, '2022-03-21 15:05:01'),
+(10073, 57, 19, 'nice watch', 4, '2022-03-21 15:05:41'),
+(10074, 73, 19, 'This Fitbit Sense first of all comes at a lowest price on Flipkart than elsewhere. Moreover the watch is also a gimmick if you are not a fitness geek. The battery does not seem to work for more than 3-4 days first of all. If you are looking for a watch for a budget <30K then it can be a best option. Performance wise it\'s still an average smart watch. Can say more about this after few weeks.', 5, '2022-03-21 15:06:55'),
+(10075, 68, 19, 'Premium look and high durability ', 5, '2022-03-21 15:07:56'),
+(10076, 71, 19, 'Best Apple watch period\r\nThis watch should be more of an apple watch series 6s the display definitely looks polished and attractive\r\nIt has all the sensors which series 6 had no new health sensor\r\nIt supports 30% faster charging', 4, '2022-03-21 15:08:35'),
+(10077, 69, 19, ' have been using this watch for 10 days.This is better than most of the smart watches in the market currently.I am also using oppo watch.It has google os.I personally feel that galaxy watch\'s os(tizen) is better than google\'s(wear). It\'s user interface is very good.', 4, '2022-03-21 15:10:47'),
+(10078, 77, 19, ' have been using this watch for 10 days.This is better than most of the smart watches in the market currently.I am also using oppo watch.It has google os.I personally feel that galaxy watch\'s os(tizen) is better than google\'s(wear). It\'s user interface is very good.', 4, '2022-03-21 15:11:46');
 
 -- --------------------------------------------------------
 
@@ -328,13 +364,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `contacts_list`
 --
 ALTER TABLE `contacts_list`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `itemref`
 --
 ALTER TABLE `itemref`
-  MODIFY `refid` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `refid` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -346,7 +382,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10052;
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10079;
 
 --
 -- AUTO_INCREMENT for table `usertable`
